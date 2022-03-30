@@ -36,6 +36,20 @@ namespace projetCegep2
             get { return description; }
             set { description = value; }
         }
+        public override string ToString()
+        {
+            return ("-  " + NumProgramme + ", " + NomProgramme + ", " + DateCreation + ", " + Description  + "\n\n");
+        }
+        public override int GetHashCode()
+        {
+            int x;
+            x = NomProgramme.Length + Description.Length;
+            return (x);
+        }
+        public override bool Equals(object obj)
+        {
+            return ((obj != null) && (obj is Programme) && NumProgramme.Equals((obj as Programme).NumProgramme));
+        }
 
 
     }

@@ -330,6 +330,7 @@ namespace projetCegep2
             this.btnCreerCegep.TabIndex = 16;
             this.btnCreerCegep.Text = "Créer";
             this.btnCreerCegep.UseVisualStyleBackColor = true;
+            this.btnCreerCegep.Click += new System.EventHandler(this.btnCreerCegep_Click);
             // 
             // edtNumeroProgramme
             // 
@@ -337,6 +338,7 @@ namespace projetCegep2
             this.edtNumeroProgramme.Name = "edtNumeroProgramme";
             this.edtNumeroProgramme.Size = new System.Drawing.Size(100, 20);
             this.edtNumeroProgramme.TabIndex = 0;
+            this.edtNumeroProgramme.Text = "420.B0";
             // 
             // label
             // 
@@ -360,8 +362,9 @@ namespace projetCegep2
             // 
             this.edtNomProgramme.Location = new System.Drawing.Point(152, 74);
             this.edtNomProgramme.Name = "edtNomProgramme";
-            this.edtNomProgramme.Size = new System.Drawing.Size(100, 20);
+            this.edtNomProgramme.Size = new System.Drawing.Size(156, 20);
             this.edtNomProgramme.TabIndex = 2;
+            this.edtNomProgramme.Text = "Techniques de l\'informatique";
             // 
             // label11
             // 
@@ -378,6 +381,7 @@ namespace projetCegep2
             this.edtDateCreationProgramme.Name = "edtDateCreationProgramme";
             this.edtDateCreationProgramme.Size = new System.Drawing.Size(100, 20);
             this.edtDateCreationProgramme.TabIndex = 4;
+            this.edtDateCreationProgramme.Text = "1980";
             // 
             // label12
             // 
@@ -394,6 +398,7 @@ namespace projetCegep2
             this.edtDescriptionProgramme.Name = "edtDescriptionProgramme";
             this.edtDescriptionProgramme.Size = new System.Drawing.Size(100, 20);
             this.edtDescriptionProgramme.TabIndex = 6;
+            this.edtDescriptionProgramme.Text = "Informatique";
             // 
             // btnCreerProgramme
             // 
@@ -403,6 +408,7 @@ namespace projetCegep2
             this.btnCreerProgramme.TabIndex = 8;
             this.btnCreerProgramme.Text = "Créer";
             this.btnCreerProgramme.UseVisualStyleBackColor = true;
+            this.btnCreerProgramme.Click += new System.EventHandler(this.btnCreerProgramme_Click);
             // 
             // Form1
             // 
