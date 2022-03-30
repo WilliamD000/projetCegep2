@@ -64,9 +64,99 @@ namespace projetCegep2
             get { return anneeDImplentation; }
             set { anneeDImplentation = value; }
         }
+
+        List<Programme> listeProgramme;
+
+        public Cegep()
+        {
+            nom = "";
+            adresse = "";
+            codePostal = "";
+            telephone = "";
+            ville = "";
+            province = "";
+            courriel = "";
+            anneeDImplentation = "";
+            listeProgramme = new List<Programme>();
+        }
+        public Cegep(string unNom, string uneAdresse, string unCodePostal, string unTelephone, string uneVille, string uneProvince, string unCourriel, string uneAnneeDImplantation)
+        {
+            nom = unNom;
+            adresse = uneAdresse;
+            codePostal = unCodePostal;
+            telephone = unTelephone;
+            ville = uneVille;
+            province = uneProvince;
+            courriel = unCourriel;
+            anneeDImplentation = uneAnneeDImplantation;
+            listeProgramme = new List<Programme>();
+        }
+        public Programme[] ObtenirListeProgramme()
+        {
+            return listeProgramme.ToArray();
+        }
+        public Programme ObtenirProgramme(Programme unProgramme)
+        {
+            foreach (Programme programme in listeProgramme)
+            {
+                if (programme.Equals(unProgramme))
+                {
+                    return programme;
+                }
+            }
+            return null;
+        }
+        public bool SiProgrammePresent(Programme unProgramme)
+        {
+            foreach (Programme programme in listeProgramme)
+            {
+                if (programme.Equals(unProgramme))
+                {
+                    return (true);
+                }
+            }
+            return (false);
+        }
+        public bool AjouterProgramme(Programme unProgramme)
+        {
+            if (SiProgrammePresent(unProgramme))
+            {
+                return false;
+            }
+            listeProgramme.Add(unProgramme);
+            return SiProgrammePresent(unProgramme);
+        }
+        public bool EnleverProgramme(Programme unProgramme)
+        {
+            if (!SiProgrammePresent(unProgramme))
+            {
+                return (false);
+            }
+            listeProgramme.Remove(unProgramme);
+            return (!SiProgrammePresent(unProgramme));
+        }
+        public int ObtenirNombreProgramme()
+        {
+            return (listeProgramme.Count);
+        }
+        public bool SiAucunProgramme()
+        {
+            return (ObtenirNombreProgramme() == 0);
+        }
+        public bool ViderListeProgramme()
+        {
+            if (ObtenirNombreProgramme() == 0)
+            {
+                return false;
+            }
+            listeProgramme.Clear();
+            return SiAucunProgramme();
+        }
+
+
         public override string ToString()
         {
-            return ("-  " + Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel + ", " + AnneeDImplantation + NumProgramme + ", " + NomProgramme + ", " + DateCreation + ", " + Description +"\n\n");
+            return ("-  " + Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel + ", " + AnneeDImplantation + ", " + "\n\n");
         }
         public override int GetHashCode()
         {

@@ -16,7 +16,7 @@ namespace projetCegep2
     {
         Cegep monCegep = new Cegep();
         Programme monProgramme;
-        List<Programme> listeProgramme = new List<Programme>();
+       
         XmlSerializer serializer = new XmlSerializer(typeof(Cegep));
         public Form1()
         {
@@ -38,6 +38,8 @@ namespace projetCegep2
             {
                 serializer.Serialize(writer, monCegep);
             }
+            MessageBox.Show("Programme enregistré." + monCegep.ToString());
+
             
         }
 
@@ -47,7 +49,7 @@ namespace projetCegep2
             {
                 monCegep = (Cegep)serializer.Deserialize(reader);
             }
-            MessageBox.Show(monCegep.ToString());
+            MessageBox.Show("Programme ouvert.");
         }
 
         private void àProposToolStripMenuItem_Click(object sender, EventArgs e)
@@ -85,7 +87,7 @@ namespace projetCegep2
             monProgramme.NumProgramme = edtNumeroProgramme.Text;
             monProgramme.DateCreation = edtDateCreationProgramme.Text;
             monProgramme.Description = edtDescriptionProgramme.Text;
-            listeProgramme.Add(monProgramme);
+            memoListeProgramme.AppendText(monProgramme.ToString());
         }
     }
 }
