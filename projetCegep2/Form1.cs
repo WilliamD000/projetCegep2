@@ -15,8 +15,8 @@ namespace projetCegep2
     public partial class Form1 : Form
     {
         Cegep monCegep = new Cegep();
-        Programme monProgramme = new Programme();
-        List<Programme> listeProgramme;
+        Programme monProgramme;
+        List<Programme> listeProgramme = new List<Programme>();
         XmlSerializer serializer = new XmlSerializer(typeof(Cegep));
         public Form1()
         {
@@ -80,7 +80,7 @@ namespace projetCegep2
 
         private void btnCreerProgramme_Click(object sender, EventArgs e)
         {
-            listeProgramme = new List<Programme>();
+            monProgramme = new Programme();
             monProgramme.NomProgramme = edtNomProgramme.Text;
             monProgramme.NumProgramme = edtNumeroProgramme.Text;
             monProgramme.DateCreation = edtDateCreationProgramme.Text;

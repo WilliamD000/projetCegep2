@@ -65,6 +65,7 @@ namespace projetCegep2
             this.label12 = new System.Windows.Forms.Label();
             this.edtDescriptionProgramme = new System.Windows.Forms.TextBox();
             this.btnCreerProgramme = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -168,6 +169,7 @@ namespace projetCegep2
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.richTextBox1);
             this.tabPage2.Controls.Add(this.btnCreerProgramme);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.edtDescriptionProgramme);
@@ -410,6 +412,14 @@ namespace projetCegep2
             this.btnCreerProgramme.UseVisualStyleBackColor = true;
             this.btnCreerProgramme.Click += new System.EventHandler(this.btnCreerProgramme_Click);
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(458, 22);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(219, 274);
+            this.richTextBox1.TabIndex = 9;
+            this.richTextBox1.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,6 +480,7 @@ namespace projetCegep2
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.TextBox edtNumeroProgramme;
         private System.Windows.Forms.Button btnCreerProgramme;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
