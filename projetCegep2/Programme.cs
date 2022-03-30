@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace projetCegep2
 {
-    class Programme
+    public class Programme
     {
         private string numProgramme;
 

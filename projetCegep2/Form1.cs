@@ -16,7 +16,7 @@ namespace projetCegep2
     {
         Cegep monCegep = new Cegep();
         Programme monProgramme = new Programme();
-        List<Programme> listeProgramme = new List<Programme>();
+        List<Programme> listeProgramme;
         XmlSerializer serializer = new XmlSerializer(typeof(Cegep));
         public Form1()
         {
@@ -30,13 +30,7 @@ namespace projetCegep2
 
         private void enregistrerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (File.Exists("Cegep.xml"))
-            {
-                MessageBox.Show("Le fichier existe déja");
-            }
-            else
-            {
-                File.WriteAllText("Cegep.xml", "");
+            File.WriteAllText("Cegep.xml", "");
             //fichierLogique = File.OpenRead("Cegep.xml");
             //fichierLogique = "Cegep.xml";
             //serializer.Serialize("Cegep.xml", monCegep);
@@ -44,7 +38,7 @@ namespace projetCegep2
             {
                 serializer.Serialize(writer, monCegep);
             }
-            }
+            
         }
 
         private void ouvrirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -86,6 +80,7 @@ namespace projetCegep2
 
         private void btnCreerProgramme_Click(object sender, EventArgs e)
         {
+            listeProgramme = new List<Programme>();
             monProgramme.NomProgramme = edtNomProgramme.Text;
             monProgramme.NumProgramme = edtNumeroProgramme.Text;
             monProgramme.DateCreation = edtDateCreationProgramme.Text;

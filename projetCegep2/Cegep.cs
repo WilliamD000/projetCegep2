@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace projetCegep2
 {
-    public class Cegep
+    public class Cegep : Programme
     {
         private string nom;
 
@@ -68,7 +68,7 @@ namespace projetCegep2
 
         public override string ToString()
         {
-            return ("-  " + Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel + ", " + AnneeDImplantation + "\n\n");
+            return ("-  " + Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel + ", " + AnneeDImplantation + NumProgramme + ", " + NomProgramme + ", " + DateCreation + ", " + Description + "\n\n");
         }
         public override int GetHashCode()
         {

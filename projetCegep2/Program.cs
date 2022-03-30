@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace projetCegep2
 {
-    static class Program
+    public class Program : Cegep
     {
         /// <summary>
         /// Point d'entrée principal de l'application.
