@@ -30,18 +30,6 @@ namespace projetCegep2
 
         private void enregistrerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           /* monCegep.Nom = edtNomCegep.Text;
-            monCegep.Adresse = edtAdresse.Text;
-            monCegep.Telephone = edtTelephone.Text;
-            monCegep.CodePostal = edtCodePostal.Text;
-            monCegep.Ville = edtVille.Text;
-            monCegep.Province = edtProvince.Text;
-            monCegep.AnneeDImplantation = edtAnneeDImplantation.Text;
-            monCegep.Courriel = edtCourriel.Text;
-            monProgramme.NomProgramme = edtNomProgramme.Text;
-            monProgramme.NumProgramme = edtNumeroProgramme.Text;
-            monProgramme.DateCreation = edtDateCreationProgramme.Text;
-            monProgramme.Description = edtDescriptionProgramme.Text;*/
             if (File.Exists("Cegep.xml"))
             {
                 MessageBox.Show("Le fichier existe déja");
@@ -70,15 +58,7 @@ namespace projetCegep2
 
         private void àProposToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            monCegep.Nom = "Cégep de Rivière-du-Loup";
-            monCegep.Adresse = "80 rue Frontenac";
-            monCegep.Telephone = "(418) 862-6903";
-            monCegep.CodePostal = "G5R 1R1";
-            monCegep.Ville = "Rivière-du-Loup";
-            monCegep.Province = "Québec";
-            monCegep.AnneeDImplantation = "1969";
-            monCegep.Courriel = "cegep@cegeprdl.ca";
-            MessageBox.Show(monCegep.ToString());
+            MessageBox.Show(monCegep.ToString() + "\n" + monProgramme.ToString());
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
