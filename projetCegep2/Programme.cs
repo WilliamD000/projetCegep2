@@ -8,6 +8,7 @@ namespace projetCegep2
 {
     public class Programme
     {
+        Cegep monCegep;
         private string numProgramme;
 
         public string NumProgramme
@@ -39,6 +40,8 @@ namespace projetCegep2
 
         public override string ToString()
         {
+            int x;
+            //x = monCegep.listeProgramme.Count();
             return ("-  " + NumProgramme + ", " + NomProgramme + ", " + DateCreation + ", " + Description  + "\n\n");
         }
         public override int GetHashCode()
@@ -46,6 +49,10 @@ namespace projetCegep2
             int x;
             x = NomProgramme.Length + Description.Length;
             return (x);
+        }
+        public override bool Equals(object obj)
+        {
+            return ((obj != null) && (obj is Programme) && NomProgramme.Equals((obj as Programme).NomProgramme));
         }
 
         public Cegep Cegep

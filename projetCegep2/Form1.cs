@@ -87,8 +87,16 @@ namespace projetCegep2
             monProgramme.NumProgramme = edtNumeroProgramme.Text;
             monProgramme.DateCreation = edtDateCreationProgramme.Text;
             monProgramme.Description = edtDescriptionProgramme.Text;
+            if (monCegep.AjouterProgramme(monProgramme) == false)
+            {
+                MessageBox.Show("Ce programme existe déjà");
+            }
+            else
+            {
             monCegep.AjouterProgramme(monProgramme);
             memoListeProgramme.AppendText(monProgramme.ToString());
+            }
+            
         }
 
         private void btnViderListe_Click(object sender, EventArgs e)
