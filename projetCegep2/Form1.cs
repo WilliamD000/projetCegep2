@@ -41,7 +41,7 @@ namespace projetCegep2
             {
                 serializer.Serialize(writer, monCegep);
             }
-            MessageBox.Show("Programme enregistré." + monCegep.ToString());
+            MessageBox.Show("Programme enregistré.");
 
             
         }
@@ -156,7 +156,9 @@ namespace projetCegep2
 
         private void lbxListeProgramme_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            string[] tableauProgramme = new string[monCegep.listeProgramme.Count];
+              /*tableauProgramme = monCegep.ObtenirListeProgramme();
+            lbxListeProgramme.SelectedIndex();*/
         }
     }
 }
