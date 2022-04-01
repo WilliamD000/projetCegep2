@@ -50,6 +50,11 @@ namespace projetCegep2
                 monCegep = (Cegep)serializer.Deserialize(reader);
             }
             MessageBox.Show("Programme ouvert.");
+            memoListeProgramme.Clear();
+            foreach (Programme unProgramme in monCegep.listeProgramme)
+            {
+                memoListeProgramme.AppendText(unProgramme.ToString());
+            }
         }
 
         private void àProposToolStripMenuItem_Click(object sender, EventArgs e)
