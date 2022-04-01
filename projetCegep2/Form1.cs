@@ -87,7 +87,47 @@ namespace projetCegep2
             monProgramme.NumProgramme = edtNumeroProgramme.Text;
             monProgramme.DateCreation = edtDateCreationProgramme.Text;
             monProgramme.Description = edtDescriptionProgramme.Text;
+            monCegep.AjouterProgramme(monProgramme);
             memoListeProgramme.AppendText(monProgramme.ToString());
+        }
+
+        private void btnViderListe_Click(object sender, EventArgs e)
+        {
+            if (monCegep.ViderListeProgramme() == false)
+            {
+                MessageBox.Show("Il n'y a aucun programme dans la liste.");
+            }
+            else
+            {
+                monCegep.ViderListeProgramme();
+                memoListeProgramme.Clear();
+                foreach (Programme unProgramme in monCegep.listeProgramme)
+                {
+                    memoListeProgramme.AppendText(unProgramme.ToString());
+                }
+            }
+        }
+
+        private void btnArrangerListe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRetirerProgramme_Click(object sender, EventArgs e)
+        {
+            int nombreARetirer;
+            nombreARetirer = int.Parse(edtRetirerProgramme.Text);
+            monCegep.listeProgramme.RemoveAt(nombreARetirer-1);
+            memoListeProgramme.Clear();
+            foreach (Programme unProgramme in monCegep.listeProgramme)
+            {
+                memoListeProgramme.AppendText(unProgramme.ToString());
+            }
         }
     }
 }

@@ -47,11 +47,13 @@ namespace projetCegep2
             x = NomProgramme.Length + Description.Length;
             return (x);
         }
-        public override bool Equals(object obj)
+
+        public Cegep Cegep
         {
-            return ((obj != null) && (obj is Programme) && NumProgramme.Equals((obj as Programme).NumProgramme));
+            get => default;
+            set
+            {
+            }
         }
-
-
     }
 }

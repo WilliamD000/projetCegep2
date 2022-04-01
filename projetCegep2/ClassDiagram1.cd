@@ -3,7 +3,7 @@
   <Class Name="projetCegep2.Cegep" Collapsed="true">
     <Position X="4" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgAAAQIAAAEAAAEgAAQIAAAECACAIBAAIAAQgCIAAI=</HashCode>
+      <HashCode>AggAABQIAACEoAAEgQAQIAAAECBCAIBAAIAAQgCJIAI=</HashCode>
       <FileName>Cegep.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -13,6 +13,16 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="projetCegep2.Programme" Collapsed="true">
+    <Position X="3.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAACEAgEAAEIAAAAAAAAAAAEIAAAAAAQAAAIAA=</HashCode>
+      <FileName>Programme.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cegep" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

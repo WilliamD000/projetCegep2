@@ -65,7 +65,7 @@ namespace projetCegep2
             set { anneeDImplentation = value; }
         }
 
-        List<Programme> listeProgramme;
+        public List<Programme> listeProgramme;
 
         public Cegep()
         {
@@ -156,7 +156,7 @@ namespace projetCegep2
 
         public override string ToString()
         {
-            return ("-  " + Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel + ", " + AnneeDImplantation + ", " + "\n\n");
+            return (Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel + ", " + AnneeDImplantation + ", " + "\n\n");
         }
         public override int GetHashCode()
         {
