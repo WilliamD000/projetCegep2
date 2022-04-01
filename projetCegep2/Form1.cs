@@ -14,8 +14,10 @@ namespace projetCegep2
 {
     public partial class Form1 : Form
     {
-        Cegep monCegep = new Cegep();
+        //FileStream fichierLogique;
+        Cegep monCegep;
         Programme monProgramme;
+        int compteurProgramme=0;
        
         XmlSerializer serializer = new XmlSerializer(typeof(Cegep));
         public Form1()
@@ -30,10 +32,11 @@ namespace projetCegep2
 
         private void enregistrerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            File.WriteAllText("Cegep.xml", "");
+            //File.WriteAllText("Cegep.xml", "");
             //fichierLogique = File.OpenRead("Cegep.xml");
             //fichierLogique = "Cegep.xml";
             //serializer.Serialize("Cegep.xml", monCegep);
+            //fichierLogique.Close();
             using (var writer = new StreamWriter("Cegep.xml"))
             {
                 serializer.Serialize(writer, monCegep);
@@ -50,10 +53,12 @@ namespace projetCegep2
                 monCegep = (Cegep)serializer.Deserialize(reader);
             }
             MessageBox.Show("Programme ouvert.");
-            memoListeProgramme.Clear();
+            lbxListeProgramme.Items.Clear();
+            compteurProgramme = 0;
             foreach (Programme unProgramme in monCegep.listeProgramme)
             {
-                memoListeProgramme.AppendText(unProgramme.ToString());
+                compteurProgramme++;
+                lbxListeProgramme.Items.Add(compteurProgramme.ToString() + unProgramme.ToString());
             }
         }
 
@@ -74,6 +79,7 @@ namespace projetCegep2
 
         private void btnCreerCegep_Click(object sender, EventArgs e)
         {
+            monCegep = new Cegep();
             monCegep.Nom = edtNomCegep.Text;
             monCegep.Adresse = edtAdresse.Text;
             monCegep.Telephone = edtTelephone.Text;
@@ -98,8 +104,9 @@ namespace projetCegep2
             }
             else
             {
-            monCegep.AjouterProgramme(monProgramme);
-            memoListeProgramme.AppendText(monProgramme.ToString());
+                compteurProgramme++;
+                monCegep.AjouterProgramme(monProgramme);
+                lbxListeProgramme.Items.Add(compteurProgramme.ToString() + monProgramme.ToString());
             }
             
         }
@@ -112,11 +119,13 @@ namespace projetCegep2
             }
             else
             {
+                compteurProgramme = 0;
                 monCegep.ViderListeProgramme();
-                memoListeProgramme.Clear();
+                lbxListeProgramme.Items.Clear();
                 foreach (Programme unProgramme in monCegep.listeProgramme)
                 {
-                    memoListeProgramme.AppendText(unProgramme.ToString());
+                    compteurProgramme++;
+                    lbxListeProgramme.Items.Add(compteurProgramme.ToString() + unProgramme.ToString());
                 }
             }
         }
@@ -136,11 +145,18 @@ namespace projetCegep2
             int nombreARetirer;
             nombreARetirer = int.Parse(edtRetirerProgramme.Text);
             monCegep.listeProgramme.RemoveAt(nombreARetirer-1);
-            memoListeProgramme.Clear();
+            lbxListeProgramme.Items.Clear();
+            compteurProgramme = 0;
             foreach (Programme unProgramme in monCegep.listeProgramme)
             {
-                memoListeProgramme.AppendText(unProgramme.ToString());
+                compteurProgramme++;
+                lbxListeProgramme.Items.Add(compteurProgramme.ToString() + unProgramme.ToString());
             }
+        }
+
+        private void lbxListeProgramme_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -56,7 +56,11 @@ namespace projetCegep2
             this.label1 = new System.Windows.Forms.Label();
             this.edtNomCegep = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.memoListeProgramme = new System.Windows.Forms.RichTextBox();
+            this.lbxListeProgramme = new System.Windows.Forms.ListBox();
+            this.btnViderListe = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnRetirerProgramme = new System.Windows.Forms.Button();
+            this.edtRetirerProgramme = new System.Windows.Forms.TextBox();
             this.btnCreerProgramme = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.edtDescriptionProgramme = new System.Windows.Forms.TextBox();
@@ -66,10 +70,6 @@ namespace projetCegep2
             this.edtNomProgramme = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
             this.edtNumeroProgramme = new System.Windows.Forms.TextBox();
-            this.edtRetirerProgramme = new System.Windows.Forms.TextBox();
-            this.btnRetirerProgramme = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.btnViderListe = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -137,10 +137,10 @@ namespace projetCegep2
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(33, 48);
+            this.tabControl1.Location = new System.Drawing.Point(12, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(722, 371);
+            this.tabControl1.Size = new System.Drawing.Size(788, 411);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -165,7 +165,7 @@ namespace projetCegep2
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(714, 345);
+            this.tabPage1.Size = new System.Drawing.Size(780, 385);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cégep";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -320,11 +320,11 @@ namespace projetCegep2
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lbxListeProgramme);
             this.tabPage2.Controls.Add(this.btnViderListe);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.btnRetirerProgramme);
             this.tabPage2.Controls.Add(this.edtRetirerProgramme);
-            this.tabPage2.Controls.Add(this.memoListeProgramme);
             this.tabPage2.Controls.Add(this.btnCreerProgramme);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.edtDescriptionProgramme);
@@ -337,19 +337,57 @@ namespace projetCegep2
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(714, 345);
+            this.tabPage2.Size = new System.Drawing.Size(780, 385);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Programme";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // memoListeProgramme
+            // lbxListeProgramme
             // 
-            this.memoListeProgramme.Location = new System.Drawing.Point(458, 22);
-            this.memoListeProgramme.Name = "memoListeProgramme";
-            this.memoListeProgramme.Size = new System.Drawing.Size(219, 274);
-            this.memoListeProgramme.TabIndex = 9;
-            this.memoListeProgramme.Text = "";
+            this.lbxListeProgramme.FormattingEnabled = true;
+            this.lbxListeProgramme.Location = new System.Drawing.Point(469, 39);
+            this.lbxListeProgramme.Name = "lbxListeProgramme";
+            this.lbxListeProgramme.Size = new System.Drawing.Size(220, 277);
+            this.lbxListeProgramme.TabIndex = 14;
+            this.lbxListeProgramme.SelectedIndexChanged += new System.EventHandler(this.lbxListeProgramme_SelectedIndexChanged);
+            // 
+            // btnViderListe
+            // 
+            this.btnViderListe.Location = new System.Drawing.Point(46, 272);
+            this.btnViderListe.Name = "btnViderListe";
+            this.btnViderListe.Size = new System.Drawing.Size(75, 23);
+            this.btnViderListe.TabIndex = 13;
+            this.btnViderListe.Text = "Vider la liste";
+            this.btnViderListe.UseVisualStyleBackColor = true;
+            this.btnViderListe.Click += new System.EventHandler(this.btnViderListe_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(205, 231);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(148, 13);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Chiffre du programme à retirer:";
+            // 
+            // btnRetirerProgramme
+            // 
+            this.btnRetirerProgramme.Location = new System.Drawing.Point(228, 274);
+            this.btnRetirerProgramme.Name = "btnRetirerProgramme";
+            this.btnRetirerProgramme.Size = new System.Drawing.Size(75, 23);
+            this.btnRetirerProgramme.TabIndex = 11;
+            this.btnRetirerProgramme.Text = "Retirer";
+            this.btnRetirerProgramme.UseVisualStyleBackColor = true;
+            this.btnRetirerProgramme.Click += new System.EventHandler(this.btnRetirerProgramme_Click);
+            // 
+            // edtRetirerProgramme
+            // 
+            this.edtRetirerProgramme.Location = new System.Drawing.Point(228, 247);
+            this.edtRetirerProgramme.Name = "edtRetirerProgramme";
+            this.edtRetirerProgramme.Size = new System.Drawing.Size(100, 20);
+            this.edtRetirerProgramme.TabIndex = 10;
+            this.edtRetirerProgramme.Text = "1";
             // 
             // btnCreerProgramme
             // 
@@ -372,7 +410,7 @@ namespace projetCegep2
             // 
             // edtDescriptionProgramme
             // 
-            this.edtDescriptionProgramme.Location = new System.Drawing.Point(137, 147);
+            this.edtDescriptionProgramme.Location = new System.Drawing.Point(208, 147);
             this.edtDescriptionProgramme.Name = "edtDescriptionProgramme";
             this.edtDescriptionProgramme.Size = new System.Drawing.Size(100, 20);
             this.edtDescriptionProgramme.TabIndex = 6;
@@ -406,7 +444,7 @@ namespace projetCegep2
             // 
             // edtNomProgramme
             // 
-            this.edtNomProgramme.Location = new System.Drawing.Point(152, 74);
+            this.edtNomProgramme.Location = new System.Drawing.Point(208, 74);
             this.edtNomProgramme.Name = "edtNomProgramme";
             this.edtNomProgramme.Size = new System.Drawing.Size(156, 20);
             this.edtNomProgramme.TabIndex = 2;
@@ -423,48 +461,11 @@ namespace projetCegep2
             // 
             // edtNumeroProgramme
             // 
-            this.edtNumeroProgramme.Location = new System.Drawing.Point(167, 39);
+            this.edtNumeroProgramme.Location = new System.Drawing.Point(208, 39);
             this.edtNumeroProgramme.Name = "edtNumeroProgramme";
             this.edtNumeroProgramme.Size = new System.Drawing.Size(100, 20);
             this.edtNumeroProgramme.TabIndex = 0;
             this.edtNumeroProgramme.Text = "420.B0";
-            // 
-            // edtRetirerProgramme
-            // 
-            this.edtRetirerProgramme.Location = new System.Drawing.Point(228, 247);
-            this.edtRetirerProgramme.Name = "edtRetirerProgramme";
-            this.edtRetirerProgramme.Size = new System.Drawing.Size(100, 20);
-            this.edtRetirerProgramme.TabIndex = 10;
-            this.edtRetirerProgramme.Text = "1";
-            // 
-            // btnRetirerProgramme
-            // 
-            this.btnRetirerProgramme.Location = new System.Drawing.Point(228, 274);
-            this.btnRetirerProgramme.Name = "btnRetirerProgramme";
-            this.btnRetirerProgramme.Size = new System.Drawing.Size(75, 23);
-            this.btnRetirerProgramme.TabIndex = 11;
-            this.btnRetirerProgramme.Text = "Retirer";
-            this.btnRetirerProgramme.UseVisualStyleBackColor = true;
-            this.btnRetirerProgramme.Click += new System.EventHandler(this.btnRetirerProgramme_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(205, 231);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(148, 13);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Chiffre du programme à retirer:";
-            // 
-            // btnViderListe
-            // 
-            this.btnViderListe.Location = new System.Drawing.Point(46, 272);
-            this.btnViderListe.Name = "btnViderListe";
-            this.btnViderListe.Size = new System.Drawing.Size(75, 23);
-            this.btnViderListe.TabIndex = 13;
-            this.btnViderListe.Text = "Vider la liste";
-            this.btnViderListe.UseVisualStyleBackColor = true;
-            this.btnViderListe.Click += new System.EventHandler(this.btnViderListe_Click);
             // 
             // Form1
             // 
@@ -526,11 +527,11 @@ namespace projetCegep2
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.TextBox edtNumeroProgramme;
         private System.Windows.Forms.Button btnCreerProgramme;
-        private System.Windows.Forms.RichTextBox memoListeProgramme;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnRetirerProgramme;
         private System.Windows.Forms.TextBox edtRetirerProgramme;
         private System.Windows.Forms.Button btnViderListe;
+        private System.Windows.Forms.ListBox lbxListeProgramme;
     }
 }
 
