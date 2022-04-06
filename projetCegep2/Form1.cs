@@ -159,10 +159,10 @@ namespace projetCegep2
         {
             int index;
             index = lbxListeProgramme.SelectedIndex;
-              monCegep.ObtenirListeProgramme()[index].NomProgramme = edtNomProgramme.Text;
-            monCegep.ObtenirListeProgramme()[index].NumProgramme = edtNumeroProgramme.Text;
-            monCegep.ObtenirListeProgramme()[index].Description = edtDescriptionProgramme.Text;
-            monCegep.ObtenirListeProgramme()[index].DateCreation = edtDateCreationProgramme.Text;
+            edtNomProgramme.Text = monCegep.ObtenirListeProgramme()[index].NomProgramme;
+            edtNumeroProgramme.Text = monCegep.ObtenirListeProgramme()[index].NumProgramme;
+            edtDescriptionProgramme.Text = monCegep.ObtenirListeProgramme()[index].Description;
+            edtDateCreationProgramme.Text = monCegep.ObtenirListeProgramme()[index].DateCreation;
 
         }
 
@@ -197,6 +197,24 @@ namespace projetCegep2
                 compteurEnseignant++;
                 lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
             }
+        }
+
+        private void lbxListeEnseignant_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index;
+            index = lbxListeProgramme.SelectedIndex;
+            edtPrenomEmploye.Text = unEnseignant.ObtenirListeEnseignant()[index].Prenom;
+            edtNomEmploye.Text = unEnseignant.ObtenirListeEnseignant()[index].Nom;
+            edtAdresseEnseignant.Text = unEnseignant.ObtenirListeEnseignant()[index].Adresse;
+            edtCodePostalEnseignant.Text = unEnseignant.ObtenirListeEnseignant()[index].CodePostal;
+            edtTelephoneEnseignant.Text = unEnseignant.ObtenirListeEnseignant()[index].Telephone;
+            edtVilleEnseignant.Text = unEnseignant.ObtenirListeEnseignant()[index].Ville;
+            edtProvinceEnseignant.Text = unEnseignant.ObtenirListeEnseignant()[index].Province;
+            edtCourrielEnseignant.Text = unEnseignant.ObtenirListeEnseignant()[index].Courriel;
+            edtNumeroEmploye.Text = unEnseignant.ObtenirListeEnseignant()[index].NumeroEmploye;
+            dtpDateEmbauche = DateTime.Parse(unEnseignant.ObtenirListeEnseignant()[index].DateEmbauche);
+            dtpDateArret = DateTime.Parse(unEnseignant.ObtenirListeEnseignant()[index].DateArret);
+
         }
 
         private void btnCreerEnseignant_Click(object sender, EventArgs e)

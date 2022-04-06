@@ -542,6 +542,7 @@ namespace projetCegep2
             this.lbxListeEnseignant.Name = "lbxListeEnseignant";
             this.lbxListeEnseignant.Size = new System.Drawing.Size(220, 277);
             this.lbxListeEnseignant.TabIndex = 28;
+            this.lbxListeEnseignant.SelectedIndexChanged += new System.EventHandler(this.lbxListeEnseignant_SelectedIndexChanged);
             // 
             // btnViderListeEnseignant
             // 
