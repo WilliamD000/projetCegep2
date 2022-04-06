@@ -17,7 +17,8 @@ namespace projetCegep2
         //FileStream fichierLogique;
         Cegep monCegep;
         Programme monProgramme;
-        int compteurProgramme=0;
+        int compteurProgramme=0, compteurEnseignant=0;
+        Enseignant unEnseignant;
        
         XmlSerializer serializer = new XmlSerializer(typeof(Cegep));
         public Form1()
@@ -163,6 +164,65 @@ namespace projetCegep2
             monCegep.ObtenirListeProgramme()[index].Description = edtDescriptionProgramme.Text;
             monCegep.ObtenirListeProgramme()[index].DateCreation = edtDateCreationProgramme.Text;
 
+        }
+
+        private void btnViderListeEnseignant_Click(object sender, EventArgs e)
+        {
+            if (unEnseignant.ViderListeEnseignant() == false)
+            {
+                MessageBox.Show("Il n'y a aucun enseignant a retirer.");
+            }
+            else
+            {
+                compteurEnseignant = 0;
+                unEnseignant.ViderListeEnseignant();
+                lbxListeEnseignant.Items.Clear();
+                foreach (Enseignant unEnseignant in unEnseignant.listeEnseignant)
+                {
+                    compteurEnseignant++;
+                    lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
+                }
+            }
+        }
+
+        private void btnRetirerEnseignant_Click(object sender, EventArgs e)
+        {
+            int nombreARetirer;
+            nombreARetirer = int.Parse(edtEnseignantARetirer.Text);
+            unEnseignant.listeEnseignant.RemoveAt(nombreARetirer - 1);
+            lbxListeEnseignant.Items.Clear();
+            compteurEnseignant = 0;
+            foreach (Enseignant unEnseignant in unEnseignant.listeEnseignant)
+            {
+                compteurEnseignant++;
+                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
+            }
+        }
+
+        private void btnCreerEnseignant_Click(object sender, EventArgs e)
+        {
+            unEnseignant = new Enseignant();
+            unEnseignant.Prenom = edtPrenomEmploye.Text;
+            unEnseignant.Nom = edtNomEmploye.Text;
+            unEnseignant.Adresse = edtAdresse.Text;
+            unEnseignant.CodePostal = edtCodePostalEnseignant.Text;
+            unEnseignant.Telephone = edtTelephoneEnseignant.Text;
+            unEnseignant.Ville = edtVilleEnseignant.Text;
+            unEnseignant.Province = edtProvinceEnseignant.Text;
+            unEnseignant.Courriel = edtCourrielEnseignant.Text;
+            unEnseignant.NumeroEmploye = edtNumeroEmploye.Text;
+            unEnseignant.DateEmbauche = dtpDateEmbauche.Value;
+            unEnseignant.DateArret = dtpDateArret.Value;
+            if (unEnseignant.AjouterEnseignant(unEnseignant) == false)
+            {
+                MessageBox.Show("Cet enseignant existe déjà");
+            }
+            else
+            {
+                compteurEnseignant++;
+                unEnseignant.AjouterEnseignant(unEnseignant);
+                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
+            }
         }
     }
 }

@@ -70,10 +70,40 @@ namespace projetCegep2
             this.edtNomProgramme = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
             this.edtNumeroProgramme = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.lbxListeEnseignant = new System.Windows.Forms.ListBox();
+            this.btnViderListeEnseignant = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnRetirerEnseignant = new System.Windows.Forms.Button();
+            this.edtEnseignantARetirer = new System.Windows.Forms.TextBox();
+            this.btnCreerEnseignant = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.edtCourrielEnseignant = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.edtProvinceEnseignant = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.edtVilleEnseignant = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.edtTelephoneEnseignant = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.edtCodePostalEnseignant = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.edtAdresseEnseignant = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.edtNomEmploye = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.edtNumeroEmploye = new System.Windows.Forms.TextBox();
+            this.dtpDateEmbauche = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateArret = new System.Windows.Forms.DateTimePicker();
+            this.label21 = new System.Windows.Forms.Label();
+            this.edtPrenomEmploye = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -137,6 +167,7 @@ namespace projetCegep2
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(12, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -467,6 +498,285 @@ namespace projetCegep2
             this.edtNumeroProgramme.TabIndex = 0;
             this.edtNumeroProgramme.Text = "420.B0";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.label21);
+            this.tabPage3.Controls.Add(this.edtPrenomEmploye);
+            this.tabPage3.Controls.Add(this.dtpDateArret);
+            this.tabPage3.Controls.Add(this.dtpDateEmbauche);
+            this.tabPage3.Controls.Add(this.label22);
+            this.tabPage3.Controls.Add(this.label23);
+            this.tabPage3.Controls.Add(this.label24);
+            this.tabPage3.Controls.Add(this.edtNumeroEmploye);
+            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.Controls.Add(this.edtCourrielEnseignant);
+            this.tabPage3.Controls.Add(this.label15);
+            this.tabPage3.Controls.Add(this.edtProvinceEnseignant);
+            this.tabPage3.Controls.Add(this.label16);
+            this.tabPage3.Controls.Add(this.edtVilleEnseignant);
+            this.tabPage3.Controls.Add(this.label17);
+            this.tabPage3.Controls.Add(this.edtTelephoneEnseignant);
+            this.tabPage3.Controls.Add(this.label18);
+            this.tabPage3.Controls.Add(this.edtCodePostalEnseignant);
+            this.tabPage3.Controls.Add(this.label19);
+            this.tabPage3.Controls.Add(this.edtAdresseEnseignant);
+            this.tabPage3.Controls.Add(this.label20);
+            this.tabPage3.Controls.Add(this.edtNomEmploye);
+            this.tabPage3.Controls.Add(this.lbxListeEnseignant);
+            this.tabPage3.Controls.Add(this.btnViderListeEnseignant);
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.btnRetirerEnseignant);
+            this.tabPage3.Controls.Add(this.edtEnseignantARetirer);
+            this.tabPage3.Controls.Add(this.btnCreerEnseignant);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(780, 385);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Enseignant";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // lbxListeEnseignant
+            // 
+            this.lbxListeEnseignant.FormattingEnabled = true;
+            this.lbxListeEnseignant.Location = new System.Drawing.Point(552, 54);
+            this.lbxListeEnseignant.Name = "lbxListeEnseignant";
+            this.lbxListeEnseignant.Size = new System.Drawing.Size(220, 277);
+            this.lbxListeEnseignant.TabIndex = 28;
+            // 
+            // btnViderListeEnseignant
+            // 
+            this.btnViderListeEnseignant.Location = new System.Drawing.Point(59, 344);
+            this.btnViderListeEnseignant.Name = "btnViderListeEnseignant";
+            this.btnViderListeEnseignant.Size = new System.Drawing.Size(75, 23);
+            this.btnViderListeEnseignant.TabIndex = 27;
+            this.btnViderListeEnseignant.Text = "Vider la liste";
+            this.btnViderListeEnseignant.UseVisualStyleBackColor = true;
+            this.btnViderListeEnseignant.Click += new System.EventHandler(this.btnViderListeEnseignant_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(233, 301);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(152, 13);
+            this.label13.TabIndex = 26;
+            this.label13.Text = "Chiffre de l\'enseignant à retirer:";
+            // 
+            // btnRetirerEnseignant
+            // 
+            this.btnRetirerEnseignant.Location = new System.Drawing.Point(256, 344);
+            this.btnRetirerEnseignant.Name = "btnRetirerEnseignant";
+            this.btnRetirerEnseignant.Size = new System.Drawing.Size(75, 23);
+            this.btnRetirerEnseignant.TabIndex = 25;
+            this.btnRetirerEnseignant.Text = "Retirer";
+            this.btnRetirerEnseignant.UseVisualStyleBackColor = true;
+            this.btnRetirerEnseignant.Click += new System.EventHandler(this.btnRetirerEnseignant_Click);
+            // 
+            // edtEnseignantARetirer
+            // 
+            this.edtEnseignantARetirer.Location = new System.Drawing.Point(256, 317);
+            this.edtEnseignantARetirer.Name = "edtEnseignantARetirer";
+            this.edtEnseignantARetirer.Size = new System.Drawing.Size(100, 20);
+            this.edtEnseignantARetirer.TabIndex = 24;
+            this.edtEnseignantARetirer.Text = "1";
+            // 
+            // btnCreerEnseignant
+            // 
+            this.btnCreerEnseignant.Location = new System.Drawing.Point(49, 296);
+            this.btnCreerEnseignant.Name = "btnCreerEnseignant";
+            this.btnCreerEnseignant.Size = new System.Drawing.Size(85, 35);
+            this.btnCreerEnseignant.TabIndex = 23;
+            this.btnCreerEnseignant.Text = "Créer";
+            this.btnCreerEnseignant.UseVisualStyleBackColor = true;
+            this.btnCreerEnseignant.Click += new System.EventHandler(this.btnCreerEnseignant_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(11, 270);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(45, 13);
+            this.label14.TabIndex = 42;
+            this.label14.Text = "Courriel:";
+            // 
+            // edtCourrielEnseignant
+            // 
+            this.edtCourrielEnseignant.Location = new System.Drawing.Point(90, 267);
+            this.edtCourrielEnseignant.Name = "edtCourrielEnseignant";
+            this.edtCourrielEnseignant.Size = new System.Drawing.Size(111, 20);
+            this.edtCourrielEnseignant.TabIndex = 41;
+            this.edtCourrielEnseignant.Text = "YDup@gmail.com";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(11, 231);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(49, 13);
+            this.label15.TabIndex = 40;
+            this.label15.Text = "Province";
+            // 
+            // edtProvinceEnseignant
+            // 
+            this.edtProvinceEnseignant.Location = new System.Drawing.Point(101, 228);
+            this.edtProvinceEnseignant.Name = "edtProvinceEnseignant";
+            this.edtProvinceEnseignant.Size = new System.Drawing.Size(100, 20);
+            this.edtProvinceEnseignant.TabIndex = 39;
+            this.edtProvinceEnseignant.Text = "Québec";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(11, 194);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(26, 13);
+            this.label16.TabIndex = 38;
+            this.label16.Text = "Ville";
+            // 
+            // edtVilleEnseignant
+            // 
+            this.edtVilleEnseignant.Location = new System.Drawing.Point(101, 191);
+            this.edtVilleEnseignant.Name = "edtVilleEnseignant";
+            this.edtVilleEnseignant.Size = new System.Drawing.Size(100, 20);
+            this.edtVilleEnseignant.TabIndex = 37;
+            this.edtVilleEnseignant.Text = "Rivière-du-Loup";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(11, 155);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(61, 13);
+            this.label17.TabIndex = 36;
+            this.label17.Text = "Telephone:";
+            // 
+            // edtTelephoneEnseignant
+            // 
+            this.edtTelephoneEnseignant.Location = new System.Drawing.Point(101, 152);
+            this.edtTelephoneEnseignant.Name = "edtTelephoneEnseignant";
+            this.edtTelephoneEnseignant.Size = new System.Drawing.Size(100, 20);
+            this.edtTelephoneEnseignant.TabIndex = 35;
+            this.edtTelephoneEnseignant.Text = "(418) 867 3492";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(12, 117);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(67, 13);
+            this.label18.TabIndex = 34;
+            this.label18.Text = "Code Postal:";
+            // 
+            // edtCodePostalEnseignant
+            // 
+            this.edtCodePostalEnseignant.Location = new System.Drawing.Point(101, 114);
+            this.edtCodePostalEnseignant.Name = "edtCodePostalEnseignant";
+            this.edtCodePostalEnseignant.Size = new System.Drawing.Size(100, 20);
+            this.edtCodePostalEnseignant.TabIndex = 33;
+            this.edtCodePostalEnseignant.Text = "G5R 9T2";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(12, 81);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(48, 13);
+            this.label19.TabIndex = 32;
+            this.label19.Text = "Adresse:";
+            // 
+            // edtAdresseEnseignant
+            // 
+            this.edtAdresseEnseignant.Location = new System.Drawing.Point(101, 79);
+            this.edtAdresseEnseignant.Name = "edtAdresseEnseignant";
+            this.edtAdresseEnseignant.Size = new System.Drawing.Size(100, 20);
+            this.edtAdresseEnseignant.TabIndex = 31;
+            this.edtAdresseEnseignant.Text = "100 Boulevard Thériault";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(11, 50);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(32, 13);
+            this.label20.TabIndex = 30;
+            this.label20.Text = "Nom:";
+            // 
+            // edtNomEmploye
+            // 
+            this.edtNomEmploye.Location = new System.Drawing.Point(59, 47);
+            this.edtNomEmploye.Name = "edtNomEmploye";
+            this.edtNomEmploye.Size = new System.Drawing.Size(142, 20);
+            this.edtNomEmploye.TabIndex = 29;
+            this.edtNomEmploye.Text = "Dupuis";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(239, 117);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(65, 13);
+            this.label22.TabIndex = 48;
+            this.label22.Text = "Date d\'arret:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(239, 83);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(94, 13);
+            this.label23.TabIndex = 46;
+            this.label23.Text = "Date d\'embauche:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(244, 50);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(98, 13);
+            this.label24.TabIndex = 44;
+            this.label24.Text = "Numero d\'Employé:";
+            // 
+            // edtNumeroEmploye
+            // 
+            this.edtNumeroEmploye.Location = new System.Drawing.Point(348, 47);
+            this.edtNumeroEmploye.Name = "edtNumeroEmploye";
+            this.edtNumeroEmploye.Size = new System.Drawing.Size(100, 20);
+            this.edtNumeroEmploye.TabIndex = 43;
+            this.edtNumeroEmploye.Text = "0944561";
+            // 
+            // dtpDateEmbauche
+            // 
+            this.dtpDateEmbauche.Location = new System.Drawing.Point(339, 83);
+            this.dtpDateEmbauche.Name = "dtpDateEmbauche";
+            this.dtpDateEmbauche.Size = new System.Drawing.Size(200, 20);
+            this.dtpDateEmbauche.TabIndex = 49;
+            this.dtpDateEmbauche.Value = new System.DateTime(2019, 10, 23, 0, 0, 0, 0);
+            // 
+            // dtpDateArret
+            // 
+            this.dtpDateArret.Location = new System.Drawing.Point(339, 117);
+            this.dtpDateArret.Name = "dtpDateArret";
+            this.dtpDateArret.Size = new System.Drawing.Size(200, 20);
+            this.dtpDateArret.TabIndex = 50;
+            this.dtpDateArret.Value = new System.DateTime(2030, 3, 18, 0, 0, 0, 0);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(11, 20);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(46, 13);
+            this.label21.TabIndex = 52;
+            this.label21.Text = "Prénom:";
+            // 
+            // edtPrenomEmploye
+            // 
+            this.edtPrenomEmploye.Location = new System.Drawing.Point(59, 17);
+            this.edtPrenomEmploye.Name = "edtPrenomEmploye";
+            this.edtPrenomEmploye.Size = new System.Drawing.Size(142, 20);
+            this.edtPrenomEmploye.TabIndex = 51;
+            this.edtPrenomEmploye.Text = "Yves";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,6 +794,8 @@ namespace projetCegep2
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -532,6 +844,35 @@ namespace projetCegep2
         private System.Windows.Forms.TextBox edtRetirerProgramme;
         private System.Windows.Forms.Button btnViderListe;
         private System.Windows.Forms.ListBox lbxListeProgramme;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox edtPrenomEmploye;
+        private System.Windows.Forms.DateTimePicker dtpDateArret;
+        private System.Windows.Forms.DateTimePicker dtpDateEmbauche;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox edtNumeroEmploye;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox edtCourrielEnseignant;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox edtProvinceEnseignant;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox edtVilleEnseignant;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox edtTelephoneEnseignant;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox edtCodePostalEnseignant;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox edtAdresseEnseignant;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox edtNomEmploye;
+        private System.Windows.Forms.ListBox lbxListeEnseignant;
+        private System.Windows.Forms.Button btnViderListeEnseignant;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnRetirerEnseignant;
+        private System.Windows.Forms.TextBox edtEnseignantARetirer;
+        private System.Windows.Forms.Button btnCreerEnseignant;
     }
 }
 
