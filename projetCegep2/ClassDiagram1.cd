@@ -17,8 +17,18 @@
   <Class Name="projetCegep2.Programme" Collapsed="true">
     <Position X="3.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgAAAACEAgEAAEIAAAAAAAAAAAEIAAAAAAQAAAIAA=</HashCode>
+      <HashCode>AAAgAAAACEAgEAAEoAAAAAAAAAAAEIAAAAAAQAAAIAA=</HashCode>
       <FileName>Programme.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cegep" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="projetCegep2.Enseignant" Collapsed="true">
+    <Position X="1.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgIAAQUCABEAAAEgAAQIAAAECAFJIBABKQJRgCICAI=</HashCode>
+      <FileName>Enseignant.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Cegep" />

@@ -192,8 +192,15 @@ namespace projetCegep2
         }
         public override bool Equals(object obj)
         {
-            return ((obj != null) && (obj is Enseignant) && Telephone.Equals((obj as Enseignant).Telephone));
+            return ((obj != null) && (obj is Enseignant) && NumeroEmploye.Equals((obj as Enseignant).NumeroEmploye));
         }
 
+        public Cegep Cegep
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

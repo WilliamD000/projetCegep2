@@ -21,10 +21,24 @@ namespace projetCegep2
         Enseignant unEnseignant;
        
         XmlSerializer serializer = new XmlSerializer(typeof(Cegep));
+
         public Form1()
         {
             InitializeComponent();
+            using (StreamReader reader = new StreamReader("Cegep.xml"))
+            {
+                monCegep = (Cegep)serializer.Deserialize(reader);
+            }
+            MessageBox.Show("Programme ouvert.");
+            lbxListeProgramme.Items.Clear();
+            compteurProgramme = 0;
+            foreach (Programme unProgramme in monCegep.listeProgramme)
+            {
+                compteurProgramme++;
+                lbxListeProgramme.Items.Add(compteurProgramme.ToString() + unProgramme.ToString());
+            }
         }
+
         /// <summary>
         /// Bouton permettant de fermer l'application
         /// </summary>
@@ -435,7 +449,7 @@ namespace projetCegep2
             {
                 compteurEnseignant++;
                 unEnseignant.AjouterEnseignant(unEnseignant);
-                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + " -"+unEnseignant.ToString());
+                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + "- "+unEnseignant.ToString());
             }
         }
     }
