@@ -107,6 +107,8 @@ namespace projetCegep2
             this.btnSuivantProgramme = new System.Windows.Forms.Button();
             this.btnPrécédentProgramme = new System.Windows.Forms.Button();
             this.btnPremierProgramme = new System.Windows.Forms.Button();
+            this.btnModifierEnseignant = new System.Windows.Forms.Button();
+            this.btnModifierProgramme = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -133,7 +135,7 @@ namespace projetCegep2
             this.enregistrerToolStripMenuItem,
             this.quitterToolStripMenuItem});
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(66, 26);
             this.fichierToolStripMenuItem.Text = "Fichier";
             // 
             // ouvrirToolStripMenuItem
@@ -162,7 +164,7 @@ namespace projetCegep2
             this.aideToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.àProposToolStripMenuItem});
             this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
-            this.aideToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
+            this.aideToolStripMenuItem.Size = new System.Drawing.Size(54, 26);
             this.aideToolStripMenuItem.Text = "Aide";
             // 
             // àProposToolStripMenuItem
@@ -379,6 +381,7 @@ namespace projetCegep2
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnModifierProgramme);
             this.tabPage2.Controls.Add(this.btnDernierProgramme);
             this.tabPage2.Controls.Add(this.btnSuivantProgramme);
             this.tabPage2.Controls.Add(this.btnPrécédentProgramme);
@@ -548,6 +551,7 @@ namespace projetCegep2
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btnModifierEnseignant);
             this.tabPage3.Controls.Add(this.btnDernierEnseignant);
             this.tabPage3.Controls.Add(this.btnSuivantEnseignant);
             this.tabPage3.Controls.Add(this.btnPrécédentEnseignant);
@@ -940,6 +944,26 @@ namespace projetCegep2
             this.btnPremierProgramme.UseVisualStyleBackColor = true;
             this.btnPremierProgramme.Click += new System.EventHandler(this.btnPremierProgramme_Click);
             // 
+            // btnModifierEnseignant
+            // 
+            this.btnModifierEnseignant.Location = new System.Drawing.Point(322, 325);
+            this.btnModifierEnseignant.Name = "btnModifierEnseignant";
+            this.btnModifierEnseignant.Size = new System.Drawing.Size(83, 26);
+            this.btnModifierEnseignant.TabIndex = 57;
+            this.btnModifierEnseignant.Text = "Modifier";
+            this.btnModifierEnseignant.UseVisualStyleBackColor = true;
+            this.btnModifierEnseignant.Click += new System.EventHandler(this.btnModifierEnseignant_Click);
+            // 
+            // btnModifierProgramme
+            // 
+            this.btnModifierProgramme.Location = new System.Drawing.Point(298, 227);
+            this.btnModifierProgramme.Name = "btnModifierProgramme";
+            this.btnModifierProgramme.Size = new System.Drawing.Size(88, 28);
+            this.btnModifierProgramme.TabIndex = 61;
+            this.btnModifierProgramme.Text = "Modifier";
+            this.btnModifierProgramme.UseVisualStyleBackColor = true;
+            this.btnModifierProgramme.Click += new System.EventHandler(this.btnModifierProgramme_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1045,6 +1069,8 @@ namespace projetCegep2
         private System.Windows.Forms.Button btnSuivantProgramme;
         private System.Windows.Forms.Button btnPrécédentProgramme;
         private System.Windows.Forms.Button btnPremierProgramme;
+        private System.Windows.Forms.Button btnModifierEnseignant;
+        private System.Windows.Forms.Button btnModifierProgramme;
     }
 }
 

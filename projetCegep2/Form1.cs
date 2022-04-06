@@ -250,7 +250,7 @@ namespace projetCegep2
         private void lbxListeEnseignant_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index;
-            index = lbxListeProgramme.SelectedIndex+1;
+            index = lbxListeEnseignant.SelectedIndex+1;
             edtPrenomEmploye.Text = unEnseignant.ObtenirListeEnseignant()[index].Prenom;
             edtNomEmploye.Text = unEnseignant.ObtenirListeEnseignant()[index].Nom;
             edtAdresseEnseignant.Text = unEnseignant.ObtenirListeEnseignant()[index].Adresse;
@@ -264,12 +264,20 @@ namespace projetCegep2
             dtpDateArret.Value = unEnseignant.ObtenirListeEnseignant()[index].DateArret;
 
         }
-
+        /// <summary>
+        /// BOuton permettant d'afficher le premier enseignant de la liste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPremierEnseignant_Click(object sender, EventArgs e)
         {
             lbxListeEnseignant.SelectedIndex = 0;
         }
-
+        /// <summary>
+        /// Bouton permettant d'afficher l'enseignant précédent de la liste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPrécédentEnseignant_Click(object sender, EventArgs e)
         {
             if (lbxListeEnseignant.SelectedIndex==0)
@@ -283,7 +291,11 @@ namespace projetCegep2
             lbxListeEnseignant.SelectedIndex = index;
             }
         }
-
+        /// <summary>
+        /// Bouton permettant d'afficher l'enseignant suivant de la liste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSuivantEnseignant_Click(object sender, EventArgs e)
         {
             if (lbxListeEnseignant.SelectedIndex == unEnseignant.ObtenirNombreEnseignant()+1)
@@ -297,17 +309,29 @@ namespace projetCegep2
                 lbxListeEnseignant.SelectedIndex = index;
             }
         }
-
+        /// <summary>
+        /// Bouton permettant d'afficher le dernier enseignant de la liste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDernierEnseignant_Click(object sender, EventArgs e)
         {
             lbxListeEnseignant.SelectedIndex = unEnseignant.ObtenirNombreEnseignant() + 1;
         }
-
+        /// <summary>
+        /// Bouton permettant d'afficher le premier programme de la liste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPremierProgramme_Click(object sender, EventArgs e)
         {
             lbxListeProgramme.SelectedIndex = 0;
         }
-
+        /// <summary>
+        /// Bouton permettant d'afficher le programme précédent de la liste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPrécédentProgramme_Click(object sender, EventArgs e)
         {
             if (lbxListeProgramme.SelectedIndex == 0)
@@ -321,7 +345,11 @@ namespace projetCegep2
                 lbxListeProgramme.SelectedIndex = index;
             }
         }
-
+        /// <summary>
+        /// Bouton permettant d'afficher le programme suivant de la liste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSuivantProgramme_Click(object sender, EventArgs e)
         {
             if (lbxListeProgramme.SelectedIndex == monCegep.ObtenirNombreProgramme() + 1)
@@ -335,10 +363,49 @@ namespace projetCegep2
                 lbxListeProgramme.SelectedIndex = index;
             }
         }
-
+        /// <summary>
+        /// Bouton permettant d'afficher le dernier programme de la liste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDernierProgramme_Click(object sender, EventArgs e)
         {
             lbxListeProgramme.SelectedIndex = monCegep.ObtenirNombreProgramme() + 1;
+        }
+        /// <summary>
+        /// Bouton permettant de modifier l'enseignant sélectionné dans le listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnModifierEnseignant_Click(object sender, EventArgs e)
+        {
+            int index;
+            index = lbxListeEnseignant.SelectedIndex + 1;
+            unEnseignant.ObtenirListeEnseignant()[index].Prenom = edtPrenomEmploye.Text;
+            unEnseignant.ObtenirListeEnseignant()[index].Nom = edtNomEmploye.Text ;
+            unEnseignant.ObtenirListeEnseignant()[index].Adresse = edtAdresseEnseignant.Text;
+            unEnseignant.ObtenirListeEnseignant()[index].CodePostal = edtCodePostalEnseignant.Text;
+            unEnseignant.ObtenirListeEnseignant()[index].Telephone = edtTelephoneEnseignant.Text;
+            unEnseignant.ObtenirListeEnseignant()[index].Ville = edtVilleEnseignant.Text;
+            unEnseignant.ObtenirListeEnseignant()[index].Province = edtProvinceEnseignant.Text;
+            unEnseignant.ObtenirListeEnseignant()[index].Courriel = edtCourrielEnseignant.Text;
+            unEnseignant.ObtenirListeEnseignant()[index].NumeroEmploye = edtNumeroEmploye.Text;
+            unEnseignant.ObtenirListeEnseignant()[index].DateEmbauche = dtpDateEmbauche.Value;
+            unEnseignant.ObtenirListeEnseignant()[index].DateArret = dtpDateArret.Value;
+        }
+        /// <summary>
+        /// Bouton permettant de modifier le programme sélectionné dans le listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnModifierProgramme_Click(object sender, EventArgs e)
+        {
+            int index;
+            index = lbxListeProgramme.SelectedIndex;
+            monCegep.ObtenirListeProgramme()[index].NomProgramme = edtNomProgramme.Text;
+            monCegep.ObtenirListeProgramme()[index].NumProgramme = edtNumeroProgramme.Text;
+            monCegep.ObtenirListeProgramme()[index].Description = edtDescriptionProgramme.Text;
+            monCegep.ObtenirListeProgramme()[index].DateCreation = edtDateCreationProgramme.Text;
         }
 
         /// <summary>
