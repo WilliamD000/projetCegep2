@@ -112,7 +112,7 @@ namespace projetCegep2
             btnCreerCegep.Enabled = false;
         }
         /// <summary>
-        /// BOuton permettant de créer un programme et de l'ajouter à la liste
+        /// Bouton permettant de créer un programme et de l'ajouter à la liste
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -136,7 +136,7 @@ namespace projetCegep2
             
         }
         /// <summary>
-        /// BOuton pour vider la liste de programmes
+        /// Bouton pour vider la liste de programmes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -169,7 +169,7 @@ namespace projetCegep2
 
         }
         /// <summary>
-        /// BOuton pour retirer un programme précis
+        /// Bouton pour retirer un programme précis
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -243,7 +243,7 @@ namespace projetCegep2
             }
         }
         /// <summary>
-        /// Action déclanchée par l'utilisateur au changement de l'Index
+        /// Action déclenchée par l'utilisateur au changement de l'Index
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -265,7 +265,7 @@ namespace projetCegep2
 
         }
         /// <summary>
-        /// BOuton permettant à la création d'un nouvel enseignant
+        /// Bouton permettant à la création d'un nouvel enseignant
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
