@@ -156,9 +156,13 @@ namespace projetCegep2
 
         private void lbxListeProgramme_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string[] tableauProgramme = new string[monCegep.listeProgramme.Count];
-              /*tableauProgramme = monCegep.ObtenirListeProgramme();
-            lbxListeProgramme.SelectedIndex();*/
+            int index;
+            index = lbxListeProgramme.SelectedIndex;
+              monCegep.ObtenirListeProgramme()[index].NomProgramme = edtNomProgramme.Text;
+            monCegep.ObtenirListeProgramme()[index].NumProgramme = edtNumeroProgramme.Text;
+            monCegep.ObtenirListeProgramme()[index].Description = edtDescriptionProgramme.Text;
+            monCegep.ObtenirListeProgramme()[index].DateCreation = edtDateCreationProgramme.Text;
+
         }
     }
 }
