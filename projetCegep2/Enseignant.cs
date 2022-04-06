@@ -182,7 +182,7 @@ namespace projetCegep2
 
         public override string ToString()
         {
-            return (NumeroEmploye + ", " + Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel + ", " + "\n\n");
+            return (NumeroEmploye + ", " + Prenom + ", " + Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel + ", " + "\n\n");
         }
         public override int GetHashCode()
         {

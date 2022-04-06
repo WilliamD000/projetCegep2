@@ -234,8 +234,8 @@ namespace projetCegep2
             int nombreARetirer;
             nombreARetirer = int.Parse(edtEnseignantARetirer.Text);
             unEnseignant.listeEnseignant.RemoveAt(nombreARetirer - 1);
-            lbxListeEnseignant.Items.Clear();
-            compteurEnseignant = 0;
+            lbxListeEnseignant.Items.RemoveAt(nombreARetirer);
+            compteurEnseignant--;
             foreach (Enseignant unEnseignant in unEnseignant.listeEnseignant)
             {
                 compteurEnseignant++;
@@ -250,7 +250,7 @@ namespace projetCegep2
         private void lbxListeEnseignant_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index;
-            index = lbxListeProgramme.SelectedIndex;
+            index = lbxListeProgramme.SelectedIndex+1;
             edtPrenomEmploye.Text = unEnseignant.ObtenirListeEnseignant()[index].Prenom;
             edtNomEmploye.Text = unEnseignant.ObtenirListeEnseignant()[index].Nom;
             edtAdresseEnseignant.Text = unEnseignant.ObtenirListeEnseignant()[index].Adresse;
@@ -264,6 +264,83 @@ namespace projetCegep2
             dtpDateArret.Value = unEnseignant.ObtenirListeEnseignant()[index].DateArret;
 
         }
+
+        private void btnPremierEnseignant_Click(object sender, EventArgs e)
+        {
+            lbxListeEnseignant.SelectedIndex = 0;
+        }
+
+        private void btnPrécédentEnseignant_Click(object sender, EventArgs e)
+        {
+            if (lbxListeEnseignant.SelectedIndex==0)
+            {
+                lbxListeEnseignant.SelectedIndex = unEnseignant.ObtenirNombreEnseignant() + 1;
+            }
+            else
+            {
+            int index;
+            index = lbxListeEnseignant.SelectedIndex - 1;
+            lbxListeEnseignant.SelectedIndex = index;
+            }
+        }
+
+        private void btnSuivantEnseignant_Click(object sender, EventArgs e)
+        {
+            if (lbxListeEnseignant.SelectedIndex == unEnseignant.ObtenirNombreEnseignant()+1)
+            {
+                lbxListeEnseignant.SelectedIndex = 0;
+            }
+            else
+            {
+                int index;
+                index = lbxListeEnseignant.SelectedIndex + 1;
+                lbxListeEnseignant.SelectedIndex = index;
+            }
+        }
+
+        private void btnDernierEnseignant_Click(object sender, EventArgs e)
+        {
+            lbxListeEnseignant.SelectedIndex = unEnseignant.ObtenirNombreEnseignant() + 1;
+        }
+
+        private void btnPremierProgramme_Click(object sender, EventArgs e)
+        {
+            lbxListeProgramme.SelectedIndex = 0;
+        }
+
+        private void btnPrécédentProgramme_Click(object sender, EventArgs e)
+        {
+            if (lbxListeProgramme.SelectedIndex == 0)
+            {
+                lbxListeProgramme.SelectedIndex = monCegep.ObtenirNombreProgramme() + 1;
+            }
+            else
+            {
+                int index;
+                index = lbxListeProgramme.SelectedIndex - 1;
+                lbxListeProgramme.SelectedIndex = index;
+            }
+        }
+
+        private void btnSuivantProgramme_Click(object sender, EventArgs e)
+        {
+            if (lbxListeProgramme.SelectedIndex == monCegep.ObtenirNombreProgramme() + 1)
+            {
+                lbxListeProgramme.SelectedIndex = 0;
+            }
+            else
+            {
+                int index;
+                index = lbxListeProgramme.SelectedIndex + 1;
+                lbxListeProgramme.SelectedIndex = index;
+            }
+        }
+
+        private void btnDernierProgramme_Click(object sender, EventArgs e)
+        {
+            lbxListeProgramme.SelectedIndex = monCegep.ObtenirNombreProgramme() + 1;
+        }
+
         /// <summary>
         /// Bouton permettant à la création d'un nouvel enseignant
         /// </summary>
@@ -291,7 +368,7 @@ namespace projetCegep2
             {
                 compteurEnseignant++;
                 unEnseignant.AjouterEnseignant(unEnseignant);
-                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
+                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + " -"+unEnseignant.ToString());
             }
         }
     }

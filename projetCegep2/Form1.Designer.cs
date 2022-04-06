@@ -99,10 +99,14 @@ namespace projetCegep2
             this.btnRetirerEnseignant = new System.Windows.Forms.Button();
             this.edtEnseignantARetirer = new System.Windows.Forms.TextBox();
             this.btnCreerEnseignant = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnPremierEnseignant = new System.Windows.Forms.Button();
+            this.btnPrécédentEnseignant = new System.Windows.Forms.Button();
+            this.btnSuivantEnseignant = new System.Windows.Forms.Button();
+            this.btnDernierEnseignant = new System.Windows.Forms.Button();
+            this.btnDernierProgramme = new System.Windows.Forms.Button();
+            this.btnSuivantProgramme = new System.Windows.Forms.Button();
+            this.btnPrécédentProgramme = new System.Windows.Forms.Button();
+            this.btnPremierProgramme = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -118,7 +122,7 @@ namespace projetCegep2
             this.aideToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -375,6 +379,10 @@ namespace projetCegep2
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnDernierProgramme);
+            this.tabPage2.Controls.Add(this.btnSuivantProgramme);
+            this.tabPage2.Controls.Add(this.btnPrécédentProgramme);
+            this.tabPage2.Controls.Add(this.btnPremierProgramme);
             this.tabPage2.Controls.Add(this.lbxListeProgramme);
             this.tabPage2.Controls.Add(this.btnViderListe);
             this.tabPage2.Controls.Add(this.label9);
@@ -412,7 +420,7 @@ namespace projetCegep2
             // 
             // btnViderListe
             // 
-            this.btnViderListe.Location = new System.Drawing.Point(61, 335);
+            this.btnViderListe.Location = new System.Drawing.Point(180, 227);
             this.btnViderListe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnViderListe.Name = "btnViderListe";
             this.btnViderListe.Size = new System.Drawing.Size(100, 28);
@@ -424,7 +432,7 @@ namespace projetCegep2
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(273, 284);
+            this.label9.Location = new System.Drawing.Point(45, 293);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(203, 17);
@@ -433,7 +441,7 @@ namespace projetCegep2
             // 
             // btnRetirerProgramme
             // 
-            this.btnRetirerProgramme.Location = new System.Drawing.Point(304, 337);
+            this.btnRetirerProgramme.Location = new System.Drawing.Point(76, 346);
             this.btnRetirerProgramme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRetirerProgramme.Name = "btnRetirerProgramme";
             this.btnRetirerProgramme.Size = new System.Drawing.Size(100, 28);
@@ -444,7 +452,7 @@ namespace projetCegep2
             // 
             // edtRetirerProgramme
             // 
-            this.edtRetirerProgramme.Location = new System.Drawing.Point(304, 304);
+            this.edtRetirerProgramme.Location = new System.Drawing.Point(76, 313);
             this.edtRetirerProgramme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edtRetirerProgramme.Name = "edtRetirerProgramme";
             this.edtRetirerProgramme.Size = new System.Drawing.Size(132, 22);
@@ -453,7 +461,7 @@ namespace projetCegep2
             // 
             // btnCreerProgramme
             // 
-            this.btnCreerProgramme.Location = new System.Drawing.Point(61, 245);
+            this.btnCreerProgramme.Location = new System.Drawing.Point(48, 227);
             this.btnCreerProgramme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreerProgramme.Name = "btnCreerProgramme";
             this.btnCreerProgramme.Size = new System.Drawing.Size(113, 43);
@@ -540,10 +548,10 @@ namespace projetCegep2
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.button4);
-            this.tabPage3.Controls.Add(this.button3);
-            this.tabPage3.Controls.Add(this.button2);
-            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.btnDernierEnseignant);
+            this.tabPage3.Controls.Add(this.btnSuivantEnseignant);
+            this.tabPage3.Controls.Add(this.btnPrécédentEnseignant);
+            this.tabPage3.Controls.Add(this.btnPremierEnseignant);
             this.tabPage3.Controls.Add(this.label21);
             this.tabPage3.Controls.Add(this.edtPrenomEmploye);
             this.tabPage3.Controls.Add(this.dtpDateArret);
@@ -852,41 +860,85 @@ namespace projetCegep2
             this.btnCreerEnseignant.UseVisualStyleBackColor = true;
             this.btnCreerEnseignant.Click += new System.EventHandler(this.btnCreerEnseignant_Click);
             // 
-            // button1
+            // btnPremierEnseignant
             // 
-            this.button1.Location = new System.Drawing.Point(330, 268);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 32);
-            this.button1.TabIndex = 53;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPremierEnseignant.Location = new System.Drawing.Point(330, 268);
+            this.btnPremierEnseignant.Name = "btnPremierEnseignant";
+            this.btnPremierEnseignant.Size = new System.Drawing.Size(75, 32);
+            this.btnPremierEnseignant.TabIndex = 53;
+            this.btnPremierEnseignant.Text = "Premier";
+            this.btnPremierEnseignant.UseVisualStyleBackColor = true;
+            this.btnPremierEnseignant.Click += new System.EventHandler(this.btnPremierEnseignant_Click);
             // 
-            // button2
+            // btnPrécédentEnseignant
             // 
-            this.button2.Location = new System.Drawing.Point(434, 268);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 35);
-            this.button2.TabIndex = 54;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnPrécédentEnseignant.Location = new System.Drawing.Point(424, 268);
+            this.btnPrécédentEnseignant.Name = "btnPrécédentEnseignant";
+            this.btnPrécédentEnseignant.Size = new System.Drawing.Size(94, 35);
+            this.btnPrécédentEnseignant.TabIndex = 54;
+            this.btnPrécédentEnseignant.Text = "Précédent";
+            this.btnPrécédentEnseignant.UseVisualStyleBackColor = true;
+            this.btnPrécédentEnseignant.Click += new System.EventHandler(this.btnPrécédentEnseignant_Click);
             // 
-            // button3
+            // btnSuivantEnseignant
             // 
-            this.button3.Location = new System.Drawing.Point(548, 268);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 35);
-            this.button3.TabIndex = 55;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSuivantEnseignant.Location = new System.Drawing.Point(548, 268);
+            this.btnSuivantEnseignant.Name = "btnSuivantEnseignant";
+            this.btnSuivantEnseignant.Size = new System.Drawing.Size(75, 35);
+            this.btnSuivantEnseignant.TabIndex = 55;
+            this.btnSuivantEnseignant.Text = "Suivant";
+            this.btnSuivantEnseignant.UseVisualStyleBackColor = true;
+            this.btnSuivantEnseignant.Click += new System.EventHandler(this.btnSuivantEnseignant_Click);
             // 
-            // button4
+            // btnDernierEnseignant
             // 
-            this.button4.Location = new System.Drawing.Point(642, 268);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 35);
-            this.button4.TabIndex = 56;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnDernierEnseignant.Location = new System.Drawing.Point(642, 268);
+            this.btnDernierEnseignant.Name = "btnDernierEnseignant";
+            this.btnDernierEnseignant.Size = new System.Drawing.Size(75, 35);
+            this.btnDernierEnseignant.TabIndex = 56;
+            this.btnDernierEnseignant.Text = "Dernier";
+            this.btnDernierEnseignant.UseVisualStyleBackColor = true;
+            this.btnDernierEnseignant.Click += new System.EventHandler(this.btnDernierEnseignant_Click);
+            // 
+            // btnDernierProgramme
+            // 
+            this.btnDernierProgramme.Location = new System.Drawing.Point(533, 339);
+            this.btnDernierProgramme.Name = "btnDernierProgramme";
+            this.btnDernierProgramme.Size = new System.Drawing.Size(75, 35);
+            this.btnDernierProgramme.TabIndex = 60;
+            this.btnDernierProgramme.Text = "Dernier";
+            this.btnDernierProgramme.UseVisualStyleBackColor = true;
+            this.btnDernierProgramme.Click += new System.EventHandler(this.btnDernierProgramme_Click);
+            // 
+            // btnSuivantProgramme
+            // 
+            this.btnSuivantProgramme.Location = new System.Drawing.Point(439, 339);
+            this.btnSuivantProgramme.Name = "btnSuivantProgramme";
+            this.btnSuivantProgramme.Size = new System.Drawing.Size(75, 35);
+            this.btnSuivantProgramme.TabIndex = 59;
+            this.btnSuivantProgramme.Text = "Suivant";
+            this.btnSuivantProgramme.UseVisualStyleBackColor = true;
+            this.btnSuivantProgramme.Click += new System.EventHandler(this.btnSuivantProgramme_Click);
+            // 
+            // btnPrécédentProgramme
+            // 
+            this.btnPrécédentProgramme.Location = new System.Drawing.Point(315, 339);
+            this.btnPrécédentProgramme.Name = "btnPrécédentProgramme";
+            this.btnPrécédentProgramme.Size = new System.Drawing.Size(94, 35);
+            this.btnPrécédentProgramme.TabIndex = 58;
+            this.btnPrécédentProgramme.Text = "Précédent";
+            this.btnPrécédentProgramme.UseVisualStyleBackColor = true;
+            this.btnPrécédentProgramme.Click += new System.EventHandler(this.btnPrécédentProgramme_Click);
+            // 
+            // btnPremierProgramme
+            // 
+            this.btnPremierProgramme.Location = new System.Drawing.Point(221, 339);
+            this.btnPremierProgramme.Name = "btnPremierProgramme";
+            this.btnPremierProgramme.Size = new System.Drawing.Size(75, 32);
+            this.btnPremierProgramme.TabIndex = 57;
+            this.btnPremierProgramme.Text = "Premier";
+            this.btnPremierProgramme.UseVisualStyleBackColor = true;
+            this.btnPremierProgramme.Click += new System.EventHandler(this.btnPremierProgramme_Click);
             // 
             // Form1
             // 
@@ -985,10 +1037,14 @@ namespace projetCegep2
         private System.Windows.Forms.Button btnRetirerEnseignant;
         private System.Windows.Forms.TextBox edtEnseignantARetirer;
         private System.Windows.Forms.Button btnCreerEnseignant;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDernierEnseignant;
+        private System.Windows.Forms.Button btnSuivantEnseignant;
+        private System.Windows.Forms.Button btnPrécédentEnseignant;
+        private System.Windows.Forms.Button btnPremierEnseignant;
+        private System.Windows.Forms.Button btnDernierProgramme;
+        private System.Windows.Forms.Button btnSuivantProgramme;
+        private System.Windows.Forms.Button btnPrécédentProgramme;
+        private System.Windows.Forms.Button btnPremierProgramme;
     }
 }
 
