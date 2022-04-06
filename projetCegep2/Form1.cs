@@ -25,12 +25,20 @@ namespace projetCegep2
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Bouton permettant de fermer l'application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        /// <summary>
+        /// Bouton permettant d'enregistrer le fichier xml à la racine
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void enregistrerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //File.WriteAllText("Cegep.xml", "");
@@ -46,7 +54,11 @@ namespace projetCegep2
 
             
         }
-
+        /// <summary>
+        /// Bouton permettant d'ouvrir le fichier XML
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ouvrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (StreamReader reader = new StreamReader("Cegep.xml"))
@@ -62,10 +74,14 @@ namespace projetCegep2
                 lbxListeProgramme.Items.Add(compteurProgramme.ToString() + unProgramme.ToString());
             }
         }
-
+        /// <summary>
+        /// Bouton affichant des informations sur le programme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void àProposToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(monCegep.ToString() + "\n" + monProgramme.ToString());
+            MessageBox.Show(monCegep.ToString() + "\n" + monProgramme.ToString() + "/n" + unEnseignant.ToString());
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -77,7 +93,11 @@ namespace projetCegep2
         {
 
         }
-
+        /// <summary>
+        /// Bouton permettant à créer le cégep
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCreerCegep_Click(object sender, EventArgs e)
         {
             monCegep = new Cegep();
@@ -91,7 +111,11 @@ namespace projetCegep2
             monCegep.Courriel = edtCourriel.Text;
             btnCreerCegep.Enabled = false;
         }
-
+        /// <summary>
+        /// BOuton permettant de créer un programme et de l'ajouter à la liste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCreerProgramme_Click(object sender, EventArgs e)
         {
             monProgramme = new Programme();
@@ -111,7 +135,11 @@ namespace projetCegep2
             }
             
         }
-
+        /// <summary>
+        /// BOuton pour vider la liste de programmes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnViderListe_Click(object sender, EventArgs e)
         {
             if (monCegep.ViderListeProgramme() == false)
@@ -140,7 +168,11 @@ namespace projetCegep2
         {
 
         }
-
+        /// <summary>
+        /// BOuton pour retirer un programme précis
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRetirerProgramme_Click(object sender, EventArgs e)
         {
             int nombreARetirer;
@@ -154,7 +186,11 @@ namespace projetCegep2
                 lbxListeProgramme.Items.Add(compteurProgramme.ToString() + unProgramme.ToString());
             }
         }
-
+        /// <summary>
+        /// Action se déroulant quand l'utilisateur change l'Index du listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lbxListeProgramme_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index;
@@ -165,7 +201,11 @@ namespace projetCegep2
             edtDateCreationProgramme.Text = monCegep.ObtenirListeProgramme()[index].DateCreation;
 
         }
-
+        /// <summary>
+        /// Bouton pour vider la liste d'enseignants
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnViderListeEnseignant_Click(object sender, EventArgs e)
         {
             if (unEnseignant.ViderListeEnseignant() == false)
@@ -184,7 +224,11 @@ namespace projetCegep2
                 }
             }
         }
-
+        /// <summary>
+        /// Bouton permetant de retirer un enseignant précis de la liste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRetirerEnseignant_Click(object sender, EventArgs e)
         {
             int nombreARetirer;
@@ -198,7 +242,11 @@ namespace projetCegep2
                 lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
             }
         }
-
+        /// <summary>
+        /// Action déclanchée par l'utilisateur au changement de l'Index
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lbxListeEnseignant_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index;
@@ -212,11 +260,15 @@ namespace projetCegep2
             edtProvinceEnseignant.Text = unEnseignant.ObtenirListeEnseignant()[index].Province;
             edtCourrielEnseignant.Text = unEnseignant.ObtenirListeEnseignant()[index].Courriel;
             edtNumeroEmploye.Text = unEnseignant.ObtenirListeEnseignant()[index].NumeroEmploye;
-            dtpDateEmbauche = DateTime.Parse(unEnseignant.ObtenirListeEnseignant()[index].DateEmbauche);
-            dtpDateArret = DateTime.Parse(unEnseignant.ObtenirListeEnseignant()[index].DateArret);
+            dtpDateEmbauche.Value = unEnseignant.ObtenirListeEnseignant()[index].DateEmbauche;
+            dtpDateArret.Value = unEnseignant.ObtenirListeEnseignant()[index].DateArret;
 
         }
-
+        /// <summary>
+        /// BOuton permettant à la création d'un nouvel enseignant
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCreerEnseignant_Click(object sender, EventArgs e)
         {
             unEnseignant = new Enseignant();
