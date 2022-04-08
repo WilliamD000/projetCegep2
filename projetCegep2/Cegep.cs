@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System.Windows.Forms;
+using System.Xml.Serialization;
+using System.IO;
 namespace projetCegep2
 {
     public class Cegep : Programme
@@ -216,6 +215,8 @@ namespace projetCegep2
             listeEnseignant.Clear();
             return SiAucunEnseignant();
         }
+
+        
 
 
         public override string ToString()

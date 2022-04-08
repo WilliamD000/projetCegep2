@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/* Nom     : ProjetCégep
+ * Date    : 2022/03/15
+ * Version : 1.0
+ * Auteur  : William Desjardins
+ * But: Simuler la gestion d'un cégep et de ses fonctions.*/
+using System;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.IO;
@@ -26,25 +24,7 @@ namespace projetCegep2
         public Form1()
         {
             InitializeComponent();
-            using (StreamReader reader = new StreamReader("Cegep.xml"))
-            {
-                monCegep = (Cegep)serializer.Deserialize(reader);
-            }
-            MessageBox.Show("Programme ouvert.");
-            lbxListeProgramme.Items.Clear();
-            compteurProgramme = 0;
-            foreach (Programme unProgramme in monCegep.listeProgramme)
-            {
-                compteurProgramme++;
-                lbxListeProgramme.Items.Add(compteurProgramme.ToString() + unProgramme.ToString());
-            }
-            compteurEnseignant = 0;
-            lbxListeEnseignant.Items.Clear();
-            foreach (Enseignant unEnseignant in monCegep.listeEnseignant)
-            {
-                compteurEnseignant++;
-                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
-            }
+            OuvrirFichier(compteurProgramme, compteurEnseignant);
         }
 
         /// <summary>
@@ -56,6 +36,7 @@ namespace projetCegep2
         {
             Application.Exit();
         }
+
         /// <summary>
         /// Bouton permettant d'enregistrer le fichier xml à la racine
         /// </summary>
@@ -77,6 +58,7 @@ namespace projetCegep2
 
             
         }
+
         /// <summary>
         /// Bouton permettant d'ouvrir le fichier XML
         /// </summary>
@@ -84,27 +66,9 @@ namespace projetCegep2
         /// <param name="e"></param>
         private void ouvrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (StreamReader reader = new StreamReader("Cegep.xml"))
-            {
-                monCegep = (Cegep)serializer.Deserialize(reader);
-            }
-            MessageBox.Show("Programme ouvert.");
-            lbxListeProgramme.Items.Clear();
-            compteurProgramme = 0;
-            Programme[] tableauProgramme = monCegep.ObtenirListeProgramme();
-            foreach (Programme unProgramme in tableauProgramme)
-            {
-                compteurProgramme++;
-                lbxListeProgramme.Items.Add(compteurProgramme.ToString() + unProgramme.ToString());
-            }
-            compteurEnseignant = 0;
-            lbxListeEnseignant.Items.Clear();
-            foreach (Enseignant unEnseignant in monCegep.listeEnseignant)
-            {
-                compteurEnseignant++;
-                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
-            }
+            OuvrirFichier(compteurProgramme, compteurEnseignant);
         }
+
         /// <summary>
         /// Bouton affichant des informations sur le programme
         /// </summary>
@@ -124,6 +88,7 @@ namespace projetCegep2
         {
 
         }
+
         /// <summary>
         /// Bouton permettant à créer le cégep
         /// </summary>
@@ -141,7 +106,10 @@ namespace projetCegep2
             monCegep.AnneeDImplantation = edtAnneeDImplantation.Text;
             monCegep.Courriel = edtCourriel.Text;
             btnCreerCegep.Enabled = false;
+            InitialiserListeProgramme(compteurProgramme);
+            InitialiserListeEnseignants(compteurEnseignant);
         }
+
         /// <summary>
         /// Bouton permettant de créer un programme et de l'ajouter à la liste
         /// </summary>
@@ -166,6 +134,7 @@ namespace projetCegep2
             }
             
         }
+
         /// <summary>
         /// Bouton pour vider la liste de programmes
         /// </summary>
@@ -179,14 +148,8 @@ namespace projetCegep2
             }
             else
             {
-                compteurProgramme = 0;
                 monCegep.ViderListeProgramme();
-                lbxListeProgramme.Items.Clear();
-                foreach (Programme unProgramme in monCegep.listeProgramme)
-                {
-                    compteurProgramme++;
-                    lbxListeProgramme.Items.Add(compteurProgramme.ToString() + unProgramme.ToString());
-                }
+                InitialiserListeProgramme(compteurProgramme);
             }
         }
 
@@ -199,6 +162,7 @@ namespace projetCegep2
         {
 
         }
+
         /// <summary>
         /// Bouton pour retirer un programme précis
         /// </summary>
@@ -209,14 +173,9 @@ namespace projetCegep2
             int nombreARetirer;
             nombreARetirer = int.Parse(edtRetirerProgramme.Text);
             monCegep.listeProgramme.RemoveAt(nombreARetirer-1);
-            lbxListeProgramme.Items.Clear();
-            compteurProgramme = 0;
-            foreach (Programme unProgramme in monCegep.listeProgramme)
-            {
-                compteurProgramme++;
-                lbxListeProgramme.Items.Add(compteurProgramme.ToString() + unProgramme.ToString());
-            }
+            InitialiserListeProgramme(compteurProgramme);
         }
+
         /// <summary>
         /// Action se déroulant quand l'utilisateur change l'Index du listbox
         /// </summary>
@@ -241,6 +200,7 @@ namespace projetCegep2
             }
 
         }
+
         /// <summary>
         /// Bouton pour vider la liste d'enseignants
         /// </summary>
@@ -254,16 +214,11 @@ namespace projetCegep2
             }
             else
             {
-                compteurEnseignant = 0;
                 monCegep.ViderListeEnseignant();
-                lbxListeEnseignant.Items.Clear();
-                foreach (Enseignant unEnseignant in monCegep.listeEnseignant)
-                {
-                    compteurEnseignant++;
-                    lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
-                }
+                InitialiserListeEnseignants(compteurEnseignant);
             }
         }
+
         /// <summary>
         /// Bouton permetant de retirer un enseignant précis de la liste
         /// </summary>
@@ -276,12 +231,9 @@ namespace projetCegep2
             monCegep.listeEnseignant.RemoveAt(nombreARetirer - 1);
             lbxListeEnseignant.Items.RemoveAt(nombreARetirer);
             compteurEnseignant--;
-            foreach (Enseignant unEnseignant in monCegep.listeEnseignant)
-            {
-                compteurEnseignant++;
-                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
-            }
+            InitialiserListeEnseignants(compteurEnseignant);
         }
+
         /// <summary>
         /// Action déclenchée par l'utilisateur au changement de l'Index
         /// </summary>
@@ -309,6 +261,7 @@ namespace projetCegep2
               MessageBox.Show("Erreur de sélection");
             }
         }
+
         /// <summary>
         /// BOuton permettant d'afficher le premier enseignant de la liste
         /// </summary>
@@ -318,6 +271,7 @@ namespace projetCegep2
         {
             lbxListeEnseignant.SelectedIndex = 0;
         }
+
         /// <summary>
         /// Bouton permettant d'afficher l'enseignant précédent de la liste
         /// </summary>
@@ -335,6 +289,7 @@ namespace projetCegep2
             lbxListeEnseignant.SelectedIndex = index;
             }
         }
+
         /// <summary>
         /// Bouton permettant d'afficher l'enseignant suivant de la liste
         /// </summary>
@@ -353,6 +308,7 @@ namespace projetCegep2
                 lbxListeEnseignant.SelectedIndex = index;
             }
         }
+
         /// <summary>
         /// Bouton permettant d'afficher le dernier enseignant de la liste
         /// </summary>
@@ -362,6 +318,7 @@ namespace projetCegep2
         {
             lbxListeEnseignant.SelectedIndex = monCegep.ObtenirNombreEnseignant() + 1;
         }
+
         /// <summary>
         /// Bouton permettant d'afficher le premier programme de la liste
         /// </summary>
@@ -371,6 +328,7 @@ namespace projetCegep2
         {
             lbxListeProgramme.SelectedIndex = 0;
         }
+
         /// <summary>
         /// Bouton permettant d'afficher le programme précédent de la liste
         /// </summary>
@@ -389,6 +347,7 @@ namespace projetCegep2
                 lbxListeProgramme.SelectedIndex = index;
             }
         }
+
         /// <summary>
         /// Bouton permettant d'afficher le programme suivant de la liste
         /// </summary>
@@ -406,6 +365,7 @@ namespace projetCegep2
                 lbxListeProgramme.SelectedIndex = index;
             }
         }
+
         /// <summary>
         /// Bouton permettant d'afficher le dernier programme de la liste
         /// </summary>
@@ -415,6 +375,7 @@ namespace projetCegep2
         {
             lbxListeProgramme.SelectedIndex = monCegep.ObtenirNombreProgramme() + 1;
         }
+
         /// <summary>
         /// Bouton permettant de modifier l'enseignant sélectionné dans le listbox
         /// </summary>
@@ -434,7 +395,14 @@ namespace projetCegep2
             monCegep.ObtenirListeEnseignant()[index].NumeroEmploye = edtNumeroEmploye.Text;
             monCegep.ObtenirListeEnseignant()[index].DateEmbauche = dtpDateEmbauche.Value;
             monCegep.ObtenirListeEnseignant()[index].DateArret = dtpDateArret.Value;
+            foreach (Enseignant unEnseignant in monCegep.listeEnseignant)
+            {
+                compteurEnseignant++;
+                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
+            }
+            InitialiserListeEnseignants(compteurEnseignant);
         }
+
         /// <summary>
         /// Bouton permettant de modifier le programme sélectionné dans le listbox
         /// </summary>
@@ -442,11 +410,13 @@ namespace projetCegep2
         /// <param name="e"></param>
         private void btnModifierProgramme_Click(object sender, EventArgs e)
         {
+
             index = lbxListeProgramme.SelectedIndex;
             monCegep.ObtenirListeProgramme()[index].NomProgramme = edtNomProgramme.Text;
             monCegep.ObtenirListeProgramme()[index].NumProgramme = edtNumeroProgramme.Text;
             monCegep.ObtenirListeProgramme()[index].Description = edtDescriptionProgramme.Text;
             monCegep.ObtenirListeProgramme()[index].DateCreation = edtDateCreationProgramme.Text;
+            InitialiserListeProgramme(compteurProgramme);
         }
 
         /// <summary>
@@ -477,7 +447,54 @@ namespace projetCegep2
                 compteurEnseignant++;
                 monCegep.AjouterEnseignant(unEnseignant);
                 lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + "- " + unEnseignant.ToString());
-               // monCegep.listeProgramme[index].AjouterEnseignant();
+            }
+        }
+        public int InitialiserListeProgramme(int compteurProgramme)
+        {
+            lbxListeProgramme.Items.Clear();
+            compteurProgramme = 0;
+            Programme[] tableauProgramme = monCegep.ObtenirListeProgramme();
+            foreach (Programme unProgramme in tableauProgramme)
+            {
+                compteurProgramme++;
+                lbxListeProgramme.Items.Add(compteurProgramme.ToString() + unProgramme.ToString());
+            }
+            return (compteurProgramme);
+        }
+        public int InitialiserListeEnseignants(int compteurEnseignant)
+        {
+            compteurEnseignant = 0;
+            lbxListeEnseignant.Items.Clear();
+            foreach (Enseignant unEnseignant in monCegep.listeEnseignant)
+            {
+                compteurEnseignant++;
+                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
+            }
+            return (compteurEnseignant);
+        }
+
+        public void OuvrirFichier(int compteurProgramme, int compteurEnseignant)
+        {
+            serializer = new XmlSerializer(typeof(Cegep));
+            using (StreamReader reader = new StreamReader("Cegep.xml"))
+            {
+                monCegep = (Cegep)serializer.Deserialize(reader);
+            }
+            MessageBox.Show("Programme ouvert.");
+            lbxListeProgramme.Items.Clear();
+            compteurProgramme = 0;
+            Programme[] tableauProgramme = monCegep.ObtenirListeProgramme();
+            foreach (Programme unProgramme in tableauProgramme)
+            {
+                compteurProgramme++;
+                lbxListeProgramme.Items.Add(compteurProgramme.ToString() + unProgramme.ToString());
+            }
+            compteurEnseignant = 0;
+            lbxListeEnseignant.Items.Clear();
+            foreach (Enseignant unEnseignant in monCegep.listeEnseignant)
+            {
+                compteurEnseignant++;
+                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
             }
         }
     }
