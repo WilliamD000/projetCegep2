@@ -19,7 +19,8 @@ namespace projetCegep2
         Programme monProgramme;
         int compteurProgramme=0, compteurEnseignant=0;
         Enseignant unEnseignant;
-       
+        int index=0;
+
         XmlSerializer serializer = new XmlSerializer(typeof(Cegep));
 
         public Form1()
@@ -82,7 +83,8 @@ namespace projetCegep2
             MessageBox.Show("Programme ouvert.");
             lbxListeProgramme.Items.Clear();
             compteurProgramme = 0;
-            foreach (Programme unProgramme in monCegep.listeProgramme)
+            Programme[] tableauProgramme = monCegep.ObtenirListeProgramme();
+            foreach (Programme unProgramme in tableauProgramme)
             {
                 compteurProgramme++;
                 lbxListeProgramme.Items.Add(compteurProgramme.ToString() + unProgramme.ToString());
@@ -207,12 +209,21 @@ namespace projetCegep2
         /// <param name="e"></param>
         private void lbxListeProgramme_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index;
+            try
+            {
+                Programme[] tableauProgramme;
             index = lbxListeProgramme.SelectedIndex;
-            edtNomProgramme.Text = monCegep.ObtenirListeProgramme()[index].NomProgramme;
-            edtNumeroProgramme.Text = monCegep.ObtenirListeProgramme()[index].NumProgramme;
-            edtDescriptionProgramme.Text = monCegep.ObtenirListeProgramme()[index].Description;
-            edtDateCreationProgramme.Text = monCegep.ObtenirListeProgramme()[index].DateCreation;
+            tableauProgramme = monCegep.ObtenirListeProgramme();
+            edtNomProgramme.Text = tableauProgramme[index].NomProgramme;
+            edtNumeroProgramme.Text = tableauProgramme[index].NumProgramme;
+            edtDescriptionProgramme.Text = tableauProgramme[index].Description;
+            edtDateCreationProgramme.Text = tableauProgramme[index].DateCreation;
+             }
+            
+            catch (Exception)
+            {
+                MessageBox.Show("Erreur de sélection");
+            }
 
         }
         /// <summary>
@@ -222,16 +233,16 @@ namespace projetCegep2
         /// <param name="e"></param>
         private void btnViderListeEnseignant_Click(object sender, EventArgs e)
         {
-            if (unEnseignant.ViderListeEnseignant() == false)
+            if (monCegep.ViderListeEnseignant() == false)
             {
                 MessageBox.Show("Il n'y a aucun enseignant a retirer.");
             }
             else
             {
                 compteurEnseignant = 0;
-                unEnseignant.ViderListeEnseignant();
+                monCegep.ViderListeEnseignant();
                 lbxListeEnseignant.Items.Clear();
-                foreach (Enseignant unEnseignant in unEnseignant.listeEnseignant)
+                foreach (Enseignant unEnseignant in monCegep.listeEnseignant)
                 {
                     compteurEnseignant++;
                     lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
@@ -247,10 +258,10 @@ namespace projetCegep2
         {
             int nombreARetirer;
             nombreARetirer = int.Parse(edtEnseignantARetirer.Text);
-            unEnseignant.listeEnseignant.RemoveAt(nombreARetirer - 1);
+            monCegep.listeEnseignant.RemoveAt(nombreARetirer - 1);
             lbxListeEnseignant.Items.RemoveAt(nombreARetirer);
             compteurEnseignant--;
-            foreach (Enseignant unEnseignant in unEnseignant.listeEnseignant)
+            foreach (Enseignant unEnseignant in monCegep.listeEnseignant)
             {
                 compteurEnseignant++;
                 lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
@@ -263,19 +274,18 @@ namespace projetCegep2
         /// <param name="e"></param>
         private void lbxListeEnseignant_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index;
-            index = lbxListeEnseignant.SelectedIndex+1;
-            edtPrenomEmploye.Text = unEnseignant.ObtenirListeEnseignant()[index].Prenom;
-            edtNomEmploye.Text = unEnseignant.ObtenirListeEnseignant()[index].Nom;
-            edtAdresseEnseignant.Text = unEnseignant.ObtenirListeEnseignant()[index].Adresse;
-            edtCodePostalEnseignant.Text = unEnseignant.ObtenirListeEnseignant()[index].CodePostal;
-            edtTelephoneEnseignant.Text = unEnseignant.ObtenirListeEnseignant()[index].Telephone;
-            edtVilleEnseignant.Text = unEnseignant.ObtenirListeEnseignant()[index].Ville;
-            edtProvinceEnseignant.Text = unEnseignant.ObtenirListeEnseignant()[index].Province;
-            edtCourrielEnseignant.Text = unEnseignant.ObtenirListeEnseignant()[index].Courriel;
-            edtNumeroEmploye.Text = unEnseignant.ObtenirListeEnseignant()[index].NumeroEmploye;
-            dtpDateEmbauche.Value = unEnseignant.ObtenirListeEnseignant()[index].DateEmbauche;
-            dtpDateArret.Value = unEnseignant.ObtenirListeEnseignant()[index].DateArret;
+            index = lbxListeEnseignant.SelectedIndex;
+            edtPrenomEmploye.Text = monCegep.ObtenirListeEnseignant()[index].Prenom;
+            edtNomEmploye.Text = monCegep.ObtenirListeEnseignant()[index].Nom;
+            edtAdresseEnseignant.Text = monCegep.ObtenirListeEnseignant()[index].Adresse;
+            edtCodePostalEnseignant.Text = monCegep.ObtenirListeEnseignant()[index].CodePostal;
+            edtTelephoneEnseignant.Text = monCegep.ObtenirListeEnseignant()[index].Telephone;
+            edtVilleEnseignant.Text = monCegep.ObtenirListeEnseignant()[index].Ville;
+            edtProvinceEnseignant.Text = monCegep.ObtenirListeEnseignant()[index].Province;
+            edtCourrielEnseignant.Text = monCegep.ObtenirListeEnseignant()[index].Courriel;
+            edtNumeroEmploye.Text = monCegep.ObtenirListeEnseignant()[index].NumeroEmploye;
+            dtpDateEmbauche.Value = monCegep.ObtenirListeEnseignant()[index].DateEmbauche;
+            dtpDateArret.Value = monCegep.ObtenirListeEnseignant()[index].DateArret;
 
         }
         /// <summary>
@@ -296,11 +306,10 @@ namespace projetCegep2
         {
             if (lbxListeEnseignant.SelectedIndex==0)
             {
-                lbxListeEnseignant.SelectedIndex = unEnseignant.ObtenirNombreEnseignant() + 1;
+                lbxListeEnseignant.SelectedIndex = monCegep.ObtenirNombreEnseignant() + 1;
             }
             else
             {
-            int index;
             index = lbxListeEnseignant.SelectedIndex - 1;
             lbxListeEnseignant.SelectedIndex = index;
             }
@@ -312,7 +321,7 @@ namespace projetCegep2
         /// <param name="e"></param>
         private void btnSuivantEnseignant_Click(object sender, EventArgs e)
         {
-            if (lbxListeEnseignant.SelectedIndex == unEnseignant.ObtenirNombreEnseignant()+1)
+            if (lbxListeEnseignant.SelectedIndex == monCegep.ObtenirNombreEnseignant()+1)
             {
                 lbxListeEnseignant.SelectedIndex = 0;
             }
@@ -330,7 +339,7 @@ namespace projetCegep2
         /// <param name="e"></param>
         private void btnDernierEnseignant_Click(object sender, EventArgs e)
         {
-            lbxListeEnseignant.SelectedIndex = unEnseignant.ObtenirNombreEnseignant() + 1;
+            lbxListeEnseignant.SelectedIndex = monCegep.ObtenirNombreEnseignant() + 1;
         }
         /// <summary>
         /// Bouton permettant d'afficher le premier programme de la liste
@@ -372,7 +381,6 @@ namespace projetCegep2
             }
             else
             {
-                int index;
                 index = lbxListeProgramme.SelectedIndex + 1;
                 lbxListeProgramme.SelectedIndex = index;
             }
@@ -393,19 +401,18 @@ namespace projetCegep2
         /// <param name="e"></param>
         private void btnModifierEnseignant_Click(object sender, EventArgs e)
         {
-            int index;
             index = lbxListeEnseignant.SelectedIndex + 1;
-            unEnseignant.ObtenirListeEnseignant()[index].Prenom = edtPrenomEmploye.Text;
-            unEnseignant.ObtenirListeEnseignant()[index].Nom = edtNomEmploye.Text ;
-            unEnseignant.ObtenirListeEnseignant()[index].Adresse = edtAdresseEnseignant.Text;
-            unEnseignant.ObtenirListeEnseignant()[index].CodePostal = edtCodePostalEnseignant.Text;
-            unEnseignant.ObtenirListeEnseignant()[index].Telephone = edtTelephoneEnseignant.Text;
-            unEnseignant.ObtenirListeEnseignant()[index].Ville = edtVilleEnseignant.Text;
-            unEnseignant.ObtenirListeEnseignant()[index].Province = edtProvinceEnseignant.Text;
-            unEnseignant.ObtenirListeEnseignant()[index].Courriel = edtCourrielEnseignant.Text;
-            unEnseignant.ObtenirListeEnseignant()[index].NumeroEmploye = edtNumeroEmploye.Text;
-            unEnseignant.ObtenirListeEnseignant()[index].DateEmbauche = dtpDateEmbauche.Value;
-            unEnseignant.ObtenirListeEnseignant()[index].DateArret = dtpDateArret.Value;
+            monCegep.ObtenirListeEnseignant()[index].Prenom = edtPrenomEmploye.Text;
+            monCegep.ObtenirListeEnseignant()[index].Nom = edtNomEmploye.Text ;
+            monCegep.ObtenirListeEnseignant()[index].Adresse = edtAdresseEnseignant.Text;
+            monCegep.ObtenirListeEnseignant()[index].CodePostal = edtCodePostalEnseignant.Text;
+            monCegep.ObtenirListeEnseignant()[index].Telephone = edtTelephoneEnseignant.Text;
+            monCegep.ObtenirListeEnseignant()[index].Ville = edtVilleEnseignant.Text;
+            monCegep.ObtenirListeEnseignant()[index].Province = edtProvinceEnseignant.Text;
+            monCegep.ObtenirListeEnseignant()[index].Courriel = edtCourrielEnseignant.Text;
+            monCegep.ObtenirListeEnseignant()[index].NumeroEmploye = edtNumeroEmploye.Text;
+            monCegep.ObtenirListeEnseignant()[index].DateEmbauche = dtpDateEmbauche.Value;
+            monCegep.ObtenirListeEnseignant()[index].DateArret = dtpDateArret.Value;
         }
         /// <summary>
         /// Bouton permettant de modifier le programme sélectionné dans le listbox
@@ -414,7 +421,6 @@ namespace projetCegep2
         /// <param name="e"></param>
         private void btnModifierProgramme_Click(object sender, EventArgs e)
         {
-            int index;
             index = lbxListeProgramme.SelectedIndex;
             monCegep.ObtenirListeProgramme()[index].NomProgramme = edtNomProgramme.Text;
             monCegep.ObtenirListeProgramme()[index].NumProgramme = edtNumeroProgramme.Text;
@@ -441,15 +447,16 @@ namespace projetCegep2
             unEnseignant.NumeroEmploye = edtNumeroEmploye.Text;
             unEnseignant.DateEmbauche = dtpDateEmbauche.Value;
             unEnseignant.DateArret = dtpDateArret.Value;
-            if (unEnseignant.AjouterEnseignant(unEnseignant) == false)
+            if (monCegep.AjouterEnseignant(unEnseignant) == false)
             {
                 MessageBox.Show("Cet enseignant existe déjà");
             }
             else
             {
                 compteurEnseignant++;
-                unEnseignant.AjouterEnseignant(unEnseignant);
-                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + "- "+unEnseignant.ToString());
+                monCegep.AjouterEnseignant(unEnseignant);
+                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + "- " + unEnseignant.ToString());
+               // monCegep.listeProgramme[index].AjouterEnseignant();
             }
         }
     }

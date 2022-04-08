@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace projetCegep2
 {
-    class Enseignant
+    public class Enseignant
     {
         private string prenom;
 
@@ -86,7 +86,7 @@ namespace projetCegep2
             get { return numeroEmploye; }
             set { numeroEmploye = value; }
         }
-        public List<Enseignant> listeEnseignant;
+       
         public Enseignant()
         {
             prenom = "";
@@ -100,7 +100,6 @@ namespace projetCegep2
             dateEmbauche = DateTime.Now;
             dateArret = DateTime.Now;
             numeroEmploye = "";
-            listeEnseignant = new List<Enseignant>();
         }
         public Enseignant(string unPrenom, string unNom, string uneAdresse, string uneVille, string unCodePostal, string uneProvince, string unTelephone, string unCourriel, DateTime uneDateEmbauche, DateTime uneDateArret, string unNumeroEmploye)
         {
@@ -115,69 +114,8 @@ namespace projetCegep2
             dateEmbauche = uneDateEmbauche;
             dateArret = uneDateArret;
             numeroEmploye = unNumeroEmploye;
-            listeEnseignant = new List<Enseignant>();
         }
-        public Enseignant[] ObtenirListeEnseignant()
-        {
-            return listeEnseignant.ToArray();
-        }
-        public Enseignant ObtenirEnseignant(Enseignant unEnseignant)
-        {
-            foreach (Enseignant enseignant in listeEnseignant)
-            {
-                if (enseignant.Equals(unEnseignant))
-                {
-                    return enseignant;
-                }
-            }
-            return null;
-        }
-        public bool SiEnseignantPresent(Enseignant unEnseignant)
-        {
-            foreach (Enseignant enseignant in listeEnseignant)
-            {
-                if (enseignant.Equals(unEnseignant))
-                {
-                    return (true);
-                }
-            }
-            return (false);
-        }
-        public bool AjouterEnseignant(Enseignant unEnseignant)
-        {
-            if (SiEnseignantPresent(unEnseignant))
-            {
-                return false;
-            }
-            listeEnseignant.Add(unEnseignant);
-            return SiEnseignantPresent(unEnseignant);
-        }
-        public bool EnleverEnseignant(Enseignant unEnseignant)
-        {
-            if (!SiEnseignantPresent(unEnseignant))
-            {
-                return (false);
-            }
-            listeEnseignant.Remove(unEnseignant);
-            return (!SiEnseignantPresent(unEnseignant));
-        }
-        public int ObtenirNombreEnseignant()
-        {
-            return (listeEnseignant.Count);
-        }
-        public bool SiAucunEnseignant()
-        {
-            return (ObtenirNombreEnseignant() == 0);
-        }
-        public bool ViderListeEnseignant()
-        {
-            if (ObtenirNombreEnseignant() == 0)
-            {
-                return false;
-            }
-            listeEnseignant.Clear();
-            return SiAucunEnseignant();
-        }
+        
 
 
         public override string ToString()

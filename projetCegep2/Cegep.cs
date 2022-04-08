@@ -66,6 +66,7 @@ namespace projetCegep2
         }
 
         public List<Programme> listeProgramme;
+        public List<Enseignant> listeEnseignant;
 
         public Cegep()
         {
@@ -78,6 +79,7 @@ namespace projetCegep2
             courriel = "";
             anneeDImplentation = "";
             listeProgramme = new List<Programme>();
+            listeEnseignant = new List<Enseignant>();
         }
         public Cegep(string unNom, string uneAdresse, string unCodePostal, string unTelephone, string uneVille, string uneProvince, string unCourriel, string uneAnneeDImplantation)
         {
@@ -90,6 +92,7 @@ namespace projetCegep2
             courriel = unCourriel;
             anneeDImplentation = uneAnneeDImplantation;
             listeProgramme = new List<Programme>();
+            listeEnseignant = new List<Enseignant>();
         }
         public Programme[] ObtenirListeProgramme()
         {
@@ -151,6 +154,67 @@ namespace projetCegep2
             }
             listeProgramme.Clear();
             return SiAucunProgramme();
+        }
+        public Enseignant[] ObtenirListeEnseignant()
+        {
+            return listeEnseignant.ToArray();
+        }
+        public Enseignant ObtenirEnseignant(Enseignant unEnseignant)
+        {
+            foreach (Enseignant enseignant in listeEnseignant)
+            {
+                if (enseignant.Equals(unEnseignant))
+                {
+                    return enseignant;
+                }
+            }
+            return null;
+        }
+        public bool SiEnseignantPresent(Enseignant unEnseignant)
+        {
+            foreach (Enseignant enseignant in listeEnseignant)
+            {
+                if (enseignant.Equals(unEnseignant))
+                {
+                    return (true);
+                }
+            }
+            return (false);
+        }
+        public bool AjouterEnseignant(Enseignant unEnseignant)
+        {
+            if (SiEnseignantPresent(unEnseignant))
+            {
+                return false;
+            }
+            listeEnseignant.Add(unEnseignant);
+            return SiEnseignantPresent(unEnseignant);
+        }
+        public bool EnleverEnseignant(Enseignant unEnseignant)
+        {
+            if (!SiEnseignantPresent(unEnseignant))
+            {
+                return (false);
+            }
+            listeEnseignant.Remove(unEnseignant);
+            return (!SiEnseignantPresent(unEnseignant));
+        }
+        public int ObtenirNombreEnseignant()
+        {
+            return (listeEnseignant.Count);
+        }
+        public bool SiAucunEnseignant()
+        {
+            return (ObtenirNombreEnseignant() == 0);
+        }
+        public bool ViderListeEnseignant()
+        {
+            if (ObtenirNombreEnseignant() == 0)
+            {
+                return false;
+            }
+            listeEnseignant.Clear();
+            return SiAucunEnseignant();
         }
 
 
