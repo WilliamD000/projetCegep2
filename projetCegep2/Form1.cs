@@ -38,6 +38,13 @@ namespace projetCegep2
                 compteurProgramme++;
                 lbxListeProgramme.Items.Add(compteurProgramme.ToString() + unProgramme.ToString());
             }
+            compteurEnseignant = 0;
+            lbxListeEnseignant.Items.Clear();
+            foreach (Enseignant unEnseignant in monCegep.listeEnseignant)
+            {
+                compteurEnseignant++;
+                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
+            }
         }
 
         /// <summary>
@@ -59,8 +66,9 @@ namespace projetCegep2
             //File.WriteAllText("Cegep.xml", "");
             //fichierLogique = File.OpenRead("Cegep.xml");
             //fichierLogique = "Cegep.xml";
-            //serializer.Serialize("Cegep.xml", monCegep);
             //fichierLogique.Close();
+            //serializer.Serialize("Cegep.xml", monCegep);
+            
             using (var writer = new StreamWriter("Cegep.xml"))
             {
                 serializer.Serialize(writer, monCegep);
@@ -88,6 +96,13 @@ namespace projetCegep2
             {
                 compteurProgramme++;
                 lbxListeProgramme.Items.Add(compteurProgramme.ToString() + unProgramme.ToString());
+            }
+            compteurEnseignant = 0;
+            lbxListeEnseignant.Items.Clear();
+            foreach (Enseignant unEnseignant in monCegep.listeEnseignant)
+            {
+                compteurEnseignant++;
+                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
             }
         }
         /// <summary>
@@ -274,6 +289,8 @@ namespace projetCegep2
         /// <param name="e"></param>
         private void lbxListeEnseignant_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
             index = lbxListeEnseignant.SelectedIndex;
             edtPrenomEmploye.Text = monCegep.ObtenirListeEnseignant()[index].Prenom;
             edtNomEmploye.Text = monCegep.ObtenirListeEnseignant()[index].Nom;
@@ -286,7 +303,11 @@ namespace projetCegep2
             edtNumeroEmploye.Text = monCegep.ObtenirListeEnseignant()[index].NumeroEmploye;
             dtpDateEmbauche.Value = monCegep.ObtenirListeEnseignant()[index].DateEmbauche;
             dtpDateArret.Value = monCegep.ObtenirListeEnseignant()[index].DateArret;
-
+            }
+            catch (Exception)
+            {
+              MessageBox.Show("Erreur de sélection");
+            }
         }
         /// <summary>
         /// BOuton permettant d'afficher le premier enseignant de la liste
