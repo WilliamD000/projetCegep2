@@ -4,9 +4,9 @@
  * Auteur  : William Desjardins
  * But: Simuler la gestion d'un cégep et de ses fonctions.*/
 using System;
+using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
-using System.IO;
 
 namespace projetCegep2
 {
@@ -15,9 +15,9 @@ namespace projetCegep2
         //FileStream fichierLogique;
         Cegep monCegep;
         Programme monProgramme;
-        int compteurProgramme=0, compteurEnseignant=0;
+        int compteurProgramme = 0, compteurEnseignant = 0;
         Enseignant unEnseignant;
-        int index=0;
+        int index = 0;
 
         XmlSerializer serializer = new XmlSerializer(typeof(Cegep));
 
@@ -49,14 +49,14 @@ namespace projetCegep2
             //fichierLogique = "Cegep.xml";
             //fichierLogique.Close();
             //serializer.Serialize("Cegep.xml", monCegep);
-            
+
             using (var writer = new StreamWriter("Cegep.xml"))
             {
                 serializer.Serialize(writer, monCegep);
             }
             MessageBox.Show("Programme enregistré.");
 
-            
+
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace projetCegep2
                 monCegep.AjouterProgramme(monProgramme);
                 lbxListeProgramme.Items.Add(compteurProgramme.ToString() + monProgramme.ToString());
             }
-            
+
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace projetCegep2
         {
             int nombreARetirer;
             nombreARetirer = int.Parse(edtRetirerProgramme.Text);
-            monCegep.listeProgramme.RemoveAt(nombreARetirer-1);
+            monCegep.listeProgramme.RemoveAt(nombreARetirer - 1);
             InitialiserListeProgramme(compteurProgramme);
         }
 
@@ -186,14 +186,14 @@ namespace projetCegep2
             try
             {
                 Programme[] tableauProgramme;
-            index = lbxListeProgramme.SelectedIndex;
-            tableauProgramme = monCegep.ObtenirListeProgramme();
-            edtNomProgramme.Text = tableauProgramme[index].NomProgramme;
-            edtNumeroProgramme.Text = tableauProgramme[index].NumProgramme;
-            edtDescriptionProgramme.Text = tableauProgramme[index].Description;
-            edtDateCreationProgramme.Text = tableauProgramme[index].DateCreation;
-             }
-            
+                index = lbxListeProgramme.SelectedIndex;
+                tableauProgramme = monCegep.ObtenirListeProgramme();
+                edtNomProgramme.Text = tableauProgramme[index].NomProgramme;
+                edtNumeroProgramme.Text = tableauProgramme[index].NumProgramme;
+                edtDescriptionProgramme.Text = tableauProgramme[index].Description;
+                edtDateCreationProgramme.Text = tableauProgramme[index].DateCreation;
+            }
+
             catch (Exception)
             {
                 MessageBox.Show("Erreur de sélection");
@@ -243,22 +243,22 @@ namespace projetCegep2
         {
             try
             {
-            index = lbxListeEnseignant.SelectedIndex;
-            edtPrenomEmploye.Text = monCegep.ObtenirListeEnseignant()[index].Prenom;
-            edtNomEmploye.Text = monCegep.ObtenirListeEnseignant()[index].Nom;
-            edtAdresseEnseignant.Text = monCegep.ObtenirListeEnseignant()[index].Adresse;
-            edtCodePostalEnseignant.Text = monCegep.ObtenirListeEnseignant()[index].CodePostal;
-            edtTelephoneEnseignant.Text = monCegep.ObtenirListeEnseignant()[index].Telephone;
-            edtVilleEnseignant.Text = monCegep.ObtenirListeEnseignant()[index].Ville;
-            edtProvinceEnseignant.Text = monCegep.ObtenirListeEnseignant()[index].Province;
-            edtCourrielEnseignant.Text = monCegep.ObtenirListeEnseignant()[index].Courriel;
-            edtNumeroEmploye.Text = monCegep.ObtenirListeEnseignant()[index].NumeroEmploye;
-            dtpDateEmbauche.Value = monCegep.ObtenirListeEnseignant()[index].DateEmbauche;
-            dtpDateArret.Value = monCegep.ObtenirListeEnseignant()[index].DateArret;
+                index = lbxListeEnseignant.SelectedIndex;
+                edtPrenomEmploye.Text = monCegep.ObtenirListeEnseignant()[index].Prenom;
+                edtNomEmploye.Text = monCegep.ObtenirListeEnseignant()[index].Nom;
+                edtAdresseEnseignant.Text = monCegep.ObtenirListeEnseignant()[index].Adresse;
+                edtCodePostalEnseignant.Text = monCegep.ObtenirListeEnseignant()[index].CodePostal;
+                edtTelephoneEnseignant.Text = monCegep.ObtenirListeEnseignant()[index].Telephone;
+                edtVilleEnseignant.Text = monCegep.ObtenirListeEnseignant()[index].Ville;
+                edtProvinceEnseignant.Text = monCegep.ObtenirListeEnseignant()[index].Province;
+                edtCourrielEnseignant.Text = monCegep.ObtenirListeEnseignant()[index].Courriel;
+                edtNumeroEmploye.Text = monCegep.ObtenirListeEnseignant()[index].NumeroEmploye;
+                dtpDateEmbauche.Value = monCegep.ObtenirListeEnseignant()[index].DateEmbauche;
+                dtpDateArret.Value = monCegep.ObtenirListeEnseignant()[index].DateArret;
             }
             catch (Exception)
             {
-              MessageBox.Show("Erreur de sélection");
+                MessageBox.Show("Erreur de sélection");
             }
         }
 
@@ -279,14 +279,15 @@ namespace projetCegep2
         /// <param name="e"></param>
         private void btnPrécédentEnseignant_Click(object sender, EventArgs e)
         {
-            if (lbxListeEnseignant.SelectedIndex==0)
+            if (lbxListeEnseignant.SelectedIndex == 0)
             {
-                lbxListeEnseignant.SelectedIndex = monCegep.ObtenirNombreEnseignant() + 1;
+                lbxListeEnseignant.SelectedIndex = monCegep.ObtenirNombreEnseignant() -
+                    1;
             }
             else
             {
-            index = lbxListeEnseignant.SelectedIndex - 1;
-            lbxListeEnseignant.SelectedIndex = index;
+                index = lbxListeEnseignant.SelectedIndex - 1;
+                lbxListeEnseignant.SelectedIndex = index;
             }
         }
 
@@ -297,7 +298,7 @@ namespace projetCegep2
         /// <param name="e"></param>
         private void btnSuivantEnseignant_Click(object sender, EventArgs e)
         {
-            if (lbxListeEnseignant.SelectedIndex == monCegep.ObtenirNombreEnseignant()+1)
+            if (lbxListeEnseignant.SelectedIndex == monCegep.ObtenirNombreEnseignant() - 1)
             {
                 lbxListeEnseignant.SelectedIndex = 0;
             }
@@ -316,7 +317,7 @@ namespace projetCegep2
         /// <param name="e"></param>
         private void btnDernierEnseignant_Click(object sender, EventArgs e)
         {
-            lbxListeEnseignant.SelectedIndex = monCegep.ObtenirNombreEnseignant() + 1;
+            lbxListeEnseignant.SelectedIndex = monCegep.ObtenirNombreEnseignant() - 1;
         }
 
         /// <summary>
@@ -338,7 +339,7 @@ namespace projetCegep2
         {
             if (lbxListeProgramme.SelectedIndex == 0)
             {
-                lbxListeProgramme.SelectedIndex = monCegep.ObtenirNombreProgramme() + 1;
+                lbxListeProgramme.SelectedIndex = monCegep.ObtenirNombreProgramme() - 1;
             }
             else
             {
@@ -355,7 +356,7 @@ namespace projetCegep2
         /// <param name="e"></param>
         private void btnSuivantProgramme_Click(object sender, EventArgs e)
         {
-            if (lbxListeProgramme.SelectedIndex == monCegep.ObtenirNombreProgramme() + 1)
+            if (lbxListeProgramme.SelectedIndex == monCegep.ObtenirNombreProgramme() - 1)
             {
                 lbxListeProgramme.SelectedIndex = 0;
             }
@@ -373,7 +374,7 @@ namespace projetCegep2
         /// <param name="e"></param>
         private void btnDernierProgramme_Click(object sender, EventArgs e)
         {
-            lbxListeProgramme.SelectedIndex = monCegep.ObtenirNombreProgramme() + 1;
+            lbxListeProgramme.SelectedIndex = monCegep.ObtenirNombreProgramme() - 1;
         }
 
         /// <summary>
@@ -385,7 +386,7 @@ namespace projetCegep2
         {
             index = lbxListeEnseignant.SelectedIndex + 1;
             monCegep.ObtenirListeEnseignant()[index].Prenom = edtPrenomEmploye.Text;
-            monCegep.ObtenirListeEnseignant()[index].Nom = edtNomEmploye.Text ;
+            monCegep.ObtenirListeEnseignant()[index].Nom = edtNomEmploye.Text;
             monCegep.ObtenirListeEnseignant()[index].Adresse = edtAdresseEnseignant.Text;
             monCegep.ObtenirListeEnseignant()[index].CodePostal = edtCodePostalEnseignant.Text;
             monCegep.ObtenirListeEnseignant()[index].Telephone = edtTelephoneEnseignant.Text;
@@ -449,6 +450,11 @@ namespace projetCegep2
                 lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + "- " + unEnseignant.ToString());
             }
         }
+        /// <summary>
+        /// Fonction qui réaffiche la liste de programmes dans le listbox
+        /// </summary>
+        /// <param name="compteurProgramme"></param>
+        /// <returns></returns>
         public int InitialiserListeProgramme(int compteurProgramme)
         {
             lbxListeProgramme.Items.Clear();
@@ -461,6 +467,11 @@ namespace projetCegep2
             }
             return (compteurProgramme);
         }
+        /// <summary>
+        /// Fonction qui réaffiche les Enseignants dans le listbox
+        /// </summary>
+        /// <param name="compteurEnseignant"></param>
+        /// <returns></returns>
         public int InitialiserListeEnseignants(int compteurEnseignant)
         {
             compteurEnseignant = 0;
@@ -472,7 +483,11 @@ namespace projetCegep2
             }
             return (compteurEnseignant);
         }
-
+        /// <summary>
+        /// Fonction qui permet d'ouvrir le fichier XML et d'en extraire l'objet Cégep 
+        /// </summary>
+        /// <param name="compteurProgramme"></param>
+        /// <param name="compteurEnseignant"></param>
         public void OuvrirFichier(int compteurProgramme, int compteurEnseignant)
         {
             serializer = new XmlSerializer(typeof(Cegep));

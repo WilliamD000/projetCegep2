@@ -117,17 +117,29 @@ namespace projetCegep2
         }
         
 
-
+        /// <summary>
+        /// Permet d'Afficher les informations de l'enseignant dans la méthode ToString()
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return (NumeroEmploye + ", " + Prenom + ", " + Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel + ", " + "\n\n");
         }
+        /// <summary>
+        /// Permet de donner un code unique à l'enseignant
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             int x;
             x = Nom.Length + Adresse.Length;
             return (x);
         }
+        /// <summary>
+        /// Permet d'empêcher la création de copies
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             return ((obj != null) && (obj is Enseignant) && NumeroEmploye.Equals((obj as Enseignant).NumeroEmploye));
