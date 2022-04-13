@@ -8,7 +8,6 @@ namespace projetCegep2
 {
     public class Enseignant : Personne
     {
-
         private DateTime dateEmbauche;
 
         public DateTime DateEmbauche
@@ -67,7 +66,7 @@ namespace projetCegep2
         /// <returns></returns>
         public override string ToString()
         {
-            return (NumeroEmploye + ", " + "\n\n");
+            return (NumeroEmploye + ", " + Prenom + ", " + Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel + ", " + "\n\n");
         }
         /// <summary>
         /// Permet de donner un code unique à l'enseignant
@@ -75,7 +74,9 @@ namespace projetCegep2
         /// <returns></returns>
         public override int GetHashCode()
         {
-            return (int.Parse(NumeroEmploye));
+            int x;
+            x = Personne.Nom.Length + Personne.Adresse.Length;
+            return (x);
         }
         /// <summary>
         /// Permet d'empêcher la création de copies
@@ -88,6 +89,14 @@ namespace projetCegep2
         }
 
         public Cegep Cegep
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        internal Personne Personne
         {
             get => default;
             set

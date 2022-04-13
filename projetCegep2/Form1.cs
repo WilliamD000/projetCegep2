@@ -17,8 +17,7 @@ namespace projetCegep2
         Programme monProgramme;
         Enseignant unEnseignant;
         Etudiant monEtudiant;
-        Personne maPersonne;
-        int compteurProgramme = 0, compteurEnseignant = 0;
+        int compteurProgramme = 0, compteurEnseignant = 0, compteurEtudiant = 0;
         
         int index = 0;
 
@@ -488,7 +487,27 @@ namespace projetCegep2
             }
             return (compteurEnseignant);
         }
-
+        /// <summary>
+        /// Fonction qui rempli le listbox avec la liste d'étudiants actuels
+        /// </summary>
+        /// <param name="compteurEtudiant"></param>
+        /// <returns></returns>
+        public int InitialiserListeEtudiant(int compteurEtudiant)
+        {
+            compteurEtudiant = 0;
+            lbxListeEtudiant.Items.Clear();
+            foreach (Etudiant unEtudiant in monCegep.listeEtudiant)
+            {
+                compteurEtudiant++;
+                lbxListeEtudiant.Items.Add(compteurEtudiant.ToString() + "- " + unEtudiant.ToString());
+            }
+            return (compteurEtudiant);
+        }
+        /// <summary>
+        /// Bouton permettant de créer un nouvel étudiant
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCreerEtudiant_Click(object sender, EventArgs e)
         {
             monEtudiant = new Etudiant();
@@ -504,6 +523,155 @@ namespace projetCegep2
             monEtudiant.NumeroDA = int.Parse(edtNumeroDA.Text);
             monEtudiant.DateInscription = dtpDateInscription.Value;
             monEtudiant.Actif = cbxActif.Checked;
+            
+            if (monCegep.AjouterEtudiant(monEtudiant) == false)
+            {
+                MessageBox.Show("Cet étudiant existe déja");
+            }
+            else
+            {
+                compteurEtudiant++;
+                monCegep.AjouterEtudiant(monEtudiant);
+                lbxListeEtudiant.Items.Add(compteurEtudiant.ToString() + "- " + monEtudiant.ToString());
+            }
+        }
+        /// <summary>
+        /// Bouton permettant de vider la liste d'étudiants
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnViderListeEtudiant_Click(object sender, EventArgs e)
+        {
+            if (monCegep.ObtenirNombreEtudiant() == 0)
+            {
+                MessageBox.Show("La liste est déja vide");
+            }
+            else
+            {
+                compteurEtudiant = 0;
+                monCegep.ViderListeEtudiant();
+            }
+        }
+        /// <summary>
+        /// Bouton permettant de retirer l'étudiant souhaité
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRetirerEtudiant_Click(object sender, EventArgs e)
+        {
+            int nombreARetirer;
+            nombreARetirer = int.Parse(edtEtudiantARetirer.Text);
+            monCegep.listeEnseignant.RemoveAt(nombreARetirer - 1);
+            lbxListeEtudiant.Items.RemoveAt(nombreARetirer);
+            compteurEtudiant--;
+            InitialiserListeEtudiant(compteurEtudiant);
+        }
+        /// <summary>
+        /// Bouton permettant de modifier un étudiant
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnModifierEtudiant_Click(object sender, EventArgs e)
+        {
+            index = lbxListeEtudiant.SelectedIndex + 1; 
+            monCegep.ObtenirListeEtudiant()[index].Prenom = edtPrenomEtudiant.Text;
+            monCegep.ObtenirListeEtudiant()[index].Nom = edtNomEtudiant.Text;
+            monCegep.ObtenirListeEtudiant()[index].Adresse = edtAdresseEtudiant.Text;
+            monCegep.ObtenirListeEtudiant()[index].CodePostal = edtCodePostalEtudiant.Text;
+            monCegep.ObtenirListeEtudiant()[index].Telephone = edtTelephoneEtudiant.Text;
+            monCegep.ObtenirListeEtudiant()[index].Ville = edtVilleEtudiant.Text;
+            monCegep.ObtenirListeEtudiant()[index].Province = edtProvinceEtudiant.Text;
+            monCegep.ObtenirListeEtudiant()[index].Courriel = edtCourrielEtudiant.Text;
+            monCegep.ObtenirListeEtudiant()[index].NumeroDA = int.Parse(edtNumeroDA.Text);
+            monCegep.ObtenirListeEtudiant()[index].DateInscription = dtpDateInscription.Value;
+            monCegep.ObtenirListeEtudiant()[index].Actif = cbxActif.Checked;
+            foreach (Etudiant unEtudiant in monCegep.listeEtudiant)
+            {
+                compteurEtudiant++;
+                lbxListeEtudiant.Items.Add(compteurEtudiant.ToString() + unEtudiant.ToString());
+            }
+            InitialiserListeEtudiant(compteurEtudiant);
+        }
+        /// <summary>
+        /// Bouton qui renvoie l'index au premier étudiant
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPremierEtudiant_Click(object sender, EventArgs e)
+        {
+            lbxListeEtudiant.SelectedIndex = 0;
+        }
+        /// <summary>
+        /// Bouton qui renvoie l'index à l'étudiant précédent
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPrecedentEtudiant_Click(object sender, EventArgs e)
+        {
+            if (lbxListeEtudiant.SelectedIndex == 0)
+            {
+                lbxListeEtudiant.SelectedIndex = monCegep.ObtenirNombreEnseignant() - 1;
+            }
+            else
+            {
+                index = lbxListeEtudiant.SelectedIndex - 1;
+                lbxListeEtudiant.SelectedIndex = index;
+            }
+        }
+        /// <summary>
+        /// Bouton qui renvoie l'index au prochain étudiant
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSuivantEtudiant_Click(object sender, EventArgs e)
+        {
+            if (lbxListeEtudiant.SelectedIndex == monCegep.ObtenirNombreEtudiant() - 1)
+            {
+                lbxListeEtudiant.SelectedIndex = 0;
+            }
+            else
+            {
+                int index;
+                index = lbxListeEtudiant.SelectedIndex + 1;
+                lbxListeEtudiant.SelectedIndex = index;
+            }
+        }
+        /// <summary>
+        /// Bouton qui renvoie l'index au dernier étudiant
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDernierEtudiant_Click(object sender, EventArgs e)
+        {
+            lbxListeEtudiant.SelectedIndex = monCegep.ObtenirNombreEtudiant() - 1;
+        }
+        /// <summary>
+        /// Permet de changer les champs d'édition selon l'index
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lbxListeEtudiant_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                index = lbxListeEtudiant.SelectedIndex;
+                edtPrenomEtudiant.Text = monCegep.ObtenirListeEtudiant()[index].Prenom;
+                edtNomEtudiant.Text = monCegep.ObtenirListeEtudiant()[index].Nom;
+                edtAdresseEtudiant.Text = monCegep.ObtenirListeEtudiant()[index].Adresse;
+                edtCodePostalEtudiant.Text = monCegep.ObtenirListeEtudiant()[index].CodePostal;
+                edtTelephoneEtudiant.Text = monCegep.ObtenirListeEtudiant()[index].Telephone;
+                edtVilleEtudiant.Text = monCegep.ObtenirListeEtudiant()[index].Ville;
+                edtProvinceEtudiant.Text = monCegep.ObtenirListeEtudiant()[index].Province;
+                edtCourrielEtudiant.Text = monCegep.ObtenirListeEtudiant()[index].Courriel;
+                edtNumeroDA.Text = monCegep.ObtenirListeEtudiant()[index].NumeroDA.ToString();
+                dtpDateInscription.Value = monCegep.ObtenirListeEtudiant()[index].DateInscription;
+                cbxActif.Checked = monCegep.ObtenirListeEtudiant()[index].Actif;
+                edtEnseignantARetirer.Text = (lbxListeEnseignant.SelectedIndex + 1).ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erreur de sélection");
+            }
         }
 
         /// <summary>

@@ -3,7 +3,7 @@
   <Class Name="projetCegep2.Cegep" Collapsed="true">
     <Position X="5.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AggAABQcAADEoAAMgQAQIAAAECBHAIBAAIAJRgCJIAI=</HashCode>
+      <HashCode>AggAABQcAIjEoAAMgQEQIAAAECBHAIBCgIAJRoCJIAI=</HashCode>
       <FileName>Cegep.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -27,7 +27,7 @@
   <Class Name="projetCegep2.Enseignant" Collapsed="true">
     <Position X="3" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAQACAAAAAAEgAAAAAAAAAAABIAABAQAAAAACAA=</HashCode>
+      <HashCode>AAAIBAQACAAAAAAEgAAAAAAAAAAABIAABAQAAAAACAA=</HashCode>
       <FileName>Enseignant.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

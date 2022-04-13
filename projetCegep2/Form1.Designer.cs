@@ -110,6 +110,9 @@ namespace projetCegep2
             this.edtEnseignantARetirer = new System.Windows.Forms.TextBox();
             this.btnCreerEnseignant = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.cbxActif = new System.Windows.Forms.CheckBox();
+            this.dtpDateInscription = new System.Windows.Forms.DateTimePicker();
+            this.label26 = new System.Windows.Forms.Label();
             this.btnModifierEtudiant = new System.Windows.Forms.Button();
             this.btnDernierEtudiant = new System.Windows.Forms.Button();
             this.btnSuivantEtudiant = new System.Windows.Forms.Button();
@@ -139,9 +142,6 @@ namespace projetCegep2
             this.btnRetirerEtudiant = new System.Windows.Forms.Button();
             this.edtEtudiantARetirer = new System.Windows.Forms.TextBox();
             this.btnCreerEtudiant = new System.Windows.Forms.Button();
-            this.label26 = new System.Windows.Forms.Label();
-            this.dtpDateInscription = new System.Windows.Forms.DateTimePicker();
-            this.cbxActif = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -242,7 +242,7 @@ namespace projetCegep2
             this.tabPage1.Controls.Add(this.edtNomCegep);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(780, 385);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cégep";
@@ -419,7 +419,7 @@ namespace projetCegep2
             this.tabPage2.Controls.Add(this.edtNumeroProgramme);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(780, 385);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Programme";
@@ -429,7 +429,7 @@ namespace projetCegep2
             // btnModifierProgramme
             // 
             this.btnModifierProgramme.Location = new System.Drawing.Point(224, 184);
-            this.btnModifierProgramme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModifierProgramme.Margin = new System.Windows.Forms.Padding(2);
             this.btnModifierProgramme.Name = "btnModifierProgramme";
             this.btnModifierProgramme.Size = new System.Drawing.Size(66, 23);
             this.btnModifierProgramme.TabIndex = 61;
@@ -440,7 +440,7 @@ namespace projetCegep2
             // btnDernierProgramme
             // 
             this.btnDernierProgramme.Location = new System.Drawing.Point(400, 275);
-            this.btnDernierProgramme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDernierProgramme.Margin = new System.Windows.Forms.Padding(2);
             this.btnDernierProgramme.Name = "btnDernierProgramme";
             this.btnDernierProgramme.Size = new System.Drawing.Size(56, 28);
             this.btnDernierProgramme.TabIndex = 60;
@@ -451,7 +451,7 @@ namespace projetCegep2
             // btnSuivantProgramme
             // 
             this.btnSuivantProgramme.Location = new System.Drawing.Point(329, 275);
-            this.btnSuivantProgramme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSuivantProgramme.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuivantProgramme.Name = "btnSuivantProgramme";
             this.btnSuivantProgramme.Size = new System.Drawing.Size(56, 28);
             this.btnSuivantProgramme.TabIndex = 59;
@@ -462,7 +462,7 @@ namespace projetCegep2
             // btnPrécédentProgramme
             // 
             this.btnPrécédentProgramme.Location = new System.Drawing.Point(236, 275);
-            this.btnPrécédentProgramme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPrécédentProgramme.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrécédentProgramme.Name = "btnPrécédentProgramme";
             this.btnPrécédentProgramme.Size = new System.Drawing.Size(70, 28);
             this.btnPrécédentProgramme.TabIndex = 58;
@@ -473,7 +473,7 @@ namespace projetCegep2
             // btnPremierProgramme
             // 
             this.btnPremierProgramme.Location = new System.Drawing.Point(166, 275);
-            this.btnPremierProgramme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPremierProgramme.Margin = new System.Windows.Forms.Padding(2);
             this.btnPremierProgramme.Name = "btnPremierProgramme";
             this.btnPremierProgramme.Size = new System.Drawing.Size(56, 26);
             this.btnPremierProgramme.TabIndex = 57;
@@ -650,7 +650,7 @@ namespace projetCegep2
             // btnModifierEnseignant
             // 
             this.btnModifierEnseignant.Location = new System.Drawing.Point(242, 264);
-            this.btnModifierEnseignant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModifierEnseignant.Margin = new System.Windows.Forms.Padding(2);
             this.btnModifierEnseignant.Name = "btnModifierEnseignant";
             this.btnModifierEnseignant.Size = new System.Drawing.Size(62, 21);
             this.btnModifierEnseignant.TabIndex = 57;
@@ -661,7 +661,7 @@ namespace projetCegep2
             // btnDernierEnseignant
             // 
             this.btnDernierEnseignant.Location = new System.Drawing.Point(482, 218);
-            this.btnDernierEnseignant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDernierEnseignant.Margin = new System.Windows.Forms.Padding(2);
             this.btnDernierEnseignant.Name = "btnDernierEnseignant";
             this.btnDernierEnseignant.Size = new System.Drawing.Size(56, 28);
             this.btnDernierEnseignant.TabIndex = 56;
@@ -672,7 +672,7 @@ namespace projetCegep2
             // btnSuivantEnseignant
             // 
             this.btnSuivantEnseignant.Location = new System.Drawing.Point(411, 218);
-            this.btnSuivantEnseignant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSuivantEnseignant.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuivantEnseignant.Name = "btnSuivantEnseignant";
             this.btnSuivantEnseignant.Size = new System.Drawing.Size(56, 28);
             this.btnSuivantEnseignant.TabIndex = 55;
@@ -683,7 +683,7 @@ namespace projetCegep2
             // btnPrécédentEnseignant
             // 
             this.btnPrécédentEnseignant.Location = new System.Drawing.Point(318, 218);
-            this.btnPrécédentEnseignant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPrécédentEnseignant.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrécédentEnseignant.Name = "btnPrécédentEnseignant";
             this.btnPrécédentEnseignant.Size = new System.Drawing.Size(70, 28);
             this.btnPrécédentEnseignant.TabIndex = 54;
@@ -694,7 +694,7 @@ namespace projetCegep2
             // btnPremierEnseignant
             // 
             this.btnPremierEnseignant.Location = new System.Drawing.Point(248, 218);
-            this.btnPremierEnseignant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPremierEnseignant.Margin = new System.Windows.Forms.Padding(2);
             this.btnPremierEnseignant.Name = "btnPremierEnseignant";
             this.btnPremierEnseignant.Size = new System.Drawing.Size(56, 26);
             this.btnPremierEnseignant.TabIndex = 53;
@@ -986,6 +986,34 @@ namespace projetCegep2
             this.tabPage4.Text = "Etudiant";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // cbxActif
+            // 
+            this.cbxActif.AutoSize = true;
+            this.cbxActif.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.cbxActif.Location = new System.Drawing.Point(283, 113);
+            this.cbxActif.Name = "cbxActif";
+            this.cbxActif.Size = new System.Drawing.Size(47, 17);
+            this.cbxActif.TabIndex = 96;
+            this.cbxActif.Text = "Actif";
+            this.cbxActif.UseVisualStyleBackColor = true;
+            // 
+            // dtpDateInscription
+            // 
+            this.dtpDateInscription.Location = new System.Drawing.Point(317, 73);
+            this.dtpDateInscription.Name = "dtpDateInscription";
+            this.dtpDateInscription.Size = new System.Drawing.Size(200, 20);
+            this.dtpDateInscription.TabIndex = 95;
+            this.dtpDateInscription.Value = new System.DateTime(2021, 5, 13, 0, 0, 0, 0);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(206, 74);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(92, 13);
+            this.label26.TabIndex = 92;
+            this.label26.Text = "Date d\'Inscription:";
+            // 
             // btnModifierEtudiant
             // 
             this.btnModifierEtudiant.Location = new System.Drawing.Point(241, 264);
@@ -995,6 +1023,7 @@ namespace projetCegep2
             this.btnModifierEtudiant.TabIndex = 90;
             this.btnModifierEtudiant.Text = "Modifier";
             this.btnModifierEtudiant.UseVisualStyleBackColor = true;
+            this.btnModifierEtudiant.Click += new System.EventHandler(this.btnModifierEtudiant_Click);
             // 
             // btnDernierEtudiant
             // 
@@ -1005,6 +1034,7 @@ namespace projetCegep2
             this.btnDernierEtudiant.TabIndex = 89;
             this.btnDernierEtudiant.Text = "Dernier";
             this.btnDernierEtudiant.UseVisualStyleBackColor = true;
+            this.btnDernierEtudiant.Click += new System.EventHandler(this.btnDernierEtudiant_Click);
             // 
             // btnSuivantEtudiant
             // 
@@ -1015,6 +1045,7 @@ namespace projetCegep2
             this.btnSuivantEtudiant.TabIndex = 88;
             this.btnSuivantEtudiant.Text = "Suivant";
             this.btnSuivantEtudiant.UseVisualStyleBackColor = true;
+            this.btnSuivantEtudiant.Click += new System.EventHandler(this.btnSuivantEtudiant_Click);
             // 
             // btnPrecedentEtudiant
             // 
@@ -1025,6 +1056,7 @@ namespace projetCegep2
             this.btnPrecedentEtudiant.TabIndex = 87;
             this.btnPrecedentEtudiant.Text = "Précédent";
             this.btnPrecedentEtudiant.UseVisualStyleBackColor = true;
+            this.btnPrecedentEtudiant.Click += new System.EventHandler(this.btnPrecedentEtudiant_Click);
             // 
             // btnPremierEtudiant
             // 
@@ -1035,6 +1067,7 @@ namespace projetCegep2
             this.btnPremierEtudiant.TabIndex = 86;
             this.btnPremierEtudiant.Text = "Premier";
             this.btnPremierEtudiant.UseVisualStyleBackColor = true;
+            this.btnPremierEtudiant.Click += new System.EventHandler(this.btnPremierEtudiant_Click);
             // 
             // label25
             // 
@@ -1196,6 +1229,7 @@ namespace projetCegep2
             this.lbxListeEtudiant.Name = "lbxListeEtudiant";
             this.lbxListeEtudiant.Size = new System.Drawing.Size(220, 277);
             this.lbxListeEtudiant.TabIndex = 63;
+            this.lbxListeEtudiant.SelectedIndexChanged += new System.EventHandler(this.lbxListeEtudiant_SelectedIndexChanged);
             // 
             // btnViderListeEtudiant
             // 
@@ -1205,6 +1239,7 @@ namespace projetCegep2
             this.btnViderListeEtudiant.TabIndex = 62;
             this.btnViderListeEtudiant.Text = "Vider la liste";
             this.btnViderListeEtudiant.UseVisualStyleBackColor = true;
+            this.btnViderListeEtudiant.Click += new System.EventHandler(this.btnViderListeEtudiant_Click);
             // 
             // label36
             // 
@@ -1223,6 +1258,7 @@ namespace projetCegep2
             this.btnRetirerEtudiant.TabIndex = 60;
             this.btnRetirerEtudiant.Text = "Retirer";
             this.btnRetirerEtudiant.UseVisualStyleBackColor = true;
+            this.btnRetirerEtudiant.Click += new System.EventHandler(this.btnRetirerEtudiant_Click);
             // 
             // edtEtudiantARetirer
             // 
@@ -1241,34 +1277,6 @@ namespace projetCegep2
             this.btnCreerEtudiant.Text = "Créer";
             this.btnCreerEtudiant.UseVisualStyleBackColor = true;
             this.btnCreerEtudiant.Click += new System.EventHandler(this.btnCreerEtudiant_Click);
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(206, 74);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(92, 13);
-            this.label26.TabIndex = 92;
-            this.label26.Text = "Date d\'Inscription:";
-            // 
-            // dtpDateInscription
-            // 
-            this.dtpDateInscription.Location = new System.Drawing.Point(317, 73);
-            this.dtpDateInscription.Name = "dtpDateInscription";
-            this.dtpDateInscription.Size = new System.Drawing.Size(200, 20);
-            this.dtpDateInscription.TabIndex = 95;
-            this.dtpDateInscription.Value = new System.DateTime(2021, 5, 13, 0, 0, 0, 0);
-            // 
-            // cbxActif
-            // 
-            this.cbxActif.AutoSize = true;
-            this.cbxActif.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cbxActif.Location = new System.Drawing.Point(283, 113);
-            this.cbxActif.Name = "cbxActif";
-            this.cbxActif.Size = new System.Drawing.Size(47, 17);
-            this.cbxActif.TabIndex = 96;
-            this.cbxActif.Text = "Actif";
-            this.cbxActif.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

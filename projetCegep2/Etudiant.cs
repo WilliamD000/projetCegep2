@@ -47,7 +47,7 @@ namespace projetCegep2
 
         public override string ToString()
         {
-            return (NumeroDA + ", Inscrit depuis:" + DateInscription + ", Actif:" + Actif);
+            return (NumeroDA + ", " + Prenom + ", " + Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel + ", Inscrit depuis:" + DateInscription + ", Actif:" + Actif);
         }
 
         public override int GetHashCode()
