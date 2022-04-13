@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="projetCegep2.Cegep" Collapsed="true">
-    <Position X="4" Y="1.75" Width="1.5" />
+    <Position X="5.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AggAABQIAACEoAAEgQAQIAAAECBCAIBAAIAAQgCJIAI=</HashCode>
+      <HashCode>AggAABQcAADEoAAMgQAQIAAAECBHAIBAAIAJRgCJIAI=</HashCode>
       <FileName>Cegep.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="projetCegep2.Program" Collapsed="true">
-    <Position X="7" Y="2.5" Width="1.5" />
+    <Position X="10.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="projetCegep2.Programme" Collapsed="true">
-    <Position X="3.5" Y="3.25" Width="1.5" />
+    <Position X="5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAACEAgEAAEoAAAAAAAAAAAEIAAAAAAQAAAIAA=</HashCode>
       <FileName>Programme.cs</FileName>
@@ -25,14 +25,31 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="projetCegep2.Enseignant" Collapsed="true">
-    <Position X="1.5" Y="2" Width="1.5" />
+    <Position X="3" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgIAAQUCABEAAAEgAAQIAAAECAFJIBABKQJRgCICAI=</HashCode>
+      <HashCode>AAAIAAQACAAAAAAEgAAAAAAAAAAABIAABAQAAAAACAA=</HashCode>
       <FileName>Enseignant.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Cegep" />
     </ShowAsAssociation>
+  </Class>
+  <Class Name="projetCegep2.Etudiant" Collapsed="true">
+    <Position X="3.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gBAAAAAQCAAAAAAEgCAAAAAgAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Etudiant.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cegep" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="projetCegep2.Personne" Collapsed="true">
+    <Position X="1.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAQAAAAEAAAEgAAQIAAAECAAIIBAAKAAQgCIAAI=</HashCode>
+      <FileName>Personne.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

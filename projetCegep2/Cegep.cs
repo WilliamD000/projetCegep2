@@ -66,6 +66,7 @@ namespace projetCegep2
 
         public List<Programme> listeProgramme;
         public List<Enseignant> listeEnseignant;
+        public List<Etudiant> listeEtudiant;
 
         public Cegep()
         {
@@ -79,6 +80,7 @@ namespace projetCegep2
             anneeDImplentation = "";
             listeProgramme = new List<Programme>();
             listeEnseignant = new List<Enseignant>();
+            listeEtudiant = new List<Etudiant>();
         }
         public Cegep(string unNom, string uneAdresse, string unCodePostal, string unTelephone, string uneVille, string uneProvince, string unCourriel, string uneAnneeDImplantation)
         {
@@ -287,8 +289,104 @@ namespace projetCegep2
             listeEnseignant.Clear();
             return SiAucunEnseignant();
         }
+        /// <summary>
+        /// Fonction qui retourne la liste d'étudiants en un tableau
+        /// </summary>
+        /// <returns></returns>
+        public Etudiant[] ObtenirListeEtudiant()
+        {
+            return listeEtudiant.ToArray();
+        }
+        /// <summary>
+        /// Fonction qui retourne l'étudiant désiré
+        /// </summary>
+        /// <param name="unEtudiant"></param>
+        /// <returns></returns>
+        public Etudiant ObtenirEtudiant(Etudiant unEtudiant)
+        {
+            foreach (Etudiant Etudiant in listeEtudiant)
+            {
+                if (Etudiant.Equals(unEtudiant))
+                {
+                    return Etudiant;
+                }
+            }
+            return null;
+        }
+        /// <summary>
+        /// Fonction qui vérifie si l'étudiant existe
+        /// </summary>
+        /// <param name="unProgramme"></param>
+        /// <returns></returns>
+        public bool SiEtudiantPresent(Etudiant unEtudiant)
+        {
+            foreach (Etudiant etudiant in listeEtudiant)
+            {
+                if (etudiant.Equals(unEtudiant))
+                {
+                    return (true);
+                }
+            }
+            return (false);
+        }
+        /// <summary>
+        /// FOnction permettant d'ajouter un étudiant a la liste
+        /// </summary>
+        /// <param name="unEtudiant"></param>
+        /// <returns></returns>
+        public bool AjouterEtudiant(Etudiant unEtudiant)
+        {
+            if (SiEtudiantPresent(unEtudiant))
+            {
+                return false;
+            }
+            listeEtudiant.Add(unEtudiant);
+            return SiEtudiantPresent(unEtudiant);
+        }
+        /// <summary>
+        /// Fonction qui supprime un étudiant
+        /// </summary>
+        /// <param name="unEtudiant"></param>
+        /// <returns></returns>
+        public bool EnleverEtudiant(Etudiant unEtudiant)
+        {
+            if (!SiEtudiantPresent(unEtudiant))
+            {
+                return (false);
+            }
+            listeEtudiant.Remove(unEtudiant);
+            return (!SiEtudiantPresent(unEtudiant));
+        }
+        /// <summary>
+        /// Retourne le nombre d'étudiants
+        /// </summary>
+        /// <returns></returns>
+        public int ObtenirNombreEtudiant()
+        {
+            return (listeEtudiant.Count);
+        }
+        /// <summary>
+        /// Vérifie si la liste d'étudiants est vide
+        /// </summary>
+        /// <returns></returns>
+        public bool SiAucunEtudiant()
+        {
+            return (ObtenirNombreEtudiant() == 0);
+        }
+        /// <summary>
+        /// Fonction qui vide la liste d'étudiants
+        /// </summary>
+        /// <returns></returns>
+        public bool ViderListeEtudiant()
+        {
+            if (ObtenirNombreEtudiant() == 0)
+            {
+                return false;
+            }
+            listeEtudiant.Clear();
+            return SiAucunEtudiant();
+        }
 
-        
 
         /// <summary>
         /// Permet d'afficher les valeurs désirée dans la méthode .ToString()

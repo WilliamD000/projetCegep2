@@ -15,8 +15,11 @@ namespace projetCegep2
         //FileStream fichierLogique;
         Cegep monCegep;
         Programme monProgramme;
-        int compteurProgramme = 0, compteurEnseignant = 0;
         Enseignant unEnseignant;
+        Etudiant monEtudiant;
+        Personne maPersonne;
+        int compteurProgramme = 0, compteurEnseignant = 0;
+        
         int index = 0;
 
         XmlSerializer serializer = new XmlSerializer(typeof(Cegep));
@@ -106,8 +109,9 @@ namespace projetCegep2
             monCegep.AnneeDImplantation = edtAnneeDImplantation.Text;
             monCegep.Courriel = edtCourriel.Text;
             btnCreerCegep.Enabled = false;
-            InitialiserListeProgramme(compteurProgramme);
-            InitialiserListeEnseignants(compteurEnseignant);
+            compteurProgramme = InitialiserListeProgramme(compteurProgramme);
+            compteurEnseignant = InitialiserListeEnseignants(compteurEnseignant);
+
         }
 
         /// <summary>
@@ -192,6 +196,7 @@ namespace projetCegep2
                 edtNumeroProgramme.Text = tableauProgramme[index].NumProgramme;
                 edtDescriptionProgramme.Text = tableauProgramme[index].Description;
                 edtDateCreationProgramme.Text = tableauProgramme[index].DateCreation;
+                edtRetirerProgramme.Text = (lbxListeProgramme.SelectedIndex + 1).ToString();
             }
 
             catch (Exception)
@@ -255,6 +260,7 @@ namespace projetCegep2
                 edtNumeroEmploye.Text = monCegep.ObtenirListeEnseignant()[index].NumeroEmploye;
                 dtpDateEmbauche.Value = monCegep.ObtenirListeEnseignant()[index].DateEmbauche;
                 dtpDateArret.Value = monCegep.ObtenirListeEnseignant()[index].DateArret;
+                edtEnseignantARetirer.Text = (lbxListeEnseignant.SelectedIndex + 1).ToString();
             }
             catch (Exception)
             {
@@ -281,8 +287,7 @@ namespace projetCegep2
         {
             if (lbxListeEnseignant.SelectedIndex == 0)
             {
-                lbxListeEnseignant.SelectedIndex = monCegep.ObtenirNombreEnseignant() -
-                    1;
+                lbxListeEnseignant.SelectedIndex = monCegep.ObtenirNombreEnseignant() - 1;
             }
             else
             {
@@ -463,7 +468,7 @@ namespace projetCegep2
             foreach (Programme unProgramme in tableauProgramme)
             {
                 compteurProgramme++;
-                lbxListeProgramme.Items.Add(compteurProgramme.ToString() + unProgramme.ToString());
+                lbxListeProgramme.Items.Add(compteurProgramme.ToString() + "- "+ unProgramme.ToString());
             }
             return (compteurProgramme);
         }
@@ -479,10 +484,28 @@ namespace projetCegep2
             foreach (Enseignant unEnseignant in monCegep.listeEnseignant)
             {
                 compteurEnseignant++;
-                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
+                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + "- "+ unEnseignant.ToString());
             }
             return (compteurEnseignant);
         }
+
+        private void btnCreerEtudiant_Click(object sender, EventArgs e)
+        {
+            monEtudiant = new Etudiant();
+
+            monEtudiant.Prenom = edtPrenomEtudiant.Text;
+            monEtudiant.Nom = edtNomEtudiant.Text;
+            monEtudiant.Adresse = edtAdresse.Text;
+            monEtudiant.Ville = edtVilleEtudiant.Text;
+            monEtudiant.Province = edtProvinceEtudiant.Text;
+            monEtudiant.CodePostal = edtCodePostalEtudiant.Text;
+            monEtudiant.Telephone = edtTelephoneEtudiant.Text;
+            monEtudiant.Courriel = edtCourrielEtudiant.Text;
+            monEtudiant.NumeroDA = int.Parse(edtNumeroDA.Text);
+            monEtudiant.DateInscription = dtpDateInscription.Value;
+            monEtudiant.Actif = cbxActif.Checked;
+        }
+
         /// <summary>
         /// Fonction qui permet d'ouvrir le fichier XML et d'en extraire l'objet Cégep 
         /// </summary>

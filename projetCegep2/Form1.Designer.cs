@@ -109,11 +109,45 @@ namespace projetCegep2
             this.btnRetirerEnseignant = new System.Windows.Forms.Button();
             this.edtEnseignantARetirer = new System.Windows.Forms.TextBox();
             this.btnCreerEnseignant = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnModifierEtudiant = new System.Windows.Forms.Button();
+            this.btnDernierEtudiant = new System.Windows.Forms.Button();
+            this.btnSuivantEtudiant = new System.Windows.Forms.Button();
+            this.btnPrecedentEtudiant = new System.Windows.Forms.Button();
+            this.btnPremierEtudiant = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.edtPrenomEtudiant = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.edtNumeroDA = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.edtCourrielEtudiant = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.edtProvinceEtudiant = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.edtVilleEtudiant = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.edtTelephoneEtudiant = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.edtCodePostalEtudiant = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.edtAdresseEtudiant = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.edtNomEtudiant = new System.Windows.Forms.TextBox();
+            this.lbxListeEtudiant = new System.Windows.Forms.ListBox();
+            this.btnViderListeEtudiant = new System.Windows.Forms.Button();
+            this.label36 = new System.Windows.Forms.Label();
+            this.btnRetirerEtudiant = new System.Windows.Forms.Button();
+            this.edtEtudiantARetirer = new System.Windows.Forms.TextBox();
+            this.btnCreerEtudiant = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.dtpDateInscription = new System.Windows.Forms.DateTimePicker();
+            this.cbxActif = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -124,7 +158,8 @@ namespace projetCegep2
             this.aideToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -135,27 +170,27 @@ namespace projetCegep2
             this.enregistrerToolStripMenuItem,
             this.quitterToolStripMenuItem});
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.fichierToolStripMenuItem.Text = "Fichier";
             // 
             // ouvrirToolStripMenuItem
             // 
             this.ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
-            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.ouvrirToolStripMenuItem.Text = "Ouvrir";
             this.ouvrirToolStripMenuItem.Click += new System.EventHandler(this.ouvrirToolStripMenuItem_Click);
             // 
             // enregistrerToolStripMenuItem
             // 
             this.enregistrerToolStripMenuItem.Name = "enregistrerToolStripMenuItem";
-            this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.enregistrerToolStripMenuItem.Text = "Enregistrer";
             this.enregistrerToolStripMenuItem.Click += new System.EventHandler(this.enregistrerToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -164,13 +199,13 @@ namespace projetCegep2
             this.aideToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.àProposToolStripMenuItem});
             this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
-            this.aideToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
+            this.aideToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.aideToolStripMenuItem.Text = "Aide";
             // 
             // àProposToolStripMenuItem
             // 
             this.àProposToolStripMenuItem.Name = "àProposToolStripMenuItem";
-            this.àProposToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
+            this.àProposToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.àProposToolStripMenuItem.Text = "À propos";
             this.àProposToolStripMenuItem.Click += new System.EventHandler(this.àProposToolStripMenuItem_Click);
             // 
@@ -179,11 +214,11 @@ namespace projetCegep2
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(16, 33);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Location = new System.Drawing.Point(12, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1051, 506);
+            this.tabControl1.Size = new System.Drawing.Size(788, 411);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -205,11 +240,10 @@ namespace projetCegep2
             this.tabPage1.Controls.Add(this.edtAdresse);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.edtNomCegep);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1043, 477);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(780, 385);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cégep";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -217,10 +251,9 @@ namespace projetCegep2
             // 
             // btnCreerCegep
             // 
-            this.btnCreerCegep.Location = new System.Drawing.Point(345, 305);
-            this.btnCreerCegep.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCreerCegep.Location = new System.Drawing.Point(259, 248);
             this.btnCreerCegep.Name = "btnCreerCegep";
-            this.btnCreerCegep.Size = new System.Drawing.Size(115, 48);
+            this.btnCreerCegep.Size = new System.Drawing.Size(86, 39);
             this.btnCreerCegep.TabIndex = 16;
             this.btnCreerCegep.Text = "Créer";
             this.btnCreerCegep.UseVisualStyleBackColor = true;
@@ -229,153 +262,137 @@ namespace projetCegep2
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 352);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(6, 286);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(144, 17);
+            this.label8.Size = new System.Drawing.Size(108, 13);
             this.label8.TabIndex = 15;
             this.label8.Text = "Année d\'implantation:";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // edtAnneeDImplantation
             // 
-            this.edtAnneeDImplantation.Location = new System.Drawing.Point(160, 352);
-            this.edtAnneeDImplantation.Margin = new System.Windows.Forms.Padding(4);
+            this.edtAnneeDImplantation.Location = new System.Drawing.Point(120, 286);
             this.edtAnneeDImplantation.Name = "edtAnneeDImplantation";
-            this.edtAnneeDImplantation.Size = new System.Drawing.Size(132, 22);
+            this.edtAnneeDImplantation.Size = new System.Drawing.Size(100, 20);
             this.edtAnneeDImplantation.TabIndex = 14;
             this.edtAnneeDImplantation.Text = "1969";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(59, 305);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(44, 248);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 17);
+            this.label7.Size = new System.Drawing.Size(45, 13);
             this.label7.TabIndex = 13;
             this.label7.Text = "Courriel:";
             // 
             // edtCourriel
             // 
-            this.edtCourriel.Location = new System.Drawing.Point(145, 302);
-            this.edtCourriel.Margin = new System.Windows.Forms.Padding(4);
+            this.edtCourriel.Location = new System.Drawing.Point(109, 245);
             this.edtCourriel.Name = "edtCourriel";
-            this.edtCourriel.Size = new System.Drawing.Size(147, 22);
+            this.edtCourriel.Size = new System.Drawing.Size(111, 20);
             this.edtCourriel.TabIndex = 12;
             this.edtCourriel.Text = "cegep@cegeprdl.ca";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(59, 257);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(44, 209);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 17);
+            this.label6.Size = new System.Drawing.Size(49, 13);
             this.label6.TabIndex = 11;
             this.label6.Text = "Province";
             // 
             // edtProvince
             // 
-            this.edtProvince.Location = new System.Drawing.Point(145, 254);
-            this.edtProvince.Margin = new System.Windows.Forms.Padding(4);
+            this.edtProvince.Location = new System.Drawing.Point(109, 206);
             this.edtProvince.Name = "edtProvince";
-            this.edtProvince.Size = new System.Drawing.Size(132, 22);
+            this.edtProvince.Size = new System.Drawing.Size(100, 20);
             this.edtProvince.TabIndex = 10;
             this.edtProvince.Text = "Québec";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(59, 212);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(44, 172);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 17);
+            this.label5.Size = new System.Drawing.Size(26, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Ville";
             // 
             // edtVille
             // 
-            this.edtVille.Location = new System.Drawing.Point(145, 208);
-            this.edtVille.Margin = new System.Windows.Forms.Padding(4);
+            this.edtVille.Location = new System.Drawing.Point(109, 169);
             this.edtVille.Name = "edtVille";
-            this.edtVille.Size = new System.Drawing.Size(132, 22);
+            this.edtVille.Size = new System.Drawing.Size(100, 20);
             this.edtVille.TabIndex = 8;
             this.edtVille.Text = "Rivière-du-Loup";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(59, 164);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(44, 133);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 17);
+            this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Telephone:";
             // 
             // edtTelephone
             // 
-            this.edtTelephone.Location = new System.Drawing.Point(145, 160);
-            this.edtTelephone.Margin = new System.Windows.Forms.Padding(4);
+            this.edtTelephone.Location = new System.Drawing.Point(109, 130);
             this.edtTelephone.Name = "edtTelephone";
-            this.edtTelephone.Size = new System.Drawing.Size(132, 22);
+            this.edtTelephone.Size = new System.Drawing.Size(100, 20);
             this.edtTelephone.TabIndex = 6;
             this.edtTelephone.Text = "(418) 862-6903";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(48, 117);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(36, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 17);
+            this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Code Postal:";
             // 
             // edtCodePostal
             // 
-            this.edtCodePostal.Location = new System.Drawing.Point(145, 113);
-            this.edtCodePostal.Margin = new System.Windows.Forms.Padding(4);
+            this.edtCodePostal.Location = new System.Drawing.Point(109, 92);
             this.edtCodePostal.Name = "edtCodePostal";
-            this.edtCodePostal.Size = new System.Drawing.Size(132, 22);
+            this.edtCodePostal.Size = new System.Drawing.Size(100, 20);
             this.edtCodePostal.TabIndex = 4;
             this.edtCodePostal.Text = "G5R 1R1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(59, 74);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(44, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Adresse:";
             // 
             // edtAdresse
             // 
-            this.edtAdresse.Location = new System.Drawing.Point(145, 70);
-            this.edtAdresse.Margin = new System.Windows.Forms.Padding(4);
+            this.edtAdresse.Location = new System.Drawing.Point(109, 57);
             this.edtAdresse.Name = "edtAdresse";
-            this.edtAdresse.Size = new System.Drawing.Size(132, 22);
+            this.edtAdresse.Size = new System.Drawing.Size(100, 20);
             this.edtAdresse.TabIndex = 2;
             this.edtAdresse.Text = "80 rue Frontenac";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 30);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(44, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 17);
+            this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nom:";
             // 
             // edtNomCegep
             // 
-            this.edtNomCegep.Location = new System.Drawing.Point(145, 26);
-            this.edtNomCegep.Margin = new System.Windows.Forms.Padding(4);
+            this.edtNomCegep.Location = new System.Drawing.Point(109, 21);
             this.edtNomCegep.Name = "edtNomCegep";
-            this.edtNomCegep.Size = new System.Drawing.Size(188, 22);
+            this.edtNomCegep.Size = new System.Drawing.Size(142, 20);
             this.edtNomCegep.TabIndex = 0;
             this.edtNomCegep.Text = "Cégep de Rivière-du-Loup";
             // 
@@ -400,11 +417,10 @@ namespace projetCegep2
             this.tabPage2.Controls.Add(this.edtNomProgramme);
             this.tabPage2.Controls.Add(this.label);
             this.tabPage2.Controls.Add(this.edtNumeroProgramme);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1043, 477);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Size = new System.Drawing.Size(780, 385);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Programme";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -412,9 +428,10 @@ namespace projetCegep2
             // 
             // btnModifierProgramme
             // 
-            this.btnModifierProgramme.Location = new System.Drawing.Point(298, 227);
+            this.btnModifierProgramme.Location = new System.Drawing.Point(224, 184);
+            this.btnModifierProgramme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModifierProgramme.Name = "btnModifierProgramme";
-            this.btnModifierProgramme.Size = new System.Drawing.Size(88, 28);
+            this.btnModifierProgramme.Size = new System.Drawing.Size(66, 23);
             this.btnModifierProgramme.TabIndex = 61;
             this.btnModifierProgramme.Text = "Modifier";
             this.btnModifierProgramme.UseVisualStyleBackColor = true;
@@ -422,9 +439,10 @@ namespace projetCegep2
             // 
             // btnDernierProgramme
             // 
-            this.btnDernierProgramme.Location = new System.Drawing.Point(533, 339);
+            this.btnDernierProgramme.Location = new System.Drawing.Point(400, 275);
+            this.btnDernierProgramme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDernierProgramme.Name = "btnDernierProgramme";
-            this.btnDernierProgramme.Size = new System.Drawing.Size(75, 35);
+            this.btnDernierProgramme.Size = new System.Drawing.Size(56, 28);
             this.btnDernierProgramme.TabIndex = 60;
             this.btnDernierProgramme.Text = "Dernier";
             this.btnDernierProgramme.UseVisualStyleBackColor = true;
@@ -432,9 +450,10 @@ namespace projetCegep2
             // 
             // btnSuivantProgramme
             // 
-            this.btnSuivantProgramme.Location = new System.Drawing.Point(439, 339);
+            this.btnSuivantProgramme.Location = new System.Drawing.Point(329, 275);
+            this.btnSuivantProgramme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSuivantProgramme.Name = "btnSuivantProgramme";
-            this.btnSuivantProgramme.Size = new System.Drawing.Size(75, 35);
+            this.btnSuivantProgramme.Size = new System.Drawing.Size(56, 28);
             this.btnSuivantProgramme.TabIndex = 59;
             this.btnSuivantProgramme.Text = "Suivant";
             this.btnSuivantProgramme.UseVisualStyleBackColor = true;
@@ -442,9 +461,10 @@ namespace projetCegep2
             // 
             // btnPrécédentProgramme
             // 
-            this.btnPrécédentProgramme.Location = new System.Drawing.Point(315, 339);
+            this.btnPrécédentProgramme.Location = new System.Drawing.Point(236, 275);
+            this.btnPrécédentProgramme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPrécédentProgramme.Name = "btnPrécédentProgramme";
-            this.btnPrécédentProgramme.Size = new System.Drawing.Size(94, 35);
+            this.btnPrécédentProgramme.Size = new System.Drawing.Size(70, 28);
             this.btnPrécédentProgramme.TabIndex = 58;
             this.btnPrécédentProgramme.Text = "Précédent";
             this.btnPrécédentProgramme.UseVisualStyleBackColor = true;
@@ -452,9 +472,10 @@ namespace projetCegep2
             // 
             // btnPremierProgramme
             // 
-            this.btnPremierProgramme.Location = new System.Drawing.Point(221, 339);
+            this.btnPremierProgramme.Location = new System.Drawing.Point(166, 275);
+            this.btnPremierProgramme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPremierProgramme.Name = "btnPremierProgramme";
-            this.btnPremierProgramme.Size = new System.Drawing.Size(75, 32);
+            this.btnPremierProgramme.Size = new System.Drawing.Size(56, 26);
             this.btnPremierProgramme.TabIndex = 57;
             this.btnPremierProgramme.Text = "Premier";
             this.btnPremierProgramme.UseVisualStyleBackColor = true;
@@ -463,20 +484,17 @@ namespace projetCegep2
             // lbxListeProgramme
             // 
             this.lbxListeProgramme.FormattingEnabled = true;
-            this.lbxListeProgramme.ItemHeight = 16;
-            this.lbxListeProgramme.Location = new System.Drawing.Point(625, 48);
-            this.lbxListeProgramme.Margin = new System.Windows.Forms.Padding(4);
+            this.lbxListeProgramme.Location = new System.Drawing.Point(469, 39);
             this.lbxListeProgramme.Name = "lbxListeProgramme";
-            this.lbxListeProgramme.Size = new System.Drawing.Size(292, 340);
+            this.lbxListeProgramme.Size = new System.Drawing.Size(220, 277);
             this.lbxListeProgramme.TabIndex = 14;
             this.lbxListeProgramme.SelectedIndexChanged += new System.EventHandler(this.lbxListeProgramme_SelectedIndexChanged);
             // 
             // btnViderListe
             // 
-            this.btnViderListe.Location = new System.Drawing.Point(180, 227);
-            this.btnViderListe.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViderListe.Location = new System.Drawing.Point(135, 184);
             this.btnViderListe.Name = "btnViderListe";
-            this.btnViderListe.Size = new System.Drawing.Size(100, 28);
+            this.btnViderListe.Size = new System.Drawing.Size(75, 23);
             this.btnViderListe.TabIndex = 13;
             this.btnViderListe.Text = "Vider la liste";
             this.btnViderListe.UseVisualStyleBackColor = true;
@@ -485,19 +503,17 @@ namespace projetCegep2
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(45, 293);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(34, 238);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(203, 17);
+            this.label9.Size = new System.Drawing.Size(148, 13);
             this.label9.TabIndex = 12;
             this.label9.Text = "Chiffre du programme à retirer:";
             // 
             // btnRetirerProgramme
             // 
-            this.btnRetirerProgramme.Location = new System.Drawing.Point(76, 346);
-            this.btnRetirerProgramme.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRetirerProgramme.Location = new System.Drawing.Point(57, 281);
             this.btnRetirerProgramme.Name = "btnRetirerProgramme";
-            this.btnRetirerProgramme.Size = new System.Drawing.Size(100, 28);
+            this.btnRetirerProgramme.Size = new System.Drawing.Size(75, 23);
             this.btnRetirerProgramme.TabIndex = 11;
             this.btnRetirerProgramme.Text = "Retirer";
             this.btnRetirerProgramme.UseVisualStyleBackColor = true;
@@ -505,19 +521,17 @@ namespace projetCegep2
             // 
             // edtRetirerProgramme
             // 
-            this.edtRetirerProgramme.Location = new System.Drawing.Point(76, 313);
-            this.edtRetirerProgramme.Margin = new System.Windows.Forms.Padding(4);
+            this.edtRetirerProgramme.Location = new System.Drawing.Point(57, 254);
             this.edtRetirerProgramme.Name = "edtRetirerProgramme";
-            this.edtRetirerProgramme.Size = new System.Drawing.Size(132, 22);
+            this.edtRetirerProgramme.Size = new System.Drawing.Size(100, 20);
             this.edtRetirerProgramme.TabIndex = 10;
             this.edtRetirerProgramme.Text = "1";
             // 
             // btnCreerProgramme
             // 
-            this.btnCreerProgramme.Location = new System.Drawing.Point(48, 227);
-            this.btnCreerProgramme.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCreerProgramme.Location = new System.Drawing.Point(36, 184);
             this.btnCreerProgramme.Name = "btnCreerProgramme";
-            this.btnCreerProgramme.Size = new System.Drawing.Size(113, 43);
+            this.btnCreerProgramme.Size = new System.Drawing.Size(85, 35);
             this.btnCreerProgramme.TabIndex = 8;
             this.btnCreerProgramme.Text = "Créer";
             this.btnCreerProgramme.UseVisualStyleBackColor = true;
@@ -526,76 +540,68 @@ namespace projetCegep2
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(57, 185);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(43, 150);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(83, 17);
+            this.label12.Size = new System.Drawing.Size(63, 13);
             this.label12.TabIndex = 7;
             this.label12.Text = "Description:";
             // 
             // edtDescriptionProgramme
             // 
-            this.edtDescriptionProgramme.Location = new System.Drawing.Point(277, 181);
-            this.edtDescriptionProgramme.Margin = new System.Windows.Forms.Padding(4);
+            this.edtDescriptionProgramme.Location = new System.Drawing.Point(208, 147);
             this.edtDescriptionProgramme.Name = "edtDescriptionProgramme";
-            this.edtDescriptionProgramme.Size = new System.Drawing.Size(132, 22);
+            this.edtDescriptionProgramme.Size = new System.Drawing.Size(100, 20);
             this.edtDescriptionProgramme.TabIndex = 6;
             this.edtDescriptionProgramme.Text = "Informatique";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(57, 140);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(43, 114);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(213, 17);
+            this.label11.Size = new System.Drawing.Size(159, 13);
             this.label11.TabIndex = 5;
             this.label11.Text = "Date de création du programme:";
             // 
             // edtDateCreationProgramme
             // 
-            this.edtDateCreationProgramme.Location = new System.Drawing.Point(277, 137);
-            this.edtDateCreationProgramme.Margin = new System.Windows.Forms.Padding(4);
+            this.edtDateCreationProgramme.Location = new System.Drawing.Point(208, 111);
             this.edtDateCreationProgramme.Name = "edtDateCreationProgramme";
-            this.edtDateCreationProgramme.Size = new System.Drawing.Size(132, 22);
+            this.edtDateCreationProgramme.Size = new System.Drawing.Size(100, 20);
             this.edtDateCreationProgramme.TabIndex = 4;
             this.edtDateCreationProgramme.Text = "1980";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(57, 95);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(43, 77);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(138, 17);
+            this.label10.Size = new System.Drawing.Size(103, 13);
             this.label10.TabIndex = 3;
             this.label10.Text = "Nom de Programme:";
             // 
             // edtNomProgramme
             // 
-            this.edtNomProgramme.Location = new System.Drawing.Point(277, 91);
-            this.edtNomProgramme.Margin = new System.Windows.Forms.Padding(4);
+            this.edtNomProgramme.Location = new System.Drawing.Point(208, 74);
             this.edtNomProgramme.Name = "edtNomProgramme";
-            this.edtNomProgramme.Size = new System.Drawing.Size(207, 22);
+            this.edtNomProgramme.Size = new System.Drawing.Size(156, 20);
             this.edtNomProgramme.TabIndex = 2;
             this.edtNomProgramme.Text = "Techniques de l\'informatique";
             // 
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(57, 48);
-            this.label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label.Location = new System.Drawing.Point(43, 39);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(159, 17);
+            this.label.Size = new System.Drawing.Size(118, 13);
             this.label.TabIndex = 1;
             this.label.Text = "Numéro de Programme:";
             // 
             // edtNumeroProgramme
             // 
-            this.edtNumeroProgramme.Location = new System.Drawing.Point(277, 48);
-            this.edtNumeroProgramme.Margin = new System.Windows.Forms.Padding(4);
+            this.edtNumeroProgramme.Location = new System.Drawing.Point(208, 39);
             this.edtNumeroProgramme.Name = "edtNumeroProgramme";
-            this.edtNumeroProgramme.Size = new System.Drawing.Size(132, 22);
+            this.edtNumeroProgramme.Size = new System.Drawing.Size(100, 20);
             this.edtNumeroProgramme.TabIndex = 0;
             this.edtNumeroProgramme.Text = "420.B0";
             // 
@@ -634,19 +640,19 @@ namespace projetCegep2
             this.tabPage3.Controls.Add(this.btnRetirerEnseignant);
             this.tabPage3.Controls.Add(this.edtEnseignantARetirer);
             this.tabPage3.Controls.Add(this.btnCreerEnseignant);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1043, 477);
+            this.tabPage3.Size = new System.Drawing.Size(780, 385);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Enseignant";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // btnModifierEnseignant
             // 
-            this.btnModifierEnseignant.Location = new System.Drawing.Point(322, 325);
+            this.btnModifierEnseignant.Location = new System.Drawing.Point(242, 264);
+            this.btnModifierEnseignant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModifierEnseignant.Name = "btnModifierEnseignant";
-            this.btnModifierEnseignant.Size = new System.Drawing.Size(83, 26);
+            this.btnModifierEnseignant.Size = new System.Drawing.Size(62, 21);
             this.btnModifierEnseignant.TabIndex = 57;
             this.btnModifierEnseignant.Text = "Modifier";
             this.btnModifierEnseignant.UseVisualStyleBackColor = true;
@@ -654,9 +660,10 @@ namespace projetCegep2
             // 
             // btnDernierEnseignant
             // 
-            this.btnDernierEnseignant.Location = new System.Drawing.Point(642, 268);
+            this.btnDernierEnseignant.Location = new System.Drawing.Point(482, 218);
+            this.btnDernierEnseignant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDernierEnseignant.Name = "btnDernierEnseignant";
-            this.btnDernierEnseignant.Size = new System.Drawing.Size(75, 35);
+            this.btnDernierEnseignant.Size = new System.Drawing.Size(56, 28);
             this.btnDernierEnseignant.TabIndex = 56;
             this.btnDernierEnseignant.Text = "Dernier";
             this.btnDernierEnseignant.UseVisualStyleBackColor = true;
@@ -664,9 +671,10 @@ namespace projetCegep2
             // 
             // btnSuivantEnseignant
             // 
-            this.btnSuivantEnseignant.Location = new System.Drawing.Point(548, 268);
+            this.btnSuivantEnseignant.Location = new System.Drawing.Point(411, 218);
+            this.btnSuivantEnseignant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSuivantEnseignant.Name = "btnSuivantEnseignant";
-            this.btnSuivantEnseignant.Size = new System.Drawing.Size(75, 35);
+            this.btnSuivantEnseignant.Size = new System.Drawing.Size(56, 28);
             this.btnSuivantEnseignant.TabIndex = 55;
             this.btnSuivantEnseignant.Text = "Suivant";
             this.btnSuivantEnseignant.UseVisualStyleBackColor = true;
@@ -674,9 +682,10 @@ namespace projetCegep2
             // 
             // btnPrécédentEnseignant
             // 
-            this.btnPrécédentEnseignant.Location = new System.Drawing.Point(424, 268);
+            this.btnPrécédentEnseignant.Location = new System.Drawing.Point(318, 218);
+            this.btnPrécédentEnseignant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPrécédentEnseignant.Name = "btnPrécédentEnseignant";
-            this.btnPrécédentEnseignant.Size = new System.Drawing.Size(94, 35);
+            this.btnPrécédentEnseignant.Size = new System.Drawing.Size(70, 28);
             this.btnPrécédentEnseignant.TabIndex = 54;
             this.btnPrécédentEnseignant.Text = "Précédent";
             this.btnPrécédentEnseignant.UseVisualStyleBackColor = true;
@@ -684,9 +693,10 @@ namespace projetCegep2
             // 
             // btnPremierEnseignant
             // 
-            this.btnPremierEnseignant.Location = new System.Drawing.Point(330, 268);
+            this.btnPremierEnseignant.Location = new System.Drawing.Point(248, 218);
+            this.btnPremierEnseignant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPremierEnseignant.Name = "btnPremierEnseignant";
-            this.btnPremierEnseignant.Size = new System.Drawing.Size(75, 32);
+            this.btnPremierEnseignant.Size = new System.Drawing.Size(56, 26);
             this.btnPremierEnseignant.TabIndex = 53;
             this.btnPremierEnseignant.Text = "Premier";
             this.btnPremierEnseignant.UseVisualStyleBackColor = true;
@@ -695,229 +705,204 @@ namespace projetCegep2
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(15, 25);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Location = new System.Drawing.Point(11, 20);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(61, 17);
+            this.label21.Size = new System.Drawing.Size(46, 13);
             this.label21.TabIndex = 52;
             this.label21.Text = "Prénom:";
             // 
             // edtPrenomEmploye
             // 
-            this.edtPrenomEmploye.Location = new System.Drawing.Point(79, 21);
-            this.edtPrenomEmploye.Margin = new System.Windows.Forms.Padding(4);
+            this.edtPrenomEmploye.Location = new System.Drawing.Point(59, 17);
             this.edtPrenomEmploye.Name = "edtPrenomEmploye";
-            this.edtPrenomEmploye.Size = new System.Drawing.Size(188, 22);
+            this.edtPrenomEmploye.Size = new System.Drawing.Size(142, 20);
             this.edtPrenomEmploye.TabIndex = 51;
             this.edtPrenomEmploye.Text = "Yves";
             // 
             // dtpDateArret
             // 
-            this.dtpDateArret.Location = new System.Drawing.Point(452, 144);
-            this.dtpDateArret.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpDateArret.Location = new System.Drawing.Point(339, 117);
             this.dtpDateArret.Name = "dtpDateArret";
-            this.dtpDateArret.Size = new System.Drawing.Size(265, 22);
+            this.dtpDateArret.Size = new System.Drawing.Size(200, 20);
             this.dtpDateArret.TabIndex = 50;
             this.dtpDateArret.Value = new System.DateTime(2030, 3, 18, 0, 0, 0, 0);
             // 
             // dtpDateEmbauche
             // 
-            this.dtpDateEmbauche.Location = new System.Drawing.Point(452, 102);
-            this.dtpDateEmbauche.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpDateEmbauche.Location = new System.Drawing.Point(339, 83);
             this.dtpDateEmbauche.Name = "dtpDateEmbauche";
-            this.dtpDateEmbauche.Size = new System.Drawing.Size(265, 22);
+            this.dtpDateEmbauche.Size = new System.Drawing.Size(200, 20);
             this.dtpDateEmbauche.TabIndex = 49;
             this.dtpDateEmbauche.Value = new System.DateTime(2019, 10, 23, 0, 0, 0, 0);
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(319, 144);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Location = new System.Drawing.Point(239, 117);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(87, 17);
+            this.label22.Size = new System.Drawing.Size(65, 13);
             this.label22.TabIndex = 48;
             this.label22.Text = "Date d\'arret:";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(319, 102);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Location = new System.Drawing.Point(239, 83);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(123, 17);
+            this.label23.Size = new System.Drawing.Size(94, 13);
             this.label23.TabIndex = 46;
             this.label23.Text = "Date d\'embauche:";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(325, 62);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label24.Location = new System.Drawing.Point(244, 50);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(131, 17);
+            this.label24.Size = new System.Drawing.Size(98, 13);
             this.label24.TabIndex = 44;
             this.label24.Text = "Numero d\'Employé:";
             // 
             // edtNumeroEmploye
             // 
-            this.edtNumeroEmploye.Location = new System.Drawing.Point(464, 58);
-            this.edtNumeroEmploye.Margin = new System.Windows.Forms.Padding(4);
+            this.edtNumeroEmploye.Location = new System.Drawing.Point(348, 47);
             this.edtNumeroEmploye.Name = "edtNumeroEmploye";
-            this.edtNumeroEmploye.Size = new System.Drawing.Size(132, 22);
+            this.edtNumeroEmploye.Size = new System.Drawing.Size(100, 20);
             this.edtNumeroEmploye.TabIndex = 43;
             this.edtNumeroEmploye.Text = "0944561";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(15, 332);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(11, 270);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(61, 17);
+            this.label14.Size = new System.Drawing.Size(45, 13);
             this.label14.TabIndex = 42;
             this.label14.Text = "Courriel:";
             // 
             // edtCourrielEnseignant
             // 
-            this.edtCourrielEnseignant.Location = new System.Drawing.Point(120, 329);
-            this.edtCourrielEnseignant.Margin = new System.Windows.Forms.Padding(4);
+            this.edtCourrielEnseignant.Location = new System.Drawing.Point(90, 267);
             this.edtCourrielEnseignant.Name = "edtCourrielEnseignant";
-            this.edtCourrielEnseignant.Size = new System.Drawing.Size(147, 22);
+            this.edtCourrielEnseignant.Size = new System.Drawing.Size(111, 20);
             this.edtCourrielEnseignant.TabIndex = 41;
             this.edtCourrielEnseignant.Text = "YDup@gmail.com";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(15, 284);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(11, 231);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(63, 17);
+            this.label15.Size = new System.Drawing.Size(49, 13);
             this.label15.TabIndex = 40;
             this.label15.Text = "Province";
             // 
             // edtProvinceEnseignant
             // 
-            this.edtProvinceEnseignant.Location = new System.Drawing.Point(135, 281);
-            this.edtProvinceEnseignant.Margin = new System.Windows.Forms.Padding(4);
+            this.edtProvinceEnseignant.Location = new System.Drawing.Point(101, 228);
             this.edtProvinceEnseignant.Name = "edtProvinceEnseignant";
-            this.edtProvinceEnseignant.Size = new System.Drawing.Size(132, 22);
+            this.edtProvinceEnseignant.Size = new System.Drawing.Size(100, 20);
             this.edtProvinceEnseignant.TabIndex = 39;
             this.edtProvinceEnseignant.Text = "Québec";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(15, 239);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Location = new System.Drawing.Point(11, 194);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(34, 17);
+            this.label16.Size = new System.Drawing.Size(26, 13);
             this.label16.TabIndex = 38;
             this.label16.Text = "Ville";
             // 
             // edtVilleEnseignant
             // 
-            this.edtVilleEnseignant.Location = new System.Drawing.Point(135, 235);
-            this.edtVilleEnseignant.Margin = new System.Windows.Forms.Padding(4);
+            this.edtVilleEnseignant.Location = new System.Drawing.Point(101, 191);
             this.edtVilleEnseignant.Name = "edtVilleEnseignant";
-            this.edtVilleEnseignant.Size = new System.Drawing.Size(132, 22);
+            this.edtVilleEnseignant.Size = new System.Drawing.Size(100, 20);
             this.edtVilleEnseignant.TabIndex = 37;
             this.edtVilleEnseignant.Text = "Rivière-du-Loup";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(15, 191);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Location = new System.Drawing.Point(11, 155);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(80, 17);
+            this.label17.Size = new System.Drawing.Size(61, 13);
             this.label17.TabIndex = 36;
             this.label17.Text = "Telephone:";
             // 
             // edtTelephoneEnseignant
             // 
-            this.edtTelephoneEnseignant.Location = new System.Drawing.Point(135, 187);
-            this.edtTelephoneEnseignant.Margin = new System.Windows.Forms.Padding(4);
+            this.edtTelephoneEnseignant.Location = new System.Drawing.Point(101, 152);
             this.edtTelephoneEnseignant.Name = "edtTelephoneEnseignant";
-            this.edtTelephoneEnseignant.Size = new System.Drawing.Size(132, 22);
+            this.edtTelephoneEnseignant.Size = new System.Drawing.Size(100, 20);
             this.edtTelephoneEnseignant.TabIndex = 35;
             this.edtTelephoneEnseignant.Text = "(418) 867 3492";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(16, 144);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Location = new System.Drawing.Point(12, 117);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(88, 17);
+            this.label18.Size = new System.Drawing.Size(67, 13);
             this.label18.TabIndex = 34;
             this.label18.Text = "Code Postal:";
             // 
             // edtCodePostalEnseignant
             // 
-            this.edtCodePostalEnseignant.Location = new System.Drawing.Point(135, 140);
-            this.edtCodePostalEnseignant.Margin = new System.Windows.Forms.Padding(4);
+            this.edtCodePostalEnseignant.Location = new System.Drawing.Point(101, 114);
             this.edtCodePostalEnseignant.Name = "edtCodePostalEnseignant";
-            this.edtCodePostalEnseignant.Size = new System.Drawing.Size(132, 22);
+            this.edtCodePostalEnseignant.Size = new System.Drawing.Size(100, 20);
             this.edtCodePostalEnseignant.TabIndex = 33;
             this.edtCodePostalEnseignant.Text = "G5R 9T2";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(16, 100);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Location = new System.Drawing.Point(12, 81);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(64, 17);
+            this.label19.Size = new System.Drawing.Size(48, 13);
             this.label19.TabIndex = 32;
             this.label19.Text = "Adresse:";
             // 
             // edtAdresseEnseignant
             // 
-            this.edtAdresseEnseignant.Location = new System.Drawing.Point(88, 97);
-            this.edtAdresseEnseignant.Margin = new System.Windows.Forms.Padding(4);
+            this.edtAdresseEnseignant.Location = new System.Drawing.Point(66, 79);
             this.edtAdresseEnseignant.Name = "edtAdresseEnseignant";
-            this.edtAdresseEnseignant.Size = new System.Drawing.Size(179, 22);
+            this.edtAdresseEnseignant.Size = new System.Drawing.Size(135, 20);
             this.edtAdresseEnseignant.TabIndex = 31;
             this.edtAdresseEnseignant.Text = "100 Boulevard Thériault";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(15, 62);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Location = new System.Drawing.Point(11, 50);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(41, 17);
+            this.label20.Size = new System.Drawing.Size(32, 13);
             this.label20.TabIndex = 30;
             this.label20.Text = "Nom:";
             // 
             // edtNomEmploye
             // 
-            this.edtNomEmploye.Location = new System.Drawing.Point(79, 58);
-            this.edtNomEmploye.Margin = new System.Windows.Forms.Padding(4);
+            this.edtNomEmploye.Location = new System.Drawing.Point(59, 47);
             this.edtNomEmploye.Name = "edtNomEmploye";
-            this.edtNomEmploye.Size = new System.Drawing.Size(188, 22);
+            this.edtNomEmploye.Size = new System.Drawing.Size(142, 20);
             this.edtNomEmploye.TabIndex = 29;
             this.edtNomEmploye.Text = "Dupuis";
             // 
             // lbxListeEnseignant
             // 
             this.lbxListeEnseignant.FormattingEnabled = true;
-            this.lbxListeEnseignant.ItemHeight = 16;
-            this.lbxListeEnseignant.Location = new System.Drawing.Point(736, 66);
-            this.lbxListeEnseignant.Margin = new System.Windows.Forms.Padding(4);
+            this.lbxListeEnseignant.Location = new System.Drawing.Point(552, 54);
             this.lbxListeEnseignant.Name = "lbxListeEnseignant";
-            this.lbxListeEnseignant.Size = new System.Drawing.Size(292, 340);
+            this.lbxListeEnseignant.Size = new System.Drawing.Size(220, 277);
             this.lbxListeEnseignant.TabIndex = 28;
             this.lbxListeEnseignant.SelectedIndexChanged += new System.EventHandler(this.lbxListeEnseignant_SelectedIndexChanged);
             // 
             // btnViderListeEnseignant
             // 
-            this.btnViderListeEnseignant.Location = new System.Drawing.Point(79, 423);
-            this.btnViderListeEnseignant.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViderListeEnseignant.Location = new System.Drawing.Point(59, 344);
             this.btnViderListeEnseignant.Name = "btnViderListeEnseignant";
-            this.btnViderListeEnseignant.Size = new System.Drawing.Size(100, 28);
+            this.btnViderListeEnseignant.Size = new System.Drawing.Size(75, 23);
             this.btnViderListeEnseignant.TabIndex = 27;
             this.btnViderListeEnseignant.Text = "Vider la liste";
             this.btnViderListeEnseignant.UseVisualStyleBackColor = true;
@@ -926,19 +911,17 @@ namespace projetCegep2
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(311, 370);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(233, 301);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(207, 17);
+            this.label13.Size = new System.Drawing.Size(152, 13);
             this.label13.TabIndex = 26;
             this.label13.Text = "Chiffre de l\'enseignant à retirer:";
             // 
             // btnRetirerEnseignant
             // 
-            this.btnRetirerEnseignant.Location = new System.Drawing.Point(341, 423);
-            this.btnRetirerEnseignant.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRetirerEnseignant.Location = new System.Drawing.Point(256, 344);
             this.btnRetirerEnseignant.Name = "btnRetirerEnseignant";
-            this.btnRetirerEnseignant.Size = new System.Drawing.Size(100, 28);
+            this.btnRetirerEnseignant.Size = new System.Drawing.Size(75, 23);
             this.btnRetirerEnseignant.TabIndex = 25;
             this.btnRetirerEnseignant.Text = "Retirer";
             this.btnRetirerEnseignant.UseVisualStyleBackColor = true;
@@ -946,33 +929,355 @@ namespace projetCegep2
             // 
             // edtEnseignantARetirer
             // 
-            this.edtEnseignantARetirer.Location = new System.Drawing.Point(341, 390);
-            this.edtEnseignantARetirer.Margin = new System.Windows.Forms.Padding(4);
+            this.edtEnseignantARetirer.Location = new System.Drawing.Point(256, 317);
             this.edtEnseignantARetirer.Name = "edtEnseignantARetirer";
-            this.edtEnseignantARetirer.Size = new System.Drawing.Size(132, 22);
+            this.edtEnseignantARetirer.Size = new System.Drawing.Size(100, 20);
             this.edtEnseignantARetirer.TabIndex = 24;
             this.edtEnseignantARetirer.Text = "1";
             // 
             // btnCreerEnseignant
             // 
-            this.btnCreerEnseignant.Location = new System.Drawing.Point(65, 364);
-            this.btnCreerEnseignant.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCreerEnseignant.Location = new System.Drawing.Point(49, 296);
             this.btnCreerEnseignant.Name = "btnCreerEnseignant";
-            this.btnCreerEnseignant.Size = new System.Drawing.Size(113, 43);
+            this.btnCreerEnseignant.Size = new System.Drawing.Size(85, 35);
             this.btnCreerEnseignant.TabIndex = 23;
             this.btnCreerEnseignant.Text = "Créer";
             this.btnCreerEnseignant.UseVisualStyleBackColor = true;
             this.btnCreerEnseignant.Click += new System.EventHandler(this.btnCreerEnseignant_Click);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.cbxActif);
+            this.tabPage4.Controls.Add(this.dtpDateInscription);
+            this.tabPage4.Controls.Add(this.label26);
+            this.tabPage4.Controls.Add(this.btnModifierEtudiant);
+            this.tabPage4.Controls.Add(this.btnDernierEtudiant);
+            this.tabPage4.Controls.Add(this.btnSuivantEtudiant);
+            this.tabPage4.Controls.Add(this.btnPrecedentEtudiant);
+            this.tabPage4.Controls.Add(this.btnPremierEtudiant);
+            this.tabPage4.Controls.Add(this.label25);
+            this.tabPage4.Controls.Add(this.edtPrenomEtudiant);
+            this.tabPage4.Controls.Add(this.label28);
+            this.tabPage4.Controls.Add(this.edtNumeroDA);
+            this.tabPage4.Controls.Add(this.label29);
+            this.tabPage4.Controls.Add(this.edtCourrielEtudiant);
+            this.tabPage4.Controls.Add(this.label30);
+            this.tabPage4.Controls.Add(this.edtProvinceEtudiant);
+            this.tabPage4.Controls.Add(this.label31);
+            this.tabPage4.Controls.Add(this.edtVilleEtudiant);
+            this.tabPage4.Controls.Add(this.label32);
+            this.tabPage4.Controls.Add(this.edtTelephoneEtudiant);
+            this.tabPage4.Controls.Add(this.label33);
+            this.tabPage4.Controls.Add(this.edtCodePostalEtudiant);
+            this.tabPage4.Controls.Add(this.label34);
+            this.tabPage4.Controls.Add(this.edtAdresseEtudiant);
+            this.tabPage4.Controls.Add(this.label35);
+            this.tabPage4.Controls.Add(this.edtNomEtudiant);
+            this.tabPage4.Controls.Add(this.lbxListeEtudiant);
+            this.tabPage4.Controls.Add(this.btnViderListeEtudiant);
+            this.tabPage4.Controls.Add(this.label36);
+            this.tabPage4.Controls.Add(this.btnRetirerEtudiant);
+            this.tabPage4.Controls.Add(this.edtEtudiantARetirer);
+            this.tabPage4.Controls.Add(this.btnCreerEtudiant);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(780, 385);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Etudiant";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnModifierEtudiant
+            // 
+            this.btnModifierEtudiant.Location = new System.Drawing.Point(241, 264);
+            this.btnModifierEtudiant.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModifierEtudiant.Name = "btnModifierEtudiant";
+            this.btnModifierEtudiant.Size = new System.Drawing.Size(62, 21);
+            this.btnModifierEtudiant.TabIndex = 90;
+            this.btnModifierEtudiant.Text = "Modifier";
+            this.btnModifierEtudiant.UseVisualStyleBackColor = true;
+            // 
+            // btnDernierEtudiant
+            // 
+            this.btnDernierEtudiant.Location = new System.Drawing.Point(481, 218);
+            this.btnDernierEtudiant.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDernierEtudiant.Name = "btnDernierEtudiant";
+            this.btnDernierEtudiant.Size = new System.Drawing.Size(56, 28);
+            this.btnDernierEtudiant.TabIndex = 89;
+            this.btnDernierEtudiant.Text = "Dernier";
+            this.btnDernierEtudiant.UseVisualStyleBackColor = true;
+            // 
+            // btnSuivantEtudiant
+            // 
+            this.btnSuivantEtudiant.Location = new System.Drawing.Point(410, 218);
+            this.btnSuivantEtudiant.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSuivantEtudiant.Name = "btnSuivantEtudiant";
+            this.btnSuivantEtudiant.Size = new System.Drawing.Size(56, 28);
+            this.btnSuivantEtudiant.TabIndex = 88;
+            this.btnSuivantEtudiant.Text = "Suivant";
+            this.btnSuivantEtudiant.UseVisualStyleBackColor = true;
+            // 
+            // btnPrecedentEtudiant
+            // 
+            this.btnPrecedentEtudiant.Location = new System.Drawing.Point(317, 218);
+            this.btnPrecedentEtudiant.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPrecedentEtudiant.Name = "btnPrecedentEtudiant";
+            this.btnPrecedentEtudiant.Size = new System.Drawing.Size(70, 28);
+            this.btnPrecedentEtudiant.TabIndex = 87;
+            this.btnPrecedentEtudiant.Text = "Précédent";
+            this.btnPrecedentEtudiant.UseVisualStyleBackColor = true;
+            // 
+            // btnPremierEtudiant
+            // 
+            this.btnPremierEtudiant.Location = new System.Drawing.Point(247, 218);
+            this.btnPremierEtudiant.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPremierEtudiant.Name = "btnPremierEtudiant";
+            this.btnPremierEtudiant.Size = new System.Drawing.Size(56, 26);
+            this.btnPremierEtudiant.TabIndex = 86;
+            this.btnPremierEtudiant.Text = "Premier";
+            this.btnPremierEtudiant.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(10, 20);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(46, 13);
+            this.label25.TabIndex = 85;
+            this.label25.Text = "Prénom:";
+            // 
+            // edtPrenomEtudiant
+            // 
+            this.edtPrenomEtudiant.Location = new System.Drawing.Point(58, 17);
+            this.edtPrenomEtudiant.Name = "edtPrenomEtudiant";
+            this.edtPrenomEtudiant.Size = new System.Drawing.Size(142, 20);
+            this.edtPrenomEtudiant.TabIndex = 84;
+            this.edtPrenomEtudiant.Text = "Charles";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(243, 50);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(80, 13);
+            this.label28.TabIndex = 79;
+            this.label28.Text = "Numero de DA:";
+            // 
+            // edtNumeroDA
+            // 
+            this.edtNumeroDA.Location = new System.Drawing.Point(347, 47);
+            this.edtNumeroDA.Name = "edtNumeroDA";
+            this.edtNumeroDA.Size = new System.Drawing.Size(100, 20);
+            this.edtNumeroDA.TabIndex = 78;
+            this.edtNumeroDA.Text = "0944561";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(10, 270);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(45, 13);
+            this.label29.TabIndex = 77;
+            this.label29.Text = "Courriel:";
+            // 
+            // edtCourrielEtudiant
+            // 
+            this.edtCourrielEtudiant.Location = new System.Drawing.Point(89, 267);
+            this.edtCourrielEtudiant.Name = "edtCourrielEtudiant";
+            this.edtCourrielEtudiant.Size = new System.Drawing.Size(111, 20);
+            this.edtCourrielEtudiant.TabIndex = 76;
+            this.edtCourrielEtudiant.Text = "CPel@gmail.com";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(10, 231);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(52, 13);
+            this.label30.TabIndex = 75;
+            this.label30.Text = "Province:";
+            // 
+            // edtProvinceEtudiant
+            // 
+            this.edtProvinceEtudiant.Location = new System.Drawing.Point(100, 228);
+            this.edtProvinceEtudiant.Name = "edtProvinceEtudiant";
+            this.edtProvinceEtudiant.Size = new System.Drawing.Size(100, 20);
+            this.edtProvinceEtudiant.TabIndex = 74;
+            this.edtProvinceEtudiant.Text = "Québec";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(10, 194);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(29, 13);
+            this.label31.TabIndex = 73;
+            this.label31.Text = "Ville:";
+            // 
+            // edtVilleEtudiant
+            // 
+            this.edtVilleEtudiant.Location = new System.Drawing.Point(100, 191);
+            this.edtVilleEtudiant.Name = "edtVilleEtudiant";
+            this.edtVilleEtudiant.Size = new System.Drawing.Size(100, 20);
+            this.edtVilleEtudiant.TabIndex = 72;
+            this.edtVilleEtudiant.Text = "Rivière-du-Loup";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(10, 155);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(61, 13);
+            this.label32.TabIndex = 71;
+            this.label32.Text = "Telephone:";
+            // 
+            // edtTelephoneEtudiant
+            // 
+            this.edtTelephoneEtudiant.Location = new System.Drawing.Point(100, 152);
+            this.edtTelephoneEtudiant.Name = "edtTelephoneEtudiant";
+            this.edtTelephoneEtudiant.Size = new System.Drawing.Size(100, 20);
+            this.edtTelephoneEtudiant.TabIndex = 70;
+            this.edtTelephoneEtudiant.Text = "(418) 894 6289";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(11, 117);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(67, 13);
+            this.label33.TabIndex = 69;
+            this.label33.Text = "Code Postal:";
+            // 
+            // edtCodePostalEtudiant
+            // 
+            this.edtCodePostalEtudiant.Location = new System.Drawing.Point(100, 114);
+            this.edtCodePostalEtudiant.Name = "edtCodePostalEtudiant";
+            this.edtCodePostalEtudiant.Size = new System.Drawing.Size(100, 20);
+            this.edtCodePostalEtudiant.TabIndex = 68;
+            this.edtCodePostalEtudiant.Text = "G5R 5U2";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(11, 81);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(48, 13);
+            this.label34.TabIndex = 67;
+            this.label34.Text = "Adresse:";
+            // 
+            // edtAdresseEtudiant
+            // 
+            this.edtAdresseEtudiant.Location = new System.Drawing.Point(65, 79);
+            this.edtAdresseEtudiant.Name = "edtAdresseEtudiant";
+            this.edtAdresseEtudiant.Size = new System.Drawing.Size(135, 20);
+            this.edtAdresseEtudiant.TabIndex = 66;
+            this.edtAdresseEtudiant.Text = "50 rue St-Pierre";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(10, 50);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(32, 13);
+            this.label35.TabIndex = 65;
+            this.label35.Text = "Nom:";
+            // 
+            // edtNomEtudiant
+            // 
+            this.edtNomEtudiant.Location = new System.Drawing.Point(58, 47);
+            this.edtNomEtudiant.Name = "edtNomEtudiant";
+            this.edtNomEtudiant.Size = new System.Drawing.Size(142, 20);
+            this.edtNomEtudiant.TabIndex = 64;
+            this.edtNomEtudiant.Text = "Pelletier";
+            // 
+            // lbxListeEtudiant
+            // 
+            this.lbxListeEtudiant.FormattingEnabled = true;
+            this.lbxListeEtudiant.Location = new System.Drawing.Point(551, 54);
+            this.lbxListeEtudiant.Name = "lbxListeEtudiant";
+            this.lbxListeEtudiant.Size = new System.Drawing.Size(220, 277);
+            this.lbxListeEtudiant.TabIndex = 63;
+            // 
+            // btnViderListeEtudiant
+            // 
+            this.btnViderListeEtudiant.Location = new System.Drawing.Point(58, 344);
+            this.btnViderListeEtudiant.Name = "btnViderListeEtudiant";
+            this.btnViderListeEtudiant.Size = new System.Drawing.Size(75, 23);
+            this.btnViderListeEtudiant.TabIndex = 62;
+            this.btnViderListeEtudiant.Text = "Vider la liste";
+            this.btnViderListeEtudiant.UseVisualStyleBackColor = true;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(232, 301);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(138, 13);
+            this.label36.TabIndex = 61;
+            this.label36.Text = "Chiffre de l\'etudiant à retirer:";
+            // 
+            // btnRetirerEtudiant
+            // 
+            this.btnRetirerEtudiant.Location = new System.Drawing.Point(255, 344);
+            this.btnRetirerEtudiant.Name = "btnRetirerEtudiant";
+            this.btnRetirerEtudiant.Size = new System.Drawing.Size(75, 23);
+            this.btnRetirerEtudiant.TabIndex = 60;
+            this.btnRetirerEtudiant.Text = "Retirer";
+            this.btnRetirerEtudiant.UseVisualStyleBackColor = true;
+            // 
+            // edtEtudiantARetirer
+            // 
+            this.edtEtudiantARetirer.Location = new System.Drawing.Point(255, 317);
+            this.edtEtudiantARetirer.Name = "edtEtudiantARetirer";
+            this.edtEtudiantARetirer.Size = new System.Drawing.Size(100, 20);
+            this.edtEtudiantARetirer.TabIndex = 59;
+            this.edtEtudiantARetirer.Text = "1";
+            // 
+            // btnCreerEtudiant
+            // 
+            this.btnCreerEtudiant.Location = new System.Drawing.Point(48, 296);
+            this.btnCreerEtudiant.Name = "btnCreerEtudiant";
+            this.btnCreerEtudiant.Size = new System.Drawing.Size(85, 35);
+            this.btnCreerEtudiant.TabIndex = 58;
+            this.btnCreerEtudiant.Text = "Créer";
+            this.btnCreerEtudiant.UseVisualStyleBackColor = true;
+            this.btnCreerEtudiant.Click += new System.EventHandler(this.btnCreerEtudiant_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(206, 74);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(92, 13);
+            this.label26.TabIndex = 92;
+            this.label26.Text = "Date d\'Inscription:";
+            // 
+            // dtpDateInscription
+            // 
+            this.dtpDateInscription.Location = new System.Drawing.Point(317, 73);
+            this.dtpDateInscription.Name = "dtpDateInscription";
+            this.dtpDateInscription.Size = new System.Drawing.Size(200, 20);
+            this.dtpDateInscription.TabIndex = 95;
+            this.dtpDateInscription.Value = new System.DateTime(2021, 5, 13, 0, 0, 0, 0);
+            // 
+            // cbxActif
+            // 
+            this.cbxActif.AutoSize = true;
+            this.cbxActif.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.cbxActif.Location = new System.Drawing.Point(283, 113);
+            this.cbxActif.Name = "cbxActif";
+            this.cbxActif.Size = new System.Drawing.Size(47, 17);
+            this.cbxActif.TabIndex = 96;
+            this.cbxActif.Text = "Actif";
+            this.cbxActif.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Programme Cégep";
             this.menuStrip1.ResumeLayout(false);
@@ -984,6 +1289,8 @@ namespace projetCegep2
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1071,6 +1378,39 @@ namespace projetCegep2
         private System.Windows.Forms.Button btnPremierProgramme;
         private System.Windows.Forms.Button btnModifierEnseignant;
         private System.Windows.Forms.Button btnModifierProgramme;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button btnModifierEtudiant;
+        private System.Windows.Forms.Button btnDernierEtudiant;
+        private System.Windows.Forms.Button btnSuivantEtudiant;
+        private System.Windows.Forms.Button btnPrecedentEtudiant;
+        private System.Windows.Forms.Button btnPremierEtudiant;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox edtPrenomEtudiant;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox edtNumeroDA;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox edtCourrielEtudiant;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox edtProvinceEtudiant;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox edtVilleEtudiant;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox edtTelephoneEtudiant;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox edtCodePostalEtudiant;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox edtAdresseEtudiant;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox edtNomEtudiant;
+        private System.Windows.Forms.ListBox lbxListeEtudiant;
+        private System.Windows.Forms.Button btnViderListeEtudiant;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Button btnRetirerEtudiant;
+        private System.Windows.Forms.TextBox edtEtudiantARetirer;
+        private System.Windows.Forms.Button btnCreerEtudiant;
+        private System.Windows.Forms.CheckBox cbxActif;
+        private System.Windows.Forms.DateTimePicker dtpDateInscription;
+        private System.Windows.Forms.Label label26;
     }
 }
 

@@ -6,65 +6,9 @@ using System.Threading.Tasks;
 
 namespace projetCegep2
 {
-    public class Enseignant
+    public class Enseignant : Personne
     {
-        private string prenom;
 
-        public string Prenom
-        {
-            get { return prenom; }
-            set { prenom = value; }
-        }
-
-        private string nom;
-
-        public string Nom
-        {
-            get { return nom; }
-            set { nom = value; }
-        }
-        private string adresse;
-
-        public string Adresse
-        {
-            get { return adresse; }
-            set { adresse = value; }
-        }
-        private string ville;
-
-        public string Ville
-        {
-            get { return ville; }
-            set { ville = value; }
-        }
-        private string province;
-
-        public string Province
-        {
-            get { return province; }
-            set { province = value; }
-        }
-        private string codePostal;
-
-        public string CodePostal
-        {
-            get { return codePostal; }
-            set { codePostal = value; }
-        }
-        private string telephone;
-
-        public string Telephone
-        {
-            get { return telephone; }
-            set { telephone = value; }
-        }
-        private string courriel;
-
-        public string Courriel
-        {
-            get { return courriel; }
-            set { courriel = value; }
-        }
         private DateTime dateEmbauche;
 
         public DateTime DateEmbauche
@@ -86,36 +30,36 @@ namespace projetCegep2
             get { return numeroEmploye; }
             set { numeroEmploye = value; }
         }
-       
+        /// <summary>
+        /// Constructeur non paramètré
+        /// </summary>
         public Enseignant()
         {
-            prenom = "";
-            nom = "";
-            adresse = "";
-            ville = "";
-            province = "";
-            codePostal = "";
-            telephone = "";
-            courriel = "";
             dateEmbauche = DateTime.Now;
             dateArret = DateTime.Now;
             numeroEmploye = "";
         }
-        public Enseignant(string unPrenom, string unNom, string uneAdresse, string uneVille, string unCodePostal, string uneProvince, string unTelephone, string unCourriel, DateTime uneDateEmbauche, DateTime uneDateArret, string unNumeroEmploye)
+        /// <summary>
+        /// Constructeur paramètré
+        /// </summary>
+        /// <param name="unPrenom"></param>
+        /// <param name="unNom"></param>
+        /// <param name="uneAdresse"></param>
+        /// <param name="uneVille"></param>
+        /// <param name="unCodePostal"></param>
+        /// <param name="uneProvince"></param>
+        /// <param name="unTelephone"></param>
+        /// <param name="unCourriel"></param>
+        /// <param name="uneDateEmbauche"></param>
+        /// <param name="uneDateArret"></param>
+        /// <param name="unNumeroEmploye"></param>
+        public Enseignant(DateTime uneDateEmbauche, DateTime uneDateArret, string unNumeroEmploye)
         {
-            prenom = unPrenom;
-            nom = unNom;
-            adresse = uneAdresse;
-            ville = uneVille;
-            province = uneProvince;
-            codePostal = unCodePostal;
-            telephone = unTelephone;
-            courriel = unCourriel;
             dateEmbauche = uneDateEmbauche;
             dateArret = uneDateArret;
             numeroEmploye = unNumeroEmploye;
         }
-        
+
 
         /// <summary>
         /// Permet d'Afficher les informations de l'enseignant dans la méthode ToString()
@@ -123,7 +67,7 @@ namespace projetCegep2
         /// <returns></returns>
         public override string ToString()
         {
-            return (NumeroEmploye + ", " + Prenom + ", " + Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel + ", " + "\n\n");
+            return (NumeroEmploye + ", " + "\n\n");
         }
         /// <summary>
         /// Permet de donner un code unique à l'enseignant
@@ -131,9 +75,7 @@ namespace projetCegep2
         /// <returns></returns>
         public override int GetHashCode()
         {
-            int x;
-            x = Nom.Length + Adresse.Length;
-            return (x);
+            return (int.Parse(NumeroEmploye));
         }
         /// <summary>
         /// Permet d'empêcher la création de copies
