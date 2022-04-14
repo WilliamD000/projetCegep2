@@ -487,7 +487,7 @@ namespace projetCegep2
             this.lbxListeProgramme.Location = new System.Drawing.Point(469, 39);
             this.lbxListeProgramme.Name = "lbxListeProgramme";
             this.lbxListeProgramme.Size = new System.Drawing.Size(220, 277);
-            this.lbxListeProgramme.TabIndex = 14;
+            this.lbxListeProgramme.TabIndex = 77;
             this.lbxListeProgramme.SelectedIndexChanged += new System.EventHandler(this.lbxListeProgramme_SelectedIndexChanged);
             // 
             // btnViderListe
@@ -506,7 +506,7 @@ namespace projetCegep2
             this.label9.Location = new System.Drawing.Point(13, 238);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(148, 13);
-            this.label9.TabIndex = 12;
+            this.label9.TabIndex = 99;
             this.label9.Text = "Chiffre du programme à retirer:";
             // 
             // btnRetirerProgramme

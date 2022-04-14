@@ -409,7 +409,7 @@ namespace projetCegep2
         /// <returns>Les informations du Cégep</returns>
         public override string ToString()
         {
-            return (Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel + ", " + AnneeDImplantation + ", " + "\n\n");
+            return (Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel + ", " + AnneeDImplantation + "\n\n");
         }
         /// <summary>
         /// Créer un code unique pour un objet

@@ -78,7 +78,7 @@ namespace projetCegep2
         /// <param name="e"></param>
         private void àProposToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(monCegep.ToString() + "\n" + monProgramme.ToString() + "/n" + unEnseignant.ToString());
+            MessageBox.Show(monCegep.ToString());
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
