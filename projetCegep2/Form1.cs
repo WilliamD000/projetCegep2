@@ -18,7 +18,7 @@ namespace projetCegep2
         Enseignant unEnseignant;
         Etudiant monEtudiant;
         int compteurProgramme = 0, compteurEnseignant = 0, compteurEtudiant = 0;
-        
+
         int index = 0;
 
         XmlSerializer serializer = new XmlSerializer(typeof(Cegep));
@@ -175,7 +175,7 @@ namespace projetCegep2
         {
             int nombreARetirer;
             nombreARetirer = int.Parse(edtRetirerProgramme.Text);
-            monCegep.listeProgramme.RemoveAt(nombreARetirer - 1);
+            monCegep.EnleverEtudiant(monCegep.ObtenirListeEtudiant()[nombreARetirer - 1]);
             InitialiserListeProgramme(compteurProgramme);
         }
 
@@ -232,9 +232,7 @@ namespace projetCegep2
         {
             int nombreARetirer;
             nombreARetirer = int.Parse(edtEnseignantARetirer.Text);
-            monCegep.listeEnseignant.RemoveAt(nombreARetirer - 1);
-            lbxListeEnseignant.Items.RemoveAt(nombreARetirer);
-            compteurEnseignant--;
+            monCegep.EnleverEtudiant(monCegep.ObtenirListeEtudiant()[nombreARetirer - 1]);
             InitialiserListeEnseignants(compteurEnseignant);
         }
 
@@ -461,13 +459,14 @@ namespace projetCegep2
         /// <returns></returns>
         public int InitialiserListeProgramme(int compteurProgramme)
         {
+
             lbxListeProgramme.Items.Clear();
             compteurProgramme = 0;
             Programme[] tableauProgramme = monCegep.ObtenirListeProgramme();
             foreach (Programme unProgramme in tableauProgramme)
             {
                 compteurProgramme++;
-                lbxListeProgramme.Items.Add(compteurProgramme.ToString() + "- "+ unProgramme.ToString());
+                lbxListeProgramme.Items.Add(compteurProgramme.ToString() + "- " + unProgramme.ToString());
             }
             return (compteurProgramme);
         }
@@ -483,7 +482,7 @@ namespace projetCegep2
             foreach (Enseignant unEnseignant in monCegep.listeEnseignant)
             {
                 compteurEnseignant++;
-                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + "- "+ unEnseignant.ToString());
+                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + "- " + unEnseignant.ToString());
             }
             return (compteurEnseignant);
         }
@@ -498,6 +497,7 @@ namespace projetCegep2
             lbxListeEtudiant.Items.Clear();
             foreach (Etudiant unEtudiant in monCegep.listeEtudiant)
             {
+                //unEtudiant = new Etudiant();
                 compteurEtudiant++;
                 lbxListeEtudiant.Items.Add(compteurEtudiant.ToString() + "- " + unEtudiant.ToString());
             }
@@ -523,7 +523,7 @@ namespace projetCegep2
             monEtudiant.NumeroDA = int.Parse(edtNumeroDA.Text);
             monEtudiant.DateInscription = dtpDateInscription.Value;
             monEtudiant.Actif = cbxActif.Checked;
-            
+
             if (monCegep.AjouterEtudiant(monEtudiant) == false)
             {
                 MessageBox.Show("Cet étudiant existe déja");
@@ -561,9 +561,7 @@ namespace projetCegep2
         {
             int nombreARetirer;
             nombreARetirer = int.Parse(edtEtudiantARetirer.Text);
-            monCegep.listeEnseignant.RemoveAt(nombreARetirer - 1);
-            lbxListeEtudiant.Items.RemoveAt(nombreARetirer);
-            compteurEtudiant--;
+            monCegep.EnleverEtudiant(monCegep.ObtenirListeEtudiant()[nombreARetirer - 1]);
             InitialiserListeEtudiant(compteurEtudiant);
         }
         /// <summary>
@@ -573,7 +571,7 @@ namespace projetCegep2
         /// <param name="e"></param>
         private void btnModifierEtudiant_Click(object sender, EventArgs e)
         {
-            index = lbxListeEtudiant.SelectedIndex + 1; 
+            index = lbxListeEtudiant.SelectedIndex + 1;
             monCegep.ObtenirListeEtudiant()[index].Prenom = edtPrenomEtudiant.Text;
             monCegep.ObtenirListeEtudiant()[index].Nom = edtNomEtudiant.Text;
             monCegep.ObtenirListeEtudiant()[index].Adresse = edtAdresseEtudiant.Text;
@@ -681,26 +679,34 @@ namespace projetCegep2
         /// <param name="compteurEnseignant"></param>
         public void OuvrirFichier(int compteurProgramme, int compteurEnseignant)
         {
-            serializer = new XmlSerializer(typeof(Cegep));
-            using (StreamReader reader = new StreamReader("Cegep.xml"))
+            monCegep = new Cegep();
+            try
             {
-                monCegep = (Cegep)serializer.Deserialize(reader);
+
+
+                if (File.Exists("Cegep.xml"))
+                {
+                    serializer = new XmlSerializer(typeof(Cegep));
+                    using (StreamReader reader = new StreamReader("Cegep.xml"))
+                    {
+                        monCegep = (Cegep)serializer.Deserialize(reader);
+                    }
+                    MessageBox.Show("Programme ouvert.");
+                    btnCreerCegep.Enabled = false;
+                    InitialiserListeProgramme(compteurProgramme);
+                    InitialiserListeEnseignants(compteurEnseignant);
+                    InitialiserListeEtudiant(compteurEtudiant);
+                }
+                else
+                {
+
+
+
+                }
             }
-            MessageBox.Show("Programme ouvert.");
-            lbxListeProgramme.Items.Clear();
-            compteurProgramme = 0;
-            Programme[] tableauProgramme = monCegep.ObtenirListeProgramme();
-            foreach (Programme unProgramme in tableauProgramme)
+            catch (Exception)
             {
-                compteurProgramme++;
-                lbxListeProgramme.Items.Add(compteurProgramme.ToString() + unProgramme.ToString());
-            }
-            compteurEnseignant = 0;
-            lbxListeEnseignant.Items.Clear();
-            foreach (Enseignant unEnseignant in monCegep.listeEnseignant)
-            {
-                compteurEnseignant++;
-                lbxListeEnseignant.Items.Add(compteurEnseignant.ToString() + unEnseignant.ToString());
+                MessageBox.Show("Une erreur est survenue");
             }
         }
     }

@@ -75,7 +75,7 @@ namespace projetCegep2
         public override int GetHashCode()
         {
             int x;
-            x = Personne.Nom.Length + Personne.Adresse.Length;
+            x = Nom.Length + Adresse.Length;
             return (x);
         }
         /// <summary>
