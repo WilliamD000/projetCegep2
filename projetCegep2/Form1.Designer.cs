@@ -37,7 +37,7 @@ namespace projetCegep2
             this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.àProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabCegep = new System.Windows.Forms.TabPage();
             this.btnCreerCegep = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.edtAnneeDImplantation = new System.Windows.Forms.TextBox();
@@ -144,7 +144,7 @@ namespace projetCegep2
             this.btnCreerEtudiant = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabCegep.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -211,7 +211,7 @@ namespace projetCegep2
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabCegep);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
@@ -221,33 +221,33 @@ namespace projetCegep2
             this.tabControl1.Size = new System.Drawing.Size(788, 411);
             this.tabControl1.TabIndex = 1;
             // 
-            // tabPage1
+            // tabCegep
             // 
-            this.tabPage1.Controls.Add(this.btnCreerCegep);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.edtAnneeDImplantation);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.edtCourriel);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.edtProvince);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.edtVille);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.edtTelephone);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.edtCodePostal);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.edtAdresse);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.edtNomCegep);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(780, 385);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Cégep";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            this.tabCegep.Controls.Add(this.btnCreerCegep);
+            this.tabCegep.Controls.Add(this.label8);
+            this.tabCegep.Controls.Add(this.edtAnneeDImplantation);
+            this.tabCegep.Controls.Add(this.label7);
+            this.tabCegep.Controls.Add(this.edtCourriel);
+            this.tabCegep.Controls.Add(this.label6);
+            this.tabCegep.Controls.Add(this.edtProvince);
+            this.tabCegep.Controls.Add(this.label5);
+            this.tabCegep.Controls.Add(this.edtVille);
+            this.tabCegep.Controls.Add(this.label4);
+            this.tabCegep.Controls.Add(this.edtTelephone);
+            this.tabCegep.Controls.Add(this.label3);
+            this.tabCegep.Controls.Add(this.edtCodePostal);
+            this.tabCegep.Controls.Add(this.label2);
+            this.tabCegep.Controls.Add(this.edtAdresse);
+            this.tabCegep.Controls.Add(this.label1);
+            this.tabCegep.Controls.Add(this.edtNomCegep);
+            this.tabCegep.Location = new System.Drawing.Point(4, 22);
+            this.tabCegep.Name = "tabCegep";
+            this.tabCegep.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCegep.Size = new System.Drawing.Size(780, 385);
+            this.tabCegep.TabIndex = 0;
+            this.tabCegep.Text = "Cégep";
+            this.tabCegep.UseVisualStyleBackColor = true;
+            this.tabCegep.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // btnCreerCegep
             // 
@@ -1291,8 +1291,8 @@ namespace projetCegep2
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabCegep.ResumeLayout(false);
+            this.tabCegep.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -1314,7 +1314,7 @@ namespace projetCegep2
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem àProposToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabCegep;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox edtTelephone;
         private System.Windows.Forms.Label label3;
