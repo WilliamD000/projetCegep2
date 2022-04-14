@@ -680,11 +680,8 @@ namespace projetCegep2
         /// <param name="compteurEtudiant">Compteur du nombre d'étudiants du Cégep</param>
         public void OuvrirFichier(int compteurProgramme, int compteurEnseignant, int compteurEtudiant)
         {
-            monCegep = new Cegep();
             try
             {
-
-
                 if (File.Exists("Cegep.xml"))
                 {
                     serializer = new XmlSerializer(typeof(Cegep));
@@ -700,14 +697,13 @@ namespace projetCegep2
                 }
                 else
                 {
-
-
-
+                    File.WriteAllText("Cegep.xml", "");
+                    MessageBox.Show("Le fichier 'Cegep.xml' a été crée, n'oubliez pas d'enregistrer souvent!");
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Une erreur est survenue");
+                MessageBox.Show("Classe cégep non détecté, veuillez créer un cégep et enregistrer.");
             }
         }
     }
