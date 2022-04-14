@@ -65,7 +65,7 @@ namespace projetCegep2
         /// <returns>Les informations du programme</returns>
         public override string ToString()
         {
-           return (NumProgramme + ", " + NomProgramme + ", " + DateCreation + ", " + Description  + "\n\n");
+            return (NumProgramme + ", " + NomProgramme + ", " + DateCreation + ", " + Description + "\n\n");
         }
         /// <summary>
         /// Permet d'attitrer un code unique a un objet
