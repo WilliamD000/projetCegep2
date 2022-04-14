@@ -151,7 +151,7 @@ namespace projetCegep2
             return (false);
         }
         /// <summary>
-        /// FOnction permettant d'ajouter un programme a la liste
+        /// Fonction permettant d'ajouter un programme à la liste
         /// </summary>
         /// <param name="unProgramme">Programme à ajouter</param>
         /// <returns>Valeur booléene</returns>
@@ -345,7 +345,7 @@ namespace projetCegep2
             return (false);
         }
         /// <summary>
-        /// FOnction permettant d'ajouter un étudiant a la liste
+        /// Fonction permettant d'ajouter un étudiant a la liste
         /// </summary>
         /// <param name="unEtudiant">L'étudiant à ajouter</param>
         /// <returns>Valeur booléene</returns>
