@@ -1,4 +1,9 @@
-﻿using System;
+﻿/* Objet   : Enseignant
+ * Date    : 2022/03/27
+ * Version : 1.0
+ * Auteur  : William Desjardins
+ * But: Objet qui représente un Enseignant*/
+using System;
 
 namespace projetCegep2
 {

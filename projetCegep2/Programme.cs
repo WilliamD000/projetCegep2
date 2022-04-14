@@ -1,4 +1,8 @@
-﻿
+﻿/* Objet   : Programme
+ * Date    : 2022/03/27
+ * Version : 1.0
+ * Auteur  : William Desjardins
+ * But: Objet qui représente le programme*/
 namespace projetCegep2
 {
     public class Programme
@@ -61,7 +65,7 @@ namespace projetCegep2
         /// <returns>Les informations du programme</returns>
         public override string ToString()
         {
-           return ("-  " + NumProgramme + ", " + NomProgramme + ", " + DateCreation + ", " + Description  + "\n\n");
+           return (NumProgramme + ", " + NomProgramme + ", " + DateCreation + ", " + Description  + "\n\n");
         }
         /// <summary>
         /// Permet d'attitrer un code unique a un objet

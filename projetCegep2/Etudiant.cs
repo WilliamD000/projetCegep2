@@ -1,4 +1,9 @@
-﻿using System;
+﻿/* Objet   : Etudiant
+ * Date    : 2022/04/07
+ * Version : 1.0
+ * Auteur  : William Desjardins
+ * But: Objet qui représente un étudiant*/
+using System;
 
 namespace projetCegep2
 {

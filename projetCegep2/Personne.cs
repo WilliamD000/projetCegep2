@@ -1,4 +1,8 @@
-﻿
+﻿/* Objet   : Personne
+ * Date    : 2022/04/07
+ * Version : 1.0
+ * Auteur  : William Desjardins
+ * But: Objet qui représente une personne*/
 
 namespace projetCegep2
 {
@@ -78,14 +82,14 @@ namespace projetCegep2
         /// <summary>
         /// Constructeur paramètré
         /// </summary>
-        /// <param name="unPrenom">Attribut pour l'objet "Prénom"</param>
-        /// <param name="unNom">Attribut pour l'objet "Nom"</param>
-        /// <param name="uneAdresse">Attribut pour l'objet "Adresse"</param>
-        /// <param name="uneVille">Attribut pour l'objet "Ville"</param>
-        /// <param name="unCodePostal">Attribut pour l'objet "Code Postal"</param>
-        /// <param name="uneProvince">Attribut pour l'objet "Province"</param>
-        /// <param name="unTelephone">Attribut pour l'objet "Telephone"</param>
-        /// <param name="unCourriel">Attribut pour l'objet "Courriel"</param>
+        /// <param name="unPrenom"> Attribut pour l'objet "Prénom"</param>
+        /// <param name="unNom"> Attribut pour l'objet "Nom"</param>
+        /// <param name="uneAdresse"> Attribut pour l'objet "Adresse"</param>
+        /// <param name="uneVille"> Attribut pour l'objet "Ville"</param>
+        /// <param name="unCodePostal"> Attribut pour l'objet "Code Postal"</param>
+        /// <param name="uneProvince"> Attribut pour l'objet "Province"</param>
+        /// <param name="unTelephone"> Attribut pour l'objet "Telephone"</param>
+        /// <param name="unCourriel"> Attribut pour l'objet "Courriel"</param>
         public Personne(string unPrenom, string unNom, string uneAdresse, string uneVille, string unCodePostal, string uneProvince, string unTelephone, string unCourriel)
         {
             prenom = unPrenom;

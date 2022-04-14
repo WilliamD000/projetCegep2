@@ -1,4 +1,9 @@
-﻿using System.Collections.Generic;
+﻿/* Objet   : Cegep
+ * Date    : 2022/03/22
+ * Version : 1.0
+ * Auteur  : William Desjardins
+ * But: Objet qui représente le Cégep*/
+using System.Collections.Generic;
 
 namespace projetCegep2
 {
