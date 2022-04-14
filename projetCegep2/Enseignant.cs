@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace projetCegep2
 {
@@ -41,17 +37,9 @@ namespace projetCegep2
         /// <summary>
         /// Constructeur paramètré
         /// </summary>
-        /// <param name="unPrenom"></param>
-        /// <param name="unNom"></param>
-        /// <param name="uneAdresse"></param>
-        /// <param name="uneVille"></param>
-        /// <param name="unCodePostal"></param>
-        /// <param name="uneProvince"></param>
-        /// <param name="unTelephone"></param>
-        /// <param name="unCourriel"></param>
-        /// <param name="uneDateEmbauche"></param>
-        /// <param name="uneDateArret"></param>
-        /// <param name="unNumeroEmploye"></param>
+        /// <param name="uneDateEmbauche"> Attribut pour l'objet "Date d'embauche"</param>
+        /// <param name="uneDateArret"> Attribut pour l'objet "Date d'arret"</param>
+        /// <param name="unNumeroEmploye"> Attribut pour l'objet "Numero d'employe"</param>
         public Enseignant(DateTime uneDateEmbauche, DateTime uneDateArret, string unNumeroEmploye)
         {
             dateEmbauche = uneDateEmbauche;
@@ -61,9 +49,9 @@ namespace projetCegep2
 
 
         /// <summary>
-        /// Permet d'Afficher les informations de l'enseignant dans la méthode ToString()
+        /// Permet d'afficher les informations de l'enseignant dans la méthode ToString()
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Informations de l'enseignant</returns>
         public override string ToString()
         {
             return (NumeroEmploye + ", " + Prenom + ", " + Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel + ", " + "\n\n");
@@ -71,7 +59,7 @@ namespace projetCegep2
         /// <summary>
         /// Permet de donner un code unique à l'enseignant
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Hash Code</returns>
         public override int GetHashCode()
         {
             int x;
@@ -81,8 +69,8 @@ namespace projetCegep2
         /// <summary>
         /// Permet d'empêcher la création de copies
         /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
+        /// <param name="obj">L'objet à comparer</param>
+        /// <returns>Valeur booléene</returns>
         public override bool Equals(object obj)
         {
             return ((obj != null) && (obj is Enseignant) && NumeroEmploye.Equals((obj as Enseignant).NumeroEmploye));

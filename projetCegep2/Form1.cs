@@ -26,7 +26,7 @@ namespace projetCegep2
         public Form1()
         {
             InitializeComponent();
-            OuvrirFichier(compteurProgramme, compteurEnseignant);
+            OuvrirFichier(compteurProgramme, compteurEnseignant, compteurEtudiant);
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace projetCegep2
         /// <param name="e"></param>
         private void ouvrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OuvrirFichier(compteurProgramme, compteurEnseignant);
+            OuvrirFichier(compteurProgramme, compteurEnseignant, compteurEtudiant);
         }
 
         /// <summary>
@@ -455,7 +455,7 @@ namespace projetCegep2
         /// <summary>
         /// Fonction qui réaffiche la liste de programmes dans le listbox
         /// </summary>
-        /// <param name="compteurProgramme"></param>
+        /// <param name="compteurProgramme">Compteur du nombre de programmes du Cégep</param>
         /// <returns></returns>
         public int InitialiserListeProgramme(int compteurProgramme)
         {
@@ -473,7 +473,7 @@ namespace projetCegep2
         /// <summary>
         /// Fonction qui réaffiche les Enseignants dans le listbox
         /// </summary>
-        /// <param name="compteurEnseignant"></param>
+        /// <param name="compteurEnseignant">Compteur du nombre d'enseignants du Cégep</param>
         /// <returns></returns>
         public int InitialiserListeEnseignants(int compteurEnseignant)
         {
@@ -489,7 +489,7 @@ namespace projetCegep2
         /// <summary>
         /// Fonction qui rempli le listbox avec la liste d'étudiants actuels
         /// </summary>
-        /// <param name="compteurEtudiant"></param>
+        /// <param name="compteurEtudiant">Compteur du nombre d'étudiants du Cégep</param>
         /// <returns></returns>
         public int InitialiserListeEtudiant(int compteurEtudiant)
         {
@@ -675,9 +675,10 @@ namespace projetCegep2
         /// <summary>
         /// Fonction qui permet d'ouvrir le fichier XML et d'en extraire l'objet Cégep 
         /// </summary>
-        /// <param name="compteurProgramme"></param>
-        /// <param name="compteurEnseignant"></param>
-        public void OuvrirFichier(int compteurProgramme, int compteurEnseignant)
+        /// <param name="compteurProgramme">Compteur du nombre de programmes du Cégep</param>
+        /// <param name="compteurEnseignant">Compteur du nombre d'enseignants du Cégep</param>
+        /// <param name="compteurEtudiant">Compteur du nombre d'étudiants du Cégep</param>
+        public void OuvrirFichier(int compteurProgramme, int compteurEnseignant, int compteurEtudiant)
         {
             monCegep = new Cegep();
             try

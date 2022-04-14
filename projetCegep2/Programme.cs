@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace projetCegep2
 {
     public class Programme
@@ -37,9 +32,33 @@ namespace projetCegep2
             set { description = value; }
         }
         /// <summary>
+        /// Constructeur non paramètré
+        /// </summary>
+        public Programme()
+        {
+            numProgramme = "";
+            nomProgramme = "";
+            dateCreation = "";
+            description = "";
+        }
+        /// <summary>
+        /// Constructeur paramètré
+        /// </summary>
+        /// <param name="unNumProgramme"> Attribut pour l'objet "Numero Programme"</param>
+        /// <param name="unNomProgramme"> Attribut pour l'objet "Nom Programme"</param>
+        /// <param name="uneDateCreation"> Attribut pour l'objet "Date creation"</param>
+        /// <param name="uneDescription"> Attribut pour l'objet "Description"</param>
+        public Programme(string unNumProgramme, string unNomProgramme, string uneDateCreation, string uneDescription)
+        {
+            numProgramme = unNumProgramme;
+            nomProgramme = unNomProgramme;
+            dateCreation = uneDateCreation;
+            description = uneDescription;
+        }
+        /// <summary>
         /// Permet d'afficher les informations du programme dans la fonction ToString()
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Les informations du programme</returns>
         public override string ToString()
         {
            return ("-  " + NumProgramme + ", " + NomProgramme + ", " + DateCreation + ", " + Description  + "\n\n");
@@ -47,7 +66,7 @@ namespace projetCegep2
         /// <summary>
         /// Permet d'attitrer un code unique a un objet
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Hash Code</returns>
         public override int GetHashCode()
         {
             int x;
@@ -57,8 +76,8 @@ namespace projetCegep2
         /// <summary>
         /// Permet de vérifier si deux objets sont identiques
         /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
+        /// <param name="obj">Valeur à comparer</param>
+        /// <returns>Valeur booléene</returns>
         public override bool Equals(object obj)
         {
             return ((obj != null) && (obj is Programme) && NomProgramme.Equals((obj as Programme).NomProgramme));

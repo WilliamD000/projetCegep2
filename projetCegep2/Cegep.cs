@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using System.Xml.Serialization;
-using System.IO;
+﻿using System.Collections.Generic;
+
 namespace projetCegep2
 {
     public class Cegep : Programme
@@ -67,7 +64,9 @@ namespace projetCegep2
         public List<Programme> listeProgramme;
         public List<Enseignant> listeEnseignant;
         public List<Etudiant> listeEtudiant;
-
+        /// <summary>
+        /// Constructeur non paramètré
+        /// </summary>
         public Cegep()
         {
             nom = "";
@@ -82,6 +81,17 @@ namespace projetCegep2
             listeEnseignant = new List<Enseignant>();
             listeEtudiant = new List<Etudiant>();
         }
+        /// <summary>
+        /// Constructeur paramètré
+        /// </summary>
+        /// <param name="unNom"> Attribut pour l'objet "Nom"</param>
+        /// <param name="uneAdresse"> Attribut pour l'objet "Adresse"</param>
+        /// <param name="unCodePostal"> Attribut pour l'objet "Code Postal"</param>
+        /// <param name="unTelephone"> Attribut pour l'objet "Telephone"</param>
+        /// <param name="uneVille"> Attribut pour l'objet "Ville"</param>
+        /// <param name="uneProvince"> Attribut pour l'objet "Province"</param>
+        /// <param name="unCourriel"> Attribut pour l'objet "Courriel"</param>
+        /// <param name="uneAnneeDImplantation"> Attribut pour l'objet "Année d'Implantation"</param>
         public Cegep(string unNom, string uneAdresse, string unCodePostal, string unTelephone, string uneVille, string uneProvince, string unCourriel, string uneAnneeDImplantation)
         {
             nom = unNom;
@@ -98,7 +108,7 @@ namespace projetCegep2
         /// <summary>
         /// Fonction qui retourne la liste de programme en un tableau
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Liste de programmes dans un tableau</returns>
         public Programme[] ObtenirListeProgramme()
         {
             return listeProgramme.ToArray();
@@ -106,8 +116,8 @@ namespace projetCegep2
         /// <summary>
         /// Fonction qui retourne le programme désiré
         /// </summary>
-        /// <param name="unProgramme"></param>
-        /// <returns></returns>
+        /// <param name="unProgramme">Programme souhaité</param>
+        /// <returns>Le programme en question</returns>
         public Programme ObtenirProgramme(Programme unProgramme)
         {
             foreach (Programme programme in listeProgramme)
@@ -122,8 +132,8 @@ namespace projetCegep2
         /// <summary>
         /// Fonction qui vérifie si le programme existe
         /// </summary>
-        /// <param name="unProgramme"></param>
-        /// <returns></returns>
+        /// <param name="unProgramme">Programme à vérifier</param>
+        /// <returns>Valeur booléene</returns>
         public bool SiProgrammePresent(Programme unProgramme)
         {
             foreach (Programme programme in listeProgramme)
@@ -138,8 +148,8 @@ namespace projetCegep2
         /// <summary>
         /// FOnction permettant d'ajouter un programme a la liste
         /// </summary>
-        /// <param name="unProgramme"></param>
-        /// <returns></returns>
+        /// <param name="unProgramme">Programme à ajouter</param>
+        /// <returns>Valeur booléene</returns>
         public bool AjouterProgramme(Programme unProgramme)
         {
             if (SiProgrammePresent(unProgramme))
@@ -152,8 +162,8 @@ namespace projetCegep2
         /// <summary>
         /// Fonction qui supprime un programme
         /// </summary>
-        /// <param name="unProgramme"></param>
-        /// <returns></returns>
+        /// <param name="unProgramme">Programme à supprimer</param>
+        /// <returns>Valeur booléene</returns>
         public bool EnleverProgramme(Programme unProgramme)
         {
             if (!SiProgrammePresent(unProgramme))
@@ -166,7 +176,7 @@ namespace projetCegep2
         /// <summary>
         /// Retourne le nombre de programme
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Nombre de programmes</returns>
         public int ObtenirNombreProgramme()
         {
             return (listeProgramme.Count);
@@ -174,7 +184,7 @@ namespace projetCegep2
         /// <summary>
         /// Vérifie si la liste de programmes est vide
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Valeur booléene</returns>
         public bool SiAucunProgramme()
         {
             return (ObtenirNombreProgramme() == 0);
@@ -182,7 +192,7 @@ namespace projetCegep2
         /// <summary>
         /// Fonction qui vide la liste de programmes
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Valeur booléene</returns>
         public bool ViderListeProgramme()
         {
             if (ObtenirNombreProgramme() == 0)
@@ -195,7 +205,7 @@ namespace projetCegep2
         /// <summary>
         /// Fonction qui transforme la liste d'enseignants en un tableau
         /// </summary>
-        /// <returns></returns>
+        /// <returns>la liste d'enseignant dans un tableau</returns>
         public Enseignant[] ObtenirListeEnseignant()
         {
             return listeEnseignant.ToArray();
@@ -203,8 +213,8 @@ namespace projetCegep2
         /// <summary>
         /// Fonction permettant d'obtenir un Enseignant spécifique
         /// </summary>
-        /// <param name="unEnseignant"></param>
-        /// <returns></returns>
+        /// <param name="unEnseignant">L'enseignant désiré</param>
+        /// <returns>L'enseignant désiré</returns>
         public Enseignant ObtenirEnseignant(Enseignant unEnseignant)
         {
             foreach (Enseignant enseignant in listeEnseignant)
@@ -219,8 +229,8 @@ namespace projetCegep2
         /// <summary>
         /// Fonction qui vérifie si un enseignant existe
         /// </summary>
-        /// <param name="unEnseignant"></param>
-        /// <returns></returns>
+        /// <param name="unEnseignant">Enseignant à vérifier</param>
+        /// <returns>Valeur booléene</returns>
         public bool SiEnseignantPresent(Enseignant unEnseignant)
         {
             foreach (Enseignant enseignant in listeEnseignant)
@@ -235,8 +245,8 @@ namespace projetCegep2
         /// <summary>
         /// Fonction qui crée un enseignant
         /// </summary>
-        /// <param name="unEnseignant"></param>
-        /// <returns></returns>
+        /// <param name="unEnseignant">Enseignant à ajouter</param>
+        /// <returns>Valeur booléene</returns>
         public bool AjouterEnseignant(Enseignant unEnseignant)
         {
             if (SiEnseignantPresent(unEnseignant))
@@ -249,8 +259,8 @@ namespace projetCegep2
         /// <summary>
         /// Fonction qui supprime un enseignant
         /// </summary>
-        /// <param name="unEnseignant"></param>
-        /// <returns></returns>
+        /// <param name="unEnseignant">Enseignant à supprimer</param>
+        /// <returns>Valeur booléene</returns>
         public bool EnleverEnseignant(Enseignant unEnseignant)
         {
             if (!SiEnseignantPresent(unEnseignant))
@@ -263,15 +273,15 @@ namespace projetCegep2
         /// <summary>
         /// Retourne le nombre d'enseignants
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Le nombre d'enseignants</returns>
         public int ObtenirNombreEnseignant()
         {
             return (listeEnseignant.Count);
         }
         /// <summary>
-        /// VÉrifie si la liste d'enseignants est vide
+        /// Vérifie si la liste d'enseignants est vide
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Valeur booléene</returns>
         public bool SiAucunEnseignant()
         {
             return (ObtenirNombreEnseignant() == 0);
@@ -279,7 +289,7 @@ namespace projetCegep2
         /// <summary>
         /// Permet de vider la liste d'enseignants
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Valeur booléene</returns>
         public bool ViderListeEnseignant()
         {
             if (ObtenirNombreEnseignant() == 0)
@@ -292,7 +302,7 @@ namespace projetCegep2
         /// <summary>
         /// Fonction qui retourne la liste d'étudiants en un tableau
         /// </summary>
-        /// <returns></returns>
+        /// <returns>La liste d'étudiants en un tableau</returns>
         public Etudiant[] ObtenirListeEtudiant()
         {
             return listeEtudiant.ToArray();
@@ -300,8 +310,8 @@ namespace projetCegep2
         /// <summary>
         /// Fonction qui retourne l'étudiant désiré
         /// </summary>
-        /// <param name="unEtudiant"></param>
-        /// <returns></returns>
+        /// <param name="unEtudiant">L'étudiant souhaité</param>
+        /// <returns>L'étudiant désiré</returns>
         public Etudiant ObtenirEtudiant(Etudiant unEtudiant)
         {
             foreach (Etudiant Etudiant in listeEtudiant)
@@ -316,8 +326,8 @@ namespace projetCegep2
         /// <summary>
         /// Fonction qui vérifie si l'étudiant existe
         /// </summary>
-        /// <param name="unProgramme"></param>
-        /// <returns></returns>
+        /// <param name="unEtudiant">L'étudiant à vérifier</param>
+        /// <returns>Valeur booléene</returns>
         public bool SiEtudiantPresent(Etudiant unEtudiant)
         {
             foreach (Etudiant etudiant in listeEtudiant)
@@ -332,8 +342,8 @@ namespace projetCegep2
         /// <summary>
         /// FOnction permettant d'ajouter un étudiant a la liste
         /// </summary>
-        /// <param name="unEtudiant"></param>
-        /// <returns></returns>
+        /// <param name="unEtudiant">L'étudiant à ajouter</param>
+        /// <returns>Valeur booléene</returns>
         public bool AjouterEtudiant(Etudiant unEtudiant)
         {
             if (SiEtudiantPresent(unEtudiant))
@@ -346,8 +356,8 @@ namespace projetCegep2
         /// <summary>
         /// Fonction qui supprime un étudiant
         /// </summary>
-        /// <param name="unEtudiant"></param>
-        /// <returns></returns>
+        /// <param name="unEtudiant">L'étudiant à supprimer</param>
+        /// <returns>Valeur booléene</returns>
         public bool EnleverEtudiant(Etudiant unEtudiant)
         {
             if (!SiEtudiantPresent(unEtudiant))
@@ -360,7 +370,7 @@ namespace projetCegep2
         /// <summary>
         /// Retourne le nombre d'étudiants
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Le nombre d'étudiants</returns>
         public int ObtenirNombreEtudiant()
         {
             return (listeEtudiant.Count);
@@ -368,7 +378,7 @@ namespace projetCegep2
         /// <summary>
         /// Vérifie si la liste d'étudiants est vide
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Valeur booléene</returns>
         public bool SiAucunEtudiant()
         {
             return (ObtenirNombreEtudiant() == 0);
@@ -376,7 +386,7 @@ namespace projetCegep2
         /// <summary>
         /// Fonction qui vide la liste d'étudiants
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Valeur booléene</returns>
         public bool ViderListeEtudiant()
         {
             if (ObtenirNombreEtudiant() == 0)
@@ -391,7 +401,7 @@ namespace projetCegep2
         /// <summary>
         /// Permet d'afficher les valeurs désirée dans la méthode .ToString()
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Les informations du Cégep</returns>
         public override string ToString()
         {
             return (Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel + ", " + AnneeDImplantation + ", " + "\n\n");
@@ -399,7 +409,7 @@ namespace projetCegep2
         /// <summary>
         /// Créer un code unique pour un objet
         /// </summary>
-        /// <returns></returns>
+        /// <returns>HashCode</returns>
         public override int GetHashCode()
         {
             int x;
@@ -409,8 +419,8 @@ namespace projetCegep2
         /// <summary>
         /// Permet de comparer deux objets pour ne pas avoir de copies
         /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
+        /// <param name="obj">L'objet à comparer</param>
+        /// <returns>Valeur booléene</returns>
         public override bool Equals(object obj)
         {
             return ((obj != null) && (obj is Cegep) && Adresse.Equals((obj as Cegep).Adresse));
