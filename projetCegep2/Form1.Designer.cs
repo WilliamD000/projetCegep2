@@ -660,10 +660,10 @@ namespace projetCegep2
             // 
             // btnDernierEnseignant
             // 
-            this.btnDernierEnseignant.Location = new System.Drawing.Point(476, 218);
+            this.btnDernierEnseignant.Location = new System.Drawing.Point(315, 201);
             this.btnDernierEnseignant.Margin = new System.Windows.Forms.Padding(2);
             this.btnDernierEnseignant.Name = "btnDernierEnseignant";
-            this.btnDernierEnseignant.Size = new System.Drawing.Size(62, 28);
+            this.btnDernierEnseignant.Size = new System.Drawing.Size(70, 28);
             this.btnDernierEnseignant.TabIndex = 16;
             this.btnDernierEnseignant.Text = "Dernier";
             this.btnDernierEnseignant.UseVisualStyleBackColor = true;
@@ -671,10 +671,10 @@ namespace projetCegep2
             // 
             // btnSuivantEnseignant
             // 
-            this.btnSuivantEnseignant.Location = new System.Drawing.Point(397, 218);
+            this.btnSuivantEnseignant.Location = new System.Drawing.Point(236, 201);
             this.btnSuivantEnseignant.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuivantEnseignant.Name = "btnSuivantEnseignant";
-            this.btnSuivantEnseignant.Size = new System.Drawing.Size(63, 28);
+            this.btnSuivantEnseignant.Size = new System.Drawing.Size(65, 28);
             this.btnSuivantEnseignant.TabIndex = 15;
             this.btnSuivantEnseignant.Text = "Suivant";
             this.btnSuivantEnseignant.UseVisualStyleBackColor = true;
@@ -682,7 +682,7 @@ namespace projetCegep2
             // 
             // btnPrécédentEnseignant
             // 
-            this.btnPrécédentEnseignant.Location = new System.Drawing.Point(311, 218);
+            this.btnPrécédentEnseignant.Location = new System.Drawing.Point(315, 140);
             this.btnPrécédentEnseignant.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrécédentEnseignant.Name = "btnPrécédentEnseignant";
             this.btnPrécédentEnseignant.Size = new System.Drawing.Size(70, 28);
@@ -693,7 +693,7 @@ namespace projetCegep2
             // 
             // btnPremierEnseignant
             // 
-            this.btnPremierEnseignant.Location = new System.Drawing.Point(235, 218);
+            this.btnPremierEnseignant.Location = new System.Drawing.Point(239, 140);
             this.btnPremierEnseignant.Margin = new System.Windows.Forms.Padding(2);
             this.btnPremierEnseignant.Name = "btnPremierEnseignant";
             this.btnPremierEnseignant.Size = new System.Drawing.Size(62, 26);
@@ -721,24 +721,24 @@ namespace projetCegep2
             // 
             // dtpDateArret
             // 
-            this.dtpDateArret.Location = new System.Drawing.Point(339, 117);
+            this.dtpDateArret.Location = new System.Drawing.Point(315, 47);
             this.dtpDateArret.Name = "dtpDateArret";
             this.dtpDateArret.Size = new System.Drawing.Size(200, 20);
-            this.dtpDateArret.TabIndex = 10;
+            this.dtpDateArret.TabIndex = 9;
             this.dtpDateArret.Value = new System.DateTime(2030, 3, 18, 0, 0, 0, 0);
             // 
             // dtpDateEmbauche
             // 
-            this.dtpDateEmbauche.Location = new System.Drawing.Point(339, 83);
+            this.dtpDateEmbauche.Location = new System.Drawing.Point(315, 13);
             this.dtpDateEmbauche.Name = "dtpDateEmbauche";
             this.dtpDateEmbauche.Size = new System.Drawing.Size(200, 20);
-            this.dtpDateEmbauche.TabIndex = 9;
+            this.dtpDateEmbauche.TabIndex = 8;
             this.dtpDateEmbauche.Value = new System.DateTime(2019, 10, 23, 0, 0, 0, 0);
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(239, 117);
+            this.label22.Location = new System.Drawing.Point(215, 47);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(65, 13);
             this.label22.TabIndex = 48;
@@ -747,7 +747,7 @@ namespace projetCegep2
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(239, 83);
+            this.label23.Location = new System.Drawing.Point(215, 13);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(94, 13);
             this.label23.TabIndex = 46;
@@ -756,7 +756,7 @@ namespace projetCegep2
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(244, 50);
+            this.label24.Location = new System.Drawing.Point(211, 77);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(98, 13);
             this.label24.TabIndex = 44;
@@ -764,10 +764,10 @@ namespace projetCegep2
             // 
             // edtNumeroEmploye
             // 
-            this.edtNumeroEmploye.Location = new System.Drawing.Point(348, 47);
+            this.edtNumeroEmploye.Location = new System.Drawing.Point(315, 74);
             this.edtNumeroEmploye.Name = "edtNumeroEmploye";
             this.edtNumeroEmploye.Size = new System.Drawing.Size(100, 20);
-            this.edtNumeroEmploye.TabIndex = 8;
+            this.edtNumeroEmploye.TabIndex = 10;
             this.edtNumeroEmploye.Text = "0944561";
             // 
             // label14
@@ -892,9 +892,9 @@ namespace projetCegep2
             // lbxListeEnseignant
             // 
             this.lbxListeEnseignant.FormattingEnabled = true;
-            this.lbxListeEnseignant.Location = new System.Drawing.Point(552, 54);
+            this.lbxListeEnseignant.Location = new System.Drawing.Point(421, 90);
             this.lbxListeEnseignant.Name = "lbxListeEnseignant";
-            this.lbxListeEnseignant.Size = new System.Drawing.Size(220, 277);
+            this.lbxListeEnseignant.Size = new System.Drawing.Size(351, 277);
             this.lbxListeEnseignant.TabIndex = 28;
             this.lbxListeEnseignant.SelectedIndexChanged += new System.EventHandler(this.lbxListeEnseignant_SelectedIndexChanged);
             // 
@@ -990,7 +990,7 @@ namespace projetCegep2
             // 
             this.cbxActif.AutoSize = true;
             this.cbxActif.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cbxActif.Location = new System.Drawing.Point(283, 113);
+            this.cbxActif.Location = new System.Drawing.Point(283, 82);
             this.cbxActif.Name = "cbxActif";
             this.cbxActif.Size = new System.Drawing.Size(47, 17);
             this.cbxActif.TabIndex = 11;
@@ -999,16 +999,16 @@ namespace projetCegep2
             // 
             // dtpDateInscription
             // 
-            this.dtpDateInscription.Location = new System.Drawing.Point(317, 73);
+            this.dtpDateInscription.Location = new System.Drawing.Point(302, 17);
             this.dtpDateInscription.Name = "dtpDateInscription";
             this.dtpDateInscription.Size = new System.Drawing.Size(200, 20);
-            this.dtpDateInscription.TabIndex = 10;
+            this.dtpDateInscription.TabIndex = 9;
             this.dtpDateInscription.Value = new System.DateTime(2021, 5, 13, 0, 0, 0, 0);
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(206, 74);
+            this.label26.Location = new System.Drawing.Point(204, 18);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(92, 13);
             this.label26.TabIndex = 92;
@@ -1027,10 +1027,10 @@ namespace projetCegep2
             // 
             // btnDernierEtudiant
             // 
-            this.btnDernierEtudiant.Location = new System.Drawing.Point(481, 218);
+            this.btnDernierEtudiant.Location = new System.Drawing.Point(317, 216);
             this.btnDernierEtudiant.Margin = new System.Windows.Forms.Padding(2);
             this.btnDernierEtudiant.Name = "btnDernierEtudiant";
-            this.btnDernierEtudiant.Size = new System.Drawing.Size(65, 26);
+            this.btnDernierEtudiant.Size = new System.Drawing.Size(70, 26);
             this.btnDernierEtudiant.TabIndex = 17;
             this.btnDernierEtudiant.Text = "Dernier";
             this.btnDernierEtudiant.UseVisualStyleBackColor = true;
@@ -1038,7 +1038,7 @@ namespace projetCegep2
             // 
             // btnSuivantEtudiant
             // 
-            this.btnSuivantEtudiant.Location = new System.Drawing.Point(404, 218);
+            this.btnSuivantEtudiant.Location = new System.Drawing.Point(241, 216);
             this.btnSuivantEtudiant.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuivantEtudiant.Name = "btnSuivantEtudiant";
             this.btnSuivantEtudiant.Size = new System.Drawing.Size(62, 28);
@@ -1049,7 +1049,7 @@ namespace projetCegep2
             // 
             // btnPrecedentEtudiant
             // 
-            this.btnPrecedentEtudiant.Location = new System.Drawing.Point(317, 218);
+            this.btnPrecedentEtudiant.Location = new System.Drawing.Point(317, 155);
             this.btnPrecedentEtudiant.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrecedentEtudiant.Name = "btnPrecedentEtudiant";
             this.btnPrecedentEtudiant.Size = new System.Drawing.Size(70, 28);
@@ -1060,7 +1060,7 @@ namespace projetCegep2
             // 
             // btnPremierEtudiant
             // 
-            this.btnPremierEtudiant.Location = new System.Drawing.Point(241, 218);
+            this.btnPremierEtudiant.Location = new System.Drawing.Point(241, 155);
             this.btnPremierEtudiant.Margin = new System.Windows.Forms.Padding(2);
             this.btnPremierEtudiant.Name = "btnPremierEtudiant";
             this.btnPremierEtudiant.Size = new System.Drawing.Size(62, 26);
@@ -1089,7 +1089,7 @@ namespace projetCegep2
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(243, 50);
+            this.label28.Location = new System.Drawing.Point(213, 50);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(80, 13);
             this.label28.TabIndex = 79;
@@ -1097,10 +1097,10 @@ namespace projetCegep2
             // 
             // edtNumeroDA
             // 
-            this.edtNumeroDA.Location = new System.Drawing.Point(347, 47);
+            this.edtNumeroDA.Location = new System.Drawing.Point(317, 47);
             this.edtNumeroDA.Name = "edtNumeroDA";
             this.edtNumeroDA.Size = new System.Drawing.Size(100, 20);
-            this.edtNumeroDA.TabIndex = 9;
+            this.edtNumeroDA.TabIndex = 10;
             this.edtNumeroDA.Text = "0944561";
             // 
             // label29
@@ -1225,9 +1225,9 @@ namespace projetCegep2
             // lbxListeEtudiant
             // 
             this.lbxListeEtudiant.FormattingEnabled = true;
-            this.lbxListeEtudiant.Location = new System.Drawing.Point(551, 54);
+            this.lbxListeEtudiant.Location = new System.Drawing.Point(423, 54);
             this.lbxListeEtudiant.Name = "lbxListeEtudiant";
-            this.lbxListeEtudiant.Size = new System.Drawing.Size(220, 277);
+            this.lbxListeEtudiant.Size = new System.Drawing.Size(348, 277);
             this.lbxListeEtudiant.TabIndex = 63;
             this.lbxListeEtudiant.SelectedIndexChanged += new System.EventHandler(this.lbxListeEtudiant_SelectedIndexChanged);
             // 

@@ -59,7 +59,7 @@ namespace projetCegep2
         /// <returns>Informations de l'enseignant</returns>
         public override string ToString()
         {
-            return (NumeroEmploye + ", " + Prenom + ", " + Nom + ", " + Adresse + ", " + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel + ", " + "\n\n");
+            return (NumeroEmploye + ", " + Prenom + ", " + Nom + ", " + Adresse + ", \n" + Ville + ", " + Province + ", " + CodePostal + ", " + Telephone + ", " + Courriel + ", " + "\n\n");
         }
         /// <summary>
         /// Permet de donner un code unique à l'enseignant
